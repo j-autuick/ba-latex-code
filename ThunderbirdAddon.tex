@@ -1,0 +1,139 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+
+\usepackage{mathpazo} % Palatino font
+
+\graphicspath{ {./images/} } % sets image folder
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+	
+	\center % Centre everything on the page
+	
+	%------------------------------------------------
+	%	Headings
+	%------------------------------------------------
+	
+	%\textsc{\LARGE Hochschule für Technik \& Wirtschaft Berlin}\\[1.5cm] % Main heading such as the name of your university/college
+		\includegraphics[width=0.9\textwidth]{logo.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	
+	\textsc{\Large Bachelor Arbeit}\\[0.5cm] % Major heading such as course name
+	
+	\textsc{\large Fachbereit 4: Internationale Medieninformatik}\\[0.5cm] % Minor heading such as course title
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+	\HRule\\[0.4cm]
+	
+	{\huge\bfseries Thunderbird Add-on: One Time Pad Encryption}\\[0.4cm] % Title of your document
+	
+	\HRule\\[1.5cm]
+	
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Student}\\
+			Esteban \textsc{Licea} % Your name
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Mentor/Supervisor}\\
+			Prof. Dr. Debora \textsc{Weber-Wulff} % Supervisor's name
+		\end{flushright}
+	\end{minipage}
+	
+	% If you don't want a supervisor, uncomment the two lines below and comment the code above
+	%{\large\textit{Author}}\\
+	%John \textsc{Smith} % Your name
+	
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+	
+	\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+	
+	{\large\today} % Date, change the \today to a set date if you want to be precise
+	
+	%------------------------------------------------
+	%	Logo
+	%------------------------------------------------
+	
+	%\vfill\vfill
+
+	 
+	%----------------------------------------------------------------------------------------
+	
+	\vfill % Push the date up 1/4 of the remaining page
+	
+\end{titlepage}
+
+\section{Thesis Proposal} % What I am to research
+
+\paragraph{I intend to create a Thunderbird Add-on, what will fulfill one specific use case. Namely, Alice want to send an encrypted message to Bob, but Bob is clueless about encryption technology, and can't be bothered learning, installing, or setting up any type of keys. However, they converse regularly, so Alice can just whisper a one time password to him, or even via a telephone conversation--for an important message she wants to send him. Alice then would like to use a Thunderbird add-on, that will allow her to encrypt the message with that password, that Bob can later open with that same password. The message will be encrypted point-to-point.}
+
+
+\paragraph{MailExtensions are based on the WebExtension technology, which is also used by many web browsers. Such an extension is a simple collection of files which modify Thunderbirds appearance and behavior. It can add user interface elements, alter content, or perform background tasks. MailExtensions are created using standard JavaScript, CSS and HTML. Interaction with Thunderbird itself, like adding UI elements or accessing the users messages or contacts is done through special WebExtension APIs.}\footnote{https://developer.thunderbird.net/add-ons/mailextensions}
+
+\paragraph{MailExtensions are created using standard JavaScript, CSS and HTML}
+
+\begin{enumerate}
+\item MailExtensions use stable WebExtension APIs, independent of Thunderbird's own code, and are therefore less likely to break when a new version of Thunderbird is released.
+\item The WebExtension technology introduced a permission mechanism, and users have to acknowledge all permissions requested by add-ons before they can be installed. These permission requests enable users to know what an add-on is actually doing. This is a major improvement, as legacy add-ons always had the same privileges as Thunderbird itself, which many users were not aware of. More information can be found in the support article about Permission request messages for Thunderbird extensions.
+\end{enumerate}
+
+\paragraph{The main configuration file of a MailExtension is a file called manifest.json, also referred to as the manifest. Besides defining some of the extension's basic properties like name, description and ID, it also defines how the extension hooks into Thunderbird:}
+
+
+
+
+\section{Methods}
+
+
+
+\section{Methodology} % How I plan to research it - write two pages on what I will be doing through should cover it.
+
+%\section{Researching Literature, Bibliography \& Citations} % What I have in mind so far. This might be something to avoid...=( But,  now I know how to make footnotes.
+%
+%\begin{thebibliography}{9}
+%
+%\bibitem{book1}
+%  Donna Freitas,
+%  \emph{The Happiness Effect: How social media is driving a generation to appear perfect at any cost},
+%  Oxford University Press, USA,
+%  2019.
+%  
+%\bibitem{book2}
+%  Hunt Allcott and Matthew Gentzkow, 
+%  \emph{Social media and fake news in the 2016 election},
+%  Technical report, National Bureau of Economic Records, 
+%  2017.
+%  
+%\bibitem{book3}
+%   Gratzer, George A.,
+%   \emph{Practical \LaTeX.},
+%   Cham: Springer, 
+%   2014. 
+%
+%\end{thebibliography}
+\end{document}

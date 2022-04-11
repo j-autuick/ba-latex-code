@@ -1,0 +1,195 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+
+
+\usepackage{mathpazo} % Palatino font
+
+\graphicspath{ {./images/} } % sets image folder
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+	
+	\center % Centre everything on the page
+	
+	%------------------------------------------------
+	%	Headings
+	%------------------------------------------------
+	
+	%\textsc{\LARGE Hochschule für Technik \& Wirtschaft Berlin}\\[1.5cm] % Main heading such as the name of your university/college
+		\includegraphics[width=0.9\textwidth]{logo.png}\\[1cm] % Include a department/university logo - this will require the graphicx package
+	
+	\textsc{\Large Bachelorarbeit}\\[0.5cm] % Major heading such as course name
+	
+	\textsc{\large Fachbereich 4: Internationale Medieninformatik}\\[0.5cm] % Minor heading such as course title
+	
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+	
+	\HRule\\[0.4cm]
+	
+	{\huge\bfseries Thunderbird Add-on: 'One Time Password/Pad' Encryption}\\[0.4cm] % Title of your document
+	
+	\HRule\\[1.5cm]
+	
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+	
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Student}\\
+			Esteban \textsc{Licea} % Your name
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Mentor/Supervisor}\\
+			Prof. Dr. Debora \textsc{Weber-Wulff} % Supervisor's name
+		\end{flushright}
+	\end{minipage}
+	
+	% If you don't want a supervisor, uncomment the two lines below and comment the code above
+	%{\large\textit{Author}}\\
+	%John \textsc{Smith} % Your name
+	
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+	
+	\vfill\vfill\vfill % Position the date 3/4 down the remaining page
+	
+	{\large\today} % Date, change the \today to a set date if you want to be precise
+	
+	%------------------------------------------------
+	%	Logo
+	%------------------------------------------------
+	
+	%\vfill\vfill
+
+	 
+	%----------------------------------------------------------------------------------------
+	
+	\vfill % Push the date up 1/4 of the remaining page
+	
+\end{titlepage}
+
+\section{Thesis Proposal} % What I am to research
+
+\paragraph{The bachelor thesis candidate intends to research and develop a Thunderbird Add-on, that will fulfill one specific use case. Namely, Alice wants to send an encrypted message to Bob, but Bob is clueless about encryption technology, and can't be bothered learning, installing, or setting up any type of keys. However, they communicate regularly, so Alice can just whisper a one time password to him, or even via a telephone conversation--for any important message she wants to send him. Alice then would like to use a Thunderbird add-on, that will allow her to encrypt the message with that password, that Bob can later open with that same password. The message will be encrypted point-to-point.}
+\footnote{Alice and Bob are fictional characters commonly used as placeholders in discussions about cryptographic systems and protocols. https://en.wikipedia.org/wiki/Alice\_and\_Bob}
+
+\paragraph{Research will dictate the best implementation strategy with likely possibilities including a "one time pad" or "one time password" solution. The goal is for the best solution to the use case, while also providing the best possible security.}
+%\paragraph{MailExtensions are based on the WebExtension technology, which is also used by many web browsers. Such an extension is a simple collection of files which modify Thunderbirds appearance and behavior. It can add user interface elements, alter content, or perform background tasks. MailExtensions are created using standard JavaScript, CSS and HTML. Interaction with Thunderbird itself, like adding UI elements or accessing the users messages or contacts is done through special WebExtension APIs.}\footnote{https://developer.thunderbird.net/add-ons/mailextensions}
+%
+%\paragraph{MailExtensions are created using standard JavaScript, CSS and HTML}
+
+%\begin{enumerate}
+%\item MailExtensions use stable WebExtension APIs, independent of Thunderbird's own code, and are therefore less likely to break when a new version of Thunderbird is released.
+%\item The WebExtension technology introduced a permission mechanism, and users have to acknowledge all permissions requested by add-ons before they can be installed. These permission requests enable users to know what an add-on is actually doing. This is a major improvement, as legacy add-ons always had the same privileges as Thunderbird itself, which many users were not aware of. More information can be found in the support article about Permission request messages for Thunderbird extensions.
+%\end{enumerate}
+%
+%\paragraph{The main configuration file of a MailExtension is a file called manifest.json, also referred to as the manifest. Besides defining some of the extension's basic properties like name, description and ID, it also defines how the extension hooks into Thunderbird:}
+
+
+
+\section{Methods}
+%A method is simply the tool used to answer your research questions — how, in short, you will go about collecting your data. Examples of UX research methods include:
+%
+%    Contextual inquiry
+%    Interview
+%    Usability study
+%    Survey
+%    Diary study
+%    Card sort
+%
+%If you are choosing among these, you might say “what method should I use?” and settle on one or more methods to answer your research question.
+
+
+
+\paragraph{The methods and or tools used to solve this research inquiry will include:}
+
+\begin{enumerate}
+\item Literature either in the form of online or paper publications, i.e. books
+\item Online learning resources
+\item Thunderbird and JS Encryption APIs
+\item Guidance from Mentors
+\item Visual Studio Code for code production
+\item Github for Source Code and Thesis code management
+\item Latex for writing the Thesis
+\item Jira for project management, i.e. Kanban board, sprints, and road maps
+\end{enumerate}
+
+
+
+\section{Methodology} % How I plan to research it - write two pages on what I will be doing through should cover it.
+
+%A methodology is the rationale for the research approach, and the lens through which the analysis occurs. Said another way, a methodology describes the “general research strategy that outlines the way in which research is to be undertaken” (An Introduction to the Philosophy of Methodology, Howell 2013). The methodology should impact which method(s) for a research endeavor are selected in order to generate the compelling data.
+%
+%Examples of methodologies, courtesy of Elin Bjorling, include:
+%
+%    Phenomenology: describes the “lived experience” of a particular phenomenon
+%    Ethnography: explores the social world or culture, shared beliefs and behaviors
+%    Participatory: views the participants as active researchers
+%    Ethnomethodology: examines how people use dialogue and body language to construct a world view
+%    Grounding theory*: assumes a blank slate and uses an inductive approach to develop a new theory
+%
+%*Despite the fact that grounding theory has theory in its name, don’t let that fool you — it is actually a methodology because it aims to generate theory from systematic application of research.
+%
+%If you wanted to know about the lived experiences purchasing food in the United States, for instance, you would be using the phenomenology methodology— and from there you could choose from different methods to collect that data. For instance, you might perform a contextual inquiry and shop alongside participants; you might also interview a handful of participants and ask them to recount their most recent grocery shopping experience; you might equally choose to do a survey and ask the same questions to hundreds of participants. Because the contextual inquiry gets the researcher much closer to the actual setting, the results may be considered stronger and more transferable in the future.
+
+\paragraph{The researcher will seek to determine the best practices for encrypting email communications. Furthermore, the researcher will implement a "one-time pad" or "one time password" type encryption add-on to be used with the multi-platform email client Thunderbird. Research will guide the final implementation. The study will examine the different possible approaches to email encryption, the challenges and solutions to such goals.}
+
+\paragraph{Previous coursework in cryptography under the instruction of Prof. Dr. Weber-Wulff and Dr. Thiel has laid the foundation for my understanding the strengths of various methods, and equally, the possible pitfalls involved with various implementations -- as the math is generally sound in perfect use cases.}
+
+\paragraph{The implementation foreseen by the author suggests that there will be challenges, and may not represent the ultimate solution, however, the goal is to reach a level of acceptability given the constraints of no key exchange. With this in mind, the author will highlight and spotlight vulnerabilities and attack vectors with this implementation. Not in an effort to break the system or limit culpability, but to be as informed as possible and reduce these weaknesses on the system.}
+
+\paragraph{After the research has been completed, all coding will proceed using a test driven development approach. Thunderbird Add-ons are based on MailExtension technology, which are created using the follow standard languages:}
+
+\begin{enumerate}
+\item HTML
+\item CSS
+\item Javascript
+\end{enumerate}
+
+\paragraph{Upon completion, the project will be submitted to Thunderbird.}
+
+
+%\section{Researching Literature, Bibliography \& Citations} % What I have in mind so far. This might be something to avoid...=( But,  now I know how to make footnotes.
+%
+%\begin{thebibliography}{9}
+%
+%\bibitem{book1}
+%  Donna Freitas,
+%  \emph{The Happiness Effect: How social media is driving a generation to appear perfect at any cost},
+%  Oxford University Press, USA,
+%  2019.
+%  
+%\bibitem{book2}
+%  Hunt Allcott and Matthew Gentzkow, 
+%  \emph{Social media and fake news in the 2016 election},
+%  Technical report, National Bureau of Economic Records, 
+%  2017.
+%  
+%\bibitem{book3}
+%   Gratzer, George A.,
+%   \emph{Practical \LaTeX.},
+%   Cham: Springer, 
+%   2014. 
+%
+%\end{thebibliography}
+\end{document}

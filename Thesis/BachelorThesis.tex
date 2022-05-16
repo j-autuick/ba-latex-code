@@ -1,43 +1,50 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[12pt,a4paper]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
 
+%allows tables to span across pages
+\usepackage{longtable}
 
 \usepackage{mathpazo} % Palatino font
 
-\graphicspath{ {./images/} } % sets image folder
+\graphicspath{{/home/wasabi/Documents/LaTex-Documents/ba-latex-code/images/}} % sets image folder
 
+%added this package, so i could float non-traditional objects
+%like lists. By default, only tables and images can be floating objects.
+%needed to do this, so that I could use captions on my equations.
+\usepackage{float}
+
+%used for creating nice looking definition section of our SRS
+\usepackage{enumitem}% http://ctan.org/pkg/enumitem
+
+%used to add captions
+%to float text around an image
+\usepackage{wrapfig}
+\usepackage[section]{placeins}
+\usepackage{caption}
 
 \begin{document}
 
-\include{titlepage}
+\input{titlepage}
 
 \tableofcontents
-\newpage
 
-\include{specifications}
+\input{intro}
 
+\input{cryptography}
 
-\section{Email - As a communication medium}
-\subsection{Strengths}
-\subsection{Weaknesses}
+\input{implementation}
 
-\section{Email Client - Thunderbird}
-\subsection{Why Thunderbird?}
-\subsection{WebExtensions}
+\input{security}
 
-\section{Cryptography}
-\subsection{Choosing Algorithm}
+\input{summary}
 
-\section{Project Implementation??}
-\subsection{Strengths}
-\subsection{Weaknesses}
-\subsubsection{Attack Vectors - Mitgation}
+%\input{appendix}
 
-\section{Summary}
+\input{srs}
 
 
 %\section{Researching Literature, Bibliography \& Citations} % What I have in mind so far. This might be something to avoid...=( But,  now I know how to make footnotes.

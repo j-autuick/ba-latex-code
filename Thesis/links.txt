@@ -1,0 +1,2 @@
+first source of information on developing a thunderbird addon
+https://developer.thunderbird.net/add-ons/mailextensions

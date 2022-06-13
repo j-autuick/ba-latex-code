@@ -1,0 +1,7 @@
+\contentsline {section}{\numberline {1}Introduction: Problem defined}{1}%
+\contentsline {section}{\numberline {2}Context of the problem}{1}%
+\contentsline {section}{\numberline {3}Research concept}{1}%
+\contentsline {section}{\numberline {4}Research methods employed}{1}%
+\contentsline {section}{\numberline {5}Technical Implementation}{1}%
+\contentsline {section}{\numberline {6}Obstacles Encountered their and solutions and compromises}{1}%
+\contentsline {section}{\numberline {7}Outlook}{1}%

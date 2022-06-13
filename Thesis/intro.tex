@@ -18,12 +18,14 @@
 % => and a Source
 
 \chapter{Introduction}
-%1. Establish your territory - begin to elaborate what your topic is about
-\paragraph{The digital age has fully taken hold into our societies. We do everything in some for or another of digital media: create art, science, communicate, create and share memories, play games, write thesis reports. There is basically no limit to what people do with their computers.}
-\paragraph{Related to this, the growth of the internet has more and more pushed our activities online. In it's nascent, this was not thought to be a major as things like Chinese or Russian Hackers, or even U.S. government intrusions were not really thought to be more than fringe blogger material. Especially, and likely most damaging, was the basic expectation of private communication. Edward Snowden's revelations about the "Five Eyes" intelligence alliance, and cooperation in the collection of all online communication, social media, phone data, etc. No online communication has been considered safe ever since.}
+
+\paragraph{The digital age has fully absorbed our societies. We do everything in some form or another of digital media: create art, science, communicate, create and share memories, play games, and write thesis reports with our computers. There is basically no limit to what people do with their computers.}
+
+\paragraph{Proportional to this growth, the internet's influence on our lives has also ballooned. Our activities have been pushed more and more online, onto the cloud. Originally, few bothered to think about privacy. Most damaging, perhaps, was the erroneous expectation of private communication. Edward Snowden's revelations about the "Five Eyes" intelligence alliance, and cooperation in the collection of all online communication, social media, and phone data. No online communication has been considered safe ever since.}
 
 
-%2. Establish a niche - why did i pick my topic in the first place
+\section{Problem}
+
 \paragraph{Mozilla has tried to support end-to-end encryption (E2EE? for a long time, it has been faced with a major obstacles:}
 
 \begin{itemize}
@@ -34,11 +36,51 @@
 \item and, again, both people must have generated keys (again
 \end{itemize}
 
+\paragraph{Thus, the problem: How can Alice send an encrypted email to someone that does not have any type of public key available?}
 
 
+\section{Context}
+\paragraph{While PGP has existed for years, it is predicated on the exchange of public keys. In clear text, there is a technical requirement to create and exchange keys, and installation of any additional required client software that most average users do not have the patience to complete. Originally, Thunderbird relied on an add-on, Enigmail, to create, manage, and exchange keys.}
+
+\paragraph{Starting with Thunderbird 78, Mozilla implemented OpenPGP as part of it's core client software, and dropped support for all add-ons not using MailExtensions (which includes Enigmail). However, the feature is disabled by default, and is still considered a work in progress. All other add-ons found on Thunderbird's extensions page or searching through Github were considered to be in a testing or experimental phase.}
+
+\section{My solution to the problem}
 %3. Introduce my current research
-\paragraph{This project is centered on the implementation of an Email Add-on that will allow end-to-end encrypted (E2EE) communication. More specifically, it will focus on the Mozilla Thunderbird client, for the simple fact that I have personally used it for over ten years, it's free, open-source, and cross platform. While I grant that not everyone uses Thunderbird, at least there should be no shortage of users, and theoretically anyone can get it easily, for free.}
+\paragraph{This project will implement of an Email Add-on that will allow end-to-end encrypted (E2EE) communication. More specifically, it will focus on the Mozilla Thunderbird client, for the simple fact that I have personally used it for over ten years, it's free, open-source, and cross platform. While I grant that not everyone uses Thunderbird, at least there should be no shortage of users, and theoretically anyone can get it easily, for free.}
 
 \paragraph{Ultimately, this project aims to offer a simple, albeit \emph{not} perfect solution for those interested in privacy, that don't have the technical expertise to engage in key creation, exchanges or have zero knowledge about encryption. The \author{Esteban Licea} will demonstrate the advantages and disadvantages of various implementations strategies, and implement a solution that offers, hopefully, a viable encryption option that will fulfill some use cases.}
+
+\section{Methods applied}
+%1. Establish your territory - begin to elaborate what your topic is about
+
+%2. Establish a niche - why did i pick my topic in the first place
+
+
+
+\paragraph{The methods and tools used to solve this research inquiry will include:}
+
+\begin{enumerate}
+\item Literature either in the form of online or paper publications, i.e. books
+\item Online learning resources
+\item Thunderbird and JS Encryption APIs
+\item Guidance from Mentors
+\item Visual Studio Code for code production
+\item Github for Source Code and Thesis code management
+\item Latex for writing the Thesis
+\item Jira for project management, i.e. Kanban board, sprints, and road maps
+\end{enumerate}
+
+\paragraph{After the research has been completed, all coding will proceed using a test driven development approach. Thunderbird Add-ons are based on MailExtension technology, which are created using the follow standard languages:}
+
+\begin{enumerate}
+\item HTML
+\item CSS
+\item Javascript
+\end{enumerate}
+
+
+
+
+
 
 

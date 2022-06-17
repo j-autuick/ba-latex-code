@@ -68,4 +68,64 @@ encrypt to a different bit or byte every time it is encrypted.\cite[p. 12]{book2
 %TODO what is my reasoning for selecting AES?
 %AES is derived from a competition from 1997, spanning world wide competitors. A belgian team won, an
 % Which mode of choose, why??
+
+%Describe the mathematics involved in the Algorithm.
+
+%Start with Field Theory - Galois 
+\paragraph{The foundation upon which the AES standard is built is based on Field Theory. More precisely, the theory of \emph{Galois Fields}. Explain basically what a Galois field is here.}
+%TODO What is a Galois field, what makes it special? Do irreducible polynomials go here?
+
+%Modulo of a irreducible polynomial
+\paragraph{Modulo arithmetic is commonly used in Computer science, and needs little explanation. It is the amount left over by the division of two integers, commonly known as the \emph{remainder}. It is written as: $11 MOD 4 = 3$.}
+
+\paragraph{We'll also need to remember polynomials from basic algebra. More precisely, the mathematics upon them, with special interest on the coefficients. Next, we will recall the division of polynomials, and the special set of polynomial divisors name \emph{irreducible polynomials.} These are polynomials that ???}
+%TODO Explain in more detail what irreducible polynimals are, and the important ones for this algorithm.
+
+\paragraph{Now, that we have an reviewed all the required mathematics,}
+
+\begin{enumerate}
+\item Galois Fields
+\item Polynomials, and their division
+\item Irreducible polynomials
+\item Modulo arithmetic
+\end{enumerate}
+
+\paragraph{we can begin with the genius of the algorithm.}
+
+%TODO what is or how is key expansion done??
+
+%XOR with key??
+\subsection{Step One:}
+\paragraph{Adding the key to the mix, the longer the key the better!}
+
+
+%Byte substitution - bit shifting?
+\subsection{"SubBytes" or byte substitution}
+\paragraph{What happens here is the that bytes get shifted?}
+
+
+
+%Row Shifting
+\subsection{ShiftRows or the rows are shifted}
+\paragraph{The rows are shifted..}
+
+
+%Column mixing??
+\subsection{MixColums or the columns are mixed}
+\paragraph{Here, the columns are mixed in "this" manner.}
+
+%Add round key??
+\subsection{AddRoundKey or the key (which key, partial) is re-added}
+\paragraph{"This" key is re-added, xor'd? Which key, back to the field.}
+
+
+%Algorithm (all the above) is repeated 9-13 times, depending on bit level of encryption.
+\subsection{The process is repeated x number of times.}
+
+
+% Goal to achieve Diffusion and Confusion.
+\subsection{AES algorithm summary}
+\paragraph{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern desktop CPUs (at least Intel and AMD), so it's blazingly fast.}
+
+%TODO fix the spacing of this image!
 \includegraphics[width=0.9\textwidth]{AES-image.png}

@@ -29,9 +29,19 @@
 \usepackage[section]{placeins}
 \usepackage{caption}
 
+% Used for displaying code blocks
+\usepackage{minted}
+% surround code with box
+\usepackage{tcolorbox}
+\usepackage{etoolbox}
+\BeforeBeginEnvironment{minted}{\begin{tcolorbox}}%
+\AfterEndEnvironment{minted}{\end{tcolorbox}}%
+
 \begin{document}
 
 \input{titlepage}
+
+\input{abstract}
 
 \tableofcontents
 

@@ -1,3 +1,5 @@
+\contentsline {section}{\numberline {0.1}Abstract}{2}{}%
+\contentsline {paragraph}{The developer describes the steps in researching and developing a Thunderbird Add-on that offers E2EE, without the need for key changes, i.e. without PGP. The developed software will allow one user to exchange a keyword/password with another user, encipher a message with that keyword/password, and the other user will be able to decipher to message with that password.}{2}{}%
 \contentsline {chapter}{\numberline {1}Introduction}{5}{}%
 \contentsline {paragraph}{The digital age has fully absorbed our societies. We do everything in some form or another of digital media: create art, science, communicate, create and share memories, play games, and write thesis reports with our computers. There is basically no limit to what people do with their computers.}{5}{}%
 \contentsline {paragraph}{Proportional to this growth, the internet's influence on our lives has also ballooned. Our activities have been pushed more and more online, onto the cloud. Originally, few bothered to think about privacy. Most damaging, perhaps, was the erroneous expectation of private communication. Edward Snowden's revelations about the "Five Eyes" intelligence alliance, and cooperation in the collection of all online communication, social media, and phone data. No online communication has been considered safe ever since.}{5}{}%
@@ -45,70 +47,83 @@
 \contentsline {paragraph}{"This" key is re-added, xor'd? Which key, back to the field.}{13}{}%
 \contentsline {subsection}{\numberline {2.2.6}The process is repeated x number of times.}{13}{}%
 \contentsline {subsection}{\numberline {2.2.7}AES algorithm summary}{13}{}%
-\contentsline {paragraph}{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern desktop CPUs (at least Intel and AMD), so it's blazingly fast.}{14}{}%
+\contentsline {paragraph}{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern desktop CPUs (at least Intel and AMD), so it's blazingly fast.}{13}{}%
 \contentsline {chapter}{\numberline {3}Implementation}{15}{}%
 \contentsline {section}{\numberline {3.1}WebExtensions}{15}{}%
-\contentsline {section}{\numberline {3.2}Crypto JS}{15}{}%
-\contentsline {chapter}{\numberline {4}Security Considerations}{17}{}%
-\contentsline {section}{\numberline {4.1}Attack Vectors}{17}{}%
-\contentsline {section}{\numberline {4.2}Attack Mitigation}{17}{}%
-\contentsline {chapter}{\numberline {5}Summary}{19}{}%
-\contentsline {chapter}{\numberline {6}Appendix}{21}{}%
-\contentsline {section}{\numberline {6.1}Specifications details}{21}{}%
-\contentsline {subsection}{\numberline {6.1.1}Use Cases}{21}{}%
-\contentsline {paragraph}{The Use Cases used in this project will be defined, and or be restricted to the following items:}{21}{}%
-\contentsline {subsubsection}{Use Case ID}{21}{}%
-\contentsline {paragraph}{The Use Case ID will be a unique, numeric identifier for the use case.}{21}{}%
-\contentsline {subsubsection}{Actor(s)}{21}{}%
-\contentsline {paragraph}{An actor is a person or other entity external to the system who interacts with it, and performs use cases to complete task. Included in this designation, will be additional actors who participate in the use case.}{21}{}%
-\contentsline {subsubsection}{Description}{21}{}%
-\contentsline {paragraph}{This section should describe at a high level the purpose of the use case, what it aims to achieve, and any other relevant outcomes.}{21}{}%
-\contentsline {subsubsection}{Preconditions}{21}{}%
-\contentsline {paragraph}{The preconditions are all those conditions that must exist prior to the execution of the use case.}{21}{}%
-\contentsline {subsubsection}{Basic Flow}{22}{}%
-\contentsline {paragraph}{These are the basic, ordered steps and the description required for the completion of the use case. The steps will be numbers, and should be executed in this exact order. Completing the steps, in this order, should lead to the completion of the use case without error.}{22}{}%
-\contentsline {subsubsection}{Exceptions}{22}{}%
-\contentsline {paragraph}{Describes any anticipated errors that could occur during the execution of the use case, and how the system will handle these errors. The exceptions systems will not describe unanticipated errors, or error that are not included in the basic flow.}{22}{}%
-\contentsline {subsubsection}{Postconditions}{22}{}%
-\contentsline {paragraph}{Describes the state of all relevant parties, including the system, \emph {after} the execution of the use case.}{22}{}%
-\contentsline {section}{\numberline {6.2}Software Requirements}{24}{}%
-\contentsline {chapter}{\numberline {7}Software Requirments Specifications}{25}{}%
-\contentsline {section}{\numberline {7.1}Introduction}{25}{}%
-\contentsline {subsection}{\numberline {7.1.1}Purpose}{25}{}%
-\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{25}{}%
-\contentsline {subsection}{\numberline {7.1.2}Scope}{25}{}%
-\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{25}{}%
-\contentsline {subsection}{\numberline {7.1.3}Definitions, acronyms, abbreviations}{25}{}%
-\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{25}{}%
-\contentsline {subsection}{\numberline {7.1.4}References}{26}{}%
-\contentsline {paragraph}{Author used the IEEE document:}{26}{}%
-\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{26}{}%
-\contentsline {subsection}{\numberline {7.1.5}Overview}{27}{}%
-\contentsline {section}{\numberline {7.2}Overall Description}{27}{}%
-\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{27}{}%
-\contentsline {subsection}{\numberline {7.2.1}Product perspective}{27}{}%
-\contentsline {paragraph}{The developed software product, \emph {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{27}{}%
-\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{27}{}%
-\contentsline {subsubsection}{System interfaces}{27}{}%
-\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{27}{}%
-\contentsline {subsubsection}{User interfaces}{27}{}%
-\contentsline {paragraph}{There are no special user interface requirements.}{27}{}%
-\contentsline {subsubsection}{Hardware interfaces}{28}{}%
-\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{28}{}%
-\contentsline {subsubsection}{Software interfaces}{28}{}%
-\contentsline {paragraph}{The required software interfaces are:}{28}{}%
-\contentsline {subsubsection}{Communications interfaces}{28}{}%
-\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{28}{}%
-\contentsline {subsubsection}{Memory constraints}{28}{}%
-\contentsline {paragraph}{Not applicable}{28}{}%
-\contentsline {subsubsection}{Operations}{28}{}%
-\contentsline {paragraph}{Not applicable}{28}{}%
-\contentsline {subsubsection}{Site adaptation requirements}{28}{}%
-\contentsline {paragraph}{Not applicable}{28}{}%
-\contentsline {subsection}{\numberline {7.2.2}Product functions}{29}{}%
-\contentsline {subsection}{\numberline {7.2.3}User characteristics}{29}{}%
-\contentsline {subsection}{\numberline {7.2.4}Constraints}{29}{}%
-\contentsline {paragraph}{There will be various constraints within this project listed below:}{29}{}%
-\contentsline {subsection}{\numberline {7.2.5}Assumptions and dependencies}{29}{}%
-\contentsline {section}{\numberline {7.3}Specific Requirements}{29}{}%
-\contentsline {section}{\numberline {7.4}Appendix}{29}{}%
+\contentsline {paragraph}{Write a blah blah paragraph, can be short, about the basic structure of WebExtension. The following are Manifest Keys that will be required for my implementation.}{15}{}%
+\contentsline {paragraph}{In Thunderbird, all WebExtension API can be accessed through the browser.* namespace, as with Firefox, but also through the messenger.* namespace, which is a better fit for Thunderbird.}{15}{}%
+\contentsline {paragraph}{messenger.tabs.query}{16}{}%
+\contentsline {subparagraph}{The tabs API provides access to Thunderbird's tabs. In some cases, since the call is executed from where it is called from, it may be necessary to execute tabs \emph {message\_display\_action} and not from inside the tab we are looking for.}{16}{}%
+\contentsline {paragraph}{messenger.messageDisplay.getDisplayedMessage()}{16}{}%
+\contentsline {subparagraph}{the \emph {getDisplayedMessage} method of the \emph {messageDisplay API} provides access to the currently viewed message in a given tab. It returns a promise for a \emph {MessageHeader} object from the \emph {message API} with basic imformation about the message.}{16}{}%
+\contentsline {paragraph}{messenger.messages.getFull()}{16}{}%
+\contentsline {subparagraph}{The \emph {getFull()} method returns a Promise for a MessagePart object, which relates to messages containing multiple MIME parts. The headers member of the part returned by getFull includes the headers of the message.}{16}{}%
+\contentsline {paragraph}{Steps to create an addon in Thunderbird.}{16}{}%
+\contentsline {subsection}{\numberline {3.1.1}Using a background page}{16}{}%
+\contentsline {paragraph}{First, we need to add "backgrounds" to our manifest.}{16}{}%
+\contentsline {paragraph}{Additionally, we'll need an html and javascript document, as well as keep the manifest updated.}{17}{}%
+\contentsline {paragraph}{The Add-on should be fully functional now.}{17}{}%
+\contentsline {section}{\numberline {3.2}Crypto JS}{17}{}%
+\contentsline {chapter}{\numberline {4}Security Considerations}{19}{}%
+\contentsline {section}{\numberline {4.1}Attack Vectors}{19}{}%
+\contentsline {section}{\numberline {4.2}Attack Mitigation}{19}{}%
+\contentsline {chapter}{\numberline {5}Summary}{21}{}%
+\contentsline {chapter}{\numberline {6}Appendix}{23}{}%
+\contentsline {section}{\numberline {6.1}Specifications details}{23}{}%
+\contentsline {subsection}{\numberline {6.1.1}Use Cases}{23}{}%
+\contentsline {paragraph}{The Use Cases used in this project will be defined, and or be restricted to the following items:}{23}{}%
+\contentsline {subsubsection}{Use Case ID}{23}{}%
+\contentsline {paragraph}{The Use Case ID will be a unique, numeric identifier for the use case.}{23}{}%
+\contentsline {subsubsection}{Actor(s)}{23}{}%
+\contentsline {paragraph}{An actor is a person or other entity external to the system who interacts with it, and performs use cases to complete task. Included in this designation, will be additional actors who participate in the use case.}{23}{}%
+\contentsline {subsubsection}{Description}{23}{}%
+\contentsline {paragraph}{This section should describe at a high level the purpose of the use case, what it aims to achieve, and any other relevant outcomes.}{23}{}%
+\contentsline {subsubsection}{Preconditions}{23}{}%
+\contentsline {paragraph}{The preconditions are all those conditions that must exist prior to the execution of the use case.}{23}{}%
+\contentsline {subsubsection}{Basic Flow}{24}{}%
+\contentsline {paragraph}{These are the basic, ordered steps and the description required for the completion of the use case. The steps will be numbers, and should be executed in this exact order. Completing the steps, in this order, should lead to the completion of the use case without error.}{24}{}%
+\contentsline {subsubsection}{Exceptions}{24}{}%
+\contentsline {paragraph}{Describes any anticipated errors that could occur during the execution of the use case, and how the system will handle these errors. The exceptions systems will not describe unanticipated errors, or error that are not included in the basic flow.}{24}{}%
+\contentsline {subsubsection}{Postconditions}{24}{}%
+\contentsline {paragraph}{Describes the state of all relevant parties, including the system, \emph {after} the execution of the use case.}{24}{}%
+\contentsline {section}{\numberline {6.2}Software Requirements}{26}{}%
+\contentsline {chapter}{\numberline {7}Software Requirments Specifications}{27}{}%
+\contentsline {section}{\numberline {7.1}Introduction}{27}{}%
+\contentsline {subsection}{\numberline {7.1.1}Purpose}{27}{}%
+\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{27}{}%
+\contentsline {subsection}{\numberline {7.1.2}Scope}{27}{}%
+\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{27}{}%
+\contentsline {subsection}{\numberline {7.1.3}Definitions, acronyms, abbreviations}{27}{}%
+\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{27}{}%
+\contentsline {subsection}{\numberline {7.1.4}References}{28}{}%
+\contentsline {paragraph}{Author used the IEEE document:}{28}{}%
+\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{28}{}%
+\contentsline {subsection}{\numberline {7.1.5}Overview}{29}{}%
+\contentsline {section}{\numberline {7.2}Overall Description}{29}{}%
+\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{29}{}%
+\contentsline {subsection}{\numberline {7.2.1}Product perspective}{29}{}%
+\contentsline {paragraph}{The developed software product, \emph {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{29}{}%
+\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{29}{}%
+\contentsline {subsubsection}{System interfaces}{29}{}%
+\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{29}{}%
+\contentsline {subsubsection}{User interfaces}{29}{}%
+\contentsline {paragraph}{There are no special user interface requirements.}{29}{}%
+\contentsline {subsubsection}{Hardware interfaces}{30}{}%
+\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{30}{}%
+\contentsline {subsubsection}{Software interfaces}{30}{}%
+\contentsline {paragraph}{The required software interfaces are:}{30}{}%
+\contentsline {subsubsection}{Communications interfaces}{30}{}%
+\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{30}{}%
+\contentsline {subsubsection}{Memory constraints}{30}{}%
+\contentsline {paragraph}{Not applicable}{30}{}%
+\contentsline {subsubsection}{Operations}{30}{}%
+\contentsline {paragraph}{Not applicable}{30}{}%
+\contentsline {subsubsection}{Site adaptation requirements}{30}{}%
+\contentsline {paragraph}{Not applicable}{30}{}%
+\contentsline {subsection}{\numberline {7.2.2}Product functions}{31}{}%
+\contentsline {subsection}{\numberline {7.2.3}User characteristics}{31}{}%
+\contentsline {subsection}{\numberline {7.2.4}Constraints}{31}{}%
+\contentsline {paragraph}{There will be various constraints within this project listed below:}{31}{}%
+\contentsline {subsection}{\numberline {7.2.5}Assumptions and dependencies}{31}{}%
+\contentsline {section}{\numberline {7.3}Specific Requirements}{31}{}%
+\contentsline {section}{\numberline {7.4}Appendix}{31}{}%

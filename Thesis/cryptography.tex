@@ -36,12 +36,10 @@ word) at a time. With a block cipher, the same plaintext block will always encry
 ciphertext block, using the same key. With a stream cipher, the same plaintext bit or byte will
 encrypt to a different bit or byte every time it is encrypted.\cite[p. 12]{book2}
 \end{quote}
-\paragraph{The advantages of a stream ciphers:}\footnote{https://crashtest-security.com/block-cipher-vs-stream-cipher/}
-
-%TODO resume here, giving highlight to stream without reason. Instead, mention that by now, mixed algorithms are also possible -if not, prevalent.
+\paragraph{The advantages of a stream ciphers:}
 
 \begin{itemize}
-\item bit or byte at a time encryption
+\item bit (or byte) at a time encryption
 \item speed of encryption/decryption
 \end{itemize}
 
@@ -63,36 +61,58 @@ encrypt to a different bit or byte every time it is encrypted.\cite[p. 12]{book2
 
 \section{Advanced Encryption Standard (AES)}
 
-\paragraph{AES is basically the only choice for a block cipher scheme. It has been the industry standard for the past 20 years, even used by the U.S. government.}\cite{book4}
+\paragraph{AES is basically the only choice for a block cipher . It has been the industry standard for the past 20 years, even used by the U.S. government.}\cite{book4}
 
-%TODO what is my reasoning for selecting AES?
-%AES is derived from a competition from 1997, spanning world wide competitors. A belgian team won, an
-% Which mode of choose, why??
+\paragraph{For that reason, the algorithm is built into modern CPU microcode, by both AMD and Intel, for even faster processing.}
+
 
 %Describe the mathematics involved in the Algorithm.
 
-%Start with Field Theory - Galois 
-\paragraph{The foundation upon which the AES standard is built is based on Field Theory. More precisely, the theory of \emph{Galois Fields}. Explain basically what a Galois field is here.}
-%TODO What is a Galois field, what makes it special? Do irreducible polynomials go here?
+\subsection{Mathematics: Overview}
+\paragraph{Since a full background is beyond the scope of this project (it could entail it's own thesis), the author will gloss over it quickly.}
+%Start with Field Theory - Galois
 
-%Modulo of a irreducible polynomial
-\paragraph{Modulo arithmetic is commonly used in Computer science, and needs little explanation. It is the amount left over by the division of two integers, commonly known as the \emph{remainder}. It is written as: $11 MOD 4 = 3$.}
+\paragraph{The foundation of AES is grounded in Abstract mathematics, more specifically, \emph{set theory}. Within set theory, is the study of groups. A group is a set of elements upon which an operation (and its inverse) can be executed.}\cite[p. 92]{PaarPelzl} 
 
-\paragraph{We'll also need to remember polynomials from basic algebra. More precisely, the mathematics upon them, with special interest on the coefficients. Next, we will recall the division of polynomials, and the special set of polynomial divisors name \emph{irreducible polynomials.} These are polynomials that ???}
+\paragraph{In short, basic mathematical operations}
+
+\begin{enumerate}
+\item addition
+\item subtraction
+\item multiplication
+\item division
+\end{enumerate}
+
+\paragraph{are operations that can be applied to a group of elements.}
+
+\paragraph{A field is an extension of a group, in that all four basic arithmetic operations are included in a single structure.}\cite[p. 92]{PaarPelzl} 
+
+\paragraph{However, as cryptographers, we are not yet satisfied. We need a working set that is finite, or as they are commonly known \emph{Galois fields}, or \emph{unendliche Körpe}. In short, the purpose of these fields is that the set of elements, regardless of the four principle operations performed on them, the result will remain \emph{within} the set of elements. This is profound, necessary and brilliant for cryptographic usage. But, how does this work?}
+
+\paragraph{Essentially, the operations are carried out with the aid of the \emph{modulo operator}, and it ensures our result remains in the set. But, what set?}
+
+\paragraph{We extend beyond a finite field, to focus on a extension field, in particular:}
+
+$GF(2^8)$
+
+\paragraph{As this conveniently translates to 256 elements, which is perfect for a computer byte.}
+
 %TODO Explain in more detail what irreducible polynimals are, and the important ones for this algorithm.
+\paragraph{The last thing we will want to have in mind as we proceed is polynomial division. It's not any different than grammar school algebra, but is carried out with one of a very special type of polynomial, known as a \emph{irreducible polynomial}. An irreducible polynomial is similar to a prime number, only it is a polynomial. In other words, it cannot be broken down, divided down, into smaller components. For our cryptographic purposes, the polynomial we'll use is the following: $X8 + X4 + X3 + X + 1$}\cite[p.21]{DelfsKnebl}
+
 
 \paragraph{Now, that we have an reviewed all the required mathematics,}
 
 \begin{enumerate}
-\item Galois Fields
-\item Polynomials, and their division
-\item Irreducible polynomials
+\item Galois Fields/Finite Fields, or \emph{endliche Körper}
+\item Polynomial division, and irreducible polynomials
 \item Modulo arithmetic
 \end{enumerate}
 
-\paragraph{we can begin with the genius of the algorithm.}
+\paragraph{we continue with the algorithm.}
 
 %TODO what is or how is key expansion done??
+\paragraph{Key expansion - how?}
 
 %XOR with key??
 \subsection{Step One:}
@@ -123,11 +143,14 @@ encrypt to a different bit or byte every time it is encrypted.\cite[p. 12]{book2
 \subsection{The process is repeated x number of times.}
 
 
+
 % Goal to achieve Diffusion and Confusion.
 \subsection{AES algorithm summary}
 \paragraph{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern desktop CPUs (at least Intel and AMD), so it's blazingly fast.}
 
-%TODO fix the spacing of this image!
+\subsection{Block}
+
+%TODO where did I get this image!!
 \begin{center}
 \includegraphics[width=0.7\textwidth]{AES-image.png}
 \end{center}

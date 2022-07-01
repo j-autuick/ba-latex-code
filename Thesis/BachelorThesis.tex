@@ -37,6 +37,9 @@
 \BeforeBeginEnvironment{minted}{\begin{tcolorbox}}%
 \AfterEndEnvironment{minted}{\end{tcolorbox}}%
 
+%new command added to change Bibliography title to References
+\renewcommand{\bibname}{References}
+
 \begin{document}
 
 \input{titlepage}
@@ -51,11 +54,11 @@
 
 \input{implementation}
 
-\input{security}
+\input{challenges}
 
 \input{summary}
 
-\input{appendix}
+%\input{appendix}
 
 \input{srs}
 

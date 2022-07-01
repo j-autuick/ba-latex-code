@@ -1,20 +1,22 @@
 \contentsline {section}{\numberline {0.1}Abstract}{2}{}%
 \contentsline {paragraph}{The developer describes the steps in researching and developing a Thunderbird Add-on that offers E2EE, without the need for key changes, i.e. without PGP. The developed software will allow one user to exchange a keyword/password with another user, encipher a message with that keyword/password, and the other user will be able to decipher to message with that password.}{2}{}%
 \contentsline {chapter}{\numberline {1}Introduction}{5}{}%
-\contentsline {paragraph}{The digital age has fully absorbed our societies. We do everything in some form or another of digital media: create art, science, communicate, create and share memories, play games, and write thesis reports with our computers. There is basically no limit to what people do with their computers.}{5}{}%
-\contentsline {paragraph}{Proportional to this growth, the internet's influence on our lives has also ballooned. Our activities have been pushed more and more online, onto the cloud. Originally, few bothered to think about privacy. Most damaging, perhaps, was the erroneous expectation of private communication. Edward Snowden's revelations about the "Five Eyes" intelligence alliance, and cooperation in the collection of all online communication, social media, and phone data. No online communication has been considered safe ever since.}{5}{}%
-\contentsline {section}{\numberline {1.1}Problem}{5}{}%
-\contentsline {paragraph}{Mozilla has tried to support end-to-end encryption (E2EE? for a long time, it has been faced with a major obstacles:}{5}{}%
-\contentsline {paragraph}{Thus, the problem: How can Alice send an encrypted email to someone that does not have any type of public key available?}{6}{}%
-\contentsline {section}{\numberline {1.2}Context}{6}{}%
-\contentsline {paragraph}{While PGP has existed for years, it is predicated on the exchange of public keys. In clear text, there is a technical requirement to create and exchange keys, and installation of any additional required client software that most average users do not have the patience to complete. Originally, Thunderbird relied on an add-on, Enigmail, to create, manage, and exchange keys.}{6}{}%
+\contentsline {paragraph}{The digital age has fully absorbed our societies. We do everything in some form or another on digital media: create art, science, communicate, create and share memories, play games, and write thesis reports with our computers. There is basically no limit to what people do with their computers.}{5}{}%
+\contentsline {paragraph}{Proportional to this growth, the internet's influence on our lives has also ballooned. Our activities have been pushed more and more online, and onto "the cloud." Originally, few bothered to think about privacy. Most damaging, perhaps, was the erroneous expectation of private communication. Edward Snowden's revelations about the "Five Eyes" intelligence alliance, between the United States, the United Kingdom, Canada, Australia, and New Zealand and their the collection of all online communication, social media, and phone data removed any doubt about expectations to individual privacy. No online communication, or online activities in general, has been considered safe ever since.}{5}{}%
+\contentsline {section}{\numberline {1.1}Background}{5}{}%
+\contentsline {paragraph}{The the sphere of email communication, PGP has existed for decades. It is predicated on the exchange of user created public (and private) keys. However, it has a few inherent problems. First, there is a technical requirement to create and exchange keys. In order to facilitate this, additional client software must be installed. Additionally, several challenging steps beyond the scope of the average end user will need to be completed, like selecting encryption algorithm, size of key, etcetra. Originally, Thunderbird relied on an add-on, Enigmail, to create, manage, and exchange keys. The author used this add-on for many years. And, while it was satisfactory, it was plain to see that it was not without it's technical requirements.}{6}{}%
 \contentsline {paragraph}{Starting with Thunderbird 78, Mozilla implemented OpenPGP as part of it's core client software, and dropped support for all add-ons not using MailExtensions (which includes Enigmail). However, the feature is disabled by default, and is still considered a work in progress. All other add-ons found on Thunderbird's extensions page or searching through Github were considered to be in a testing or experimental phase.}{6}{}%
-\contentsline {section}{\numberline {1.3}My solution to the problem}{6}{}%
-\contentsline {paragraph}{This project will implement of an Email Add-on that will allow end-to-end encrypted (E2EE) communication. More specifically, it will focus on the Mozilla Thunderbird client, for the simple fact that I have personally used it for over ten years, it's free, open-source, and cross platform. While I grant that not everyone uses Thunderbird, at least there should be no shortage of users, and theoretically anyone can get it easily, for free.}{6}{}%
-\contentsline {paragraph}{Ultimately, this project aims to offer a simple, albeit \emph {not} perfect solution for those interested in privacy, that don't have the technical expertise to engage in key creation, exchanges or have zero knowledge about encryption. The \author {Esteban Licea} will demonstrate the advantages and disadvantages of various implementations strategies, and implement a solution that offers, hopefully, a viable encryption option that will fulfill some use cases.}{7}{}%
+\contentsline {section}{\numberline {1.2}Problem}{6}{}%
+\contentsline {paragraph}{Mozilla has tried to support end-to-end encryption (E2EE) for a long time, it has been faced with a major obstacles, mostly mentioned above, including:}{6}{}%
+\contentsline {paragraph}{Thus, the problem: How can Alice send an encrypted email to someone that does not have any type of public key available?}{6}{}%
+\contentsline {section}{\numberline {1.3}Solution}{7}{}%
+\contentsline {paragraph}{The bachelor thesis candidate intends to research and develop a Thunderbird Add-on, that will allow Alice to send an encrypted message to Bob. Bob is not a tech savvy person, and is clueless about encryption technology. So, the idea of learning, installing, and setting up any types of keys, for him, is overwhelming. However, they do communicate regularly, so Alice can just whisper a one time password to him. Subsequently, Alice could then use developed add-on to encipher an email message for Bob. Which, he then could decipher using the same add-on, and the analog agreed upon passphrase.}{7}{}%
+\contentsline {paragraph}{More specifically, it will focus on the Mozilla Thunderbird client, for the simple fact that I have personally used it for over ten years, it's free, open-source, and cross platform. While I grant that not everyone uses Thunderbird, at least there should be no shortage of users, and theoretically anyone can get it easily, for free.}{7}{}%
+\contentsline {paragraph}{Ultimately, this project aims to offer a simple, albeit \emph {not} perfect solution for those interested in privacy, that don't have the technical expertise to engage in key creation, exchanges or have zero knowledge about encryption. The author will demonstrate the advantages and disadvantages of various implementations strategies, and implement a solution that offers, hopefully, a viable encryption option that will fulfill some use cases.}{7}{}%
+\contentsline {paragraph}{Research will dictate the best implementation strategy.}{7}{}%
 \contentsline {section}{\numberline {1.4}Methods applied}{7}{}%
 \contentsline {paragraph}{The methods and tools used to solve this research inquiry will include:}{7}{}%
-\contentsline {paragraph}{After the research has been completed, all coding will proceed using a test driven development approach. Thunderbird Add-ons are based on MailExtension technology, which are created using the follow standard languages:}{7}{}%
+\contentsline {paragraph}{After the research has been completed, all coding will proceed using a test driven development approach. Thunderbird add-ons are based on MailExtension technology, which are created using the follow standard languages:}{8}{}%
 \contentsline {chapter}{\numberline {2}Cryptography}{9}{}%
 \contentsline {section}{\numberline {2.1}Algorithm selection overview}{9}{}%
 \contentsline {subsection}{\numberline {2.1.1}Symmetric key encryption}{9}{}%
@@ -29,25 +31,36 @@
 \contentsline {paragraph}{There are many block ciphers to choose from, these are just some of the most popular:}{10}{}%
 \contentsline {paragraph}{But, after an overall account of the block enciphers available, the author decided there is really only one reasonable choice: the Advanced Encryption Standard (AES). This decision is based }{11}{}%
 \contentsline {section}{\numberline {2.2}Advanced Encryption Standard (AES)}{11}{}%
-\contentsline {paragraph}{AES is basically the only choice for a block cipher scheme. It has been the industry standard for the past 20 years, even used by the U.S. government.}{11}{}%
-\contentsline {paragraph}{The foundation upon which the AES standard is built is based on Field Theory. More precisely, the theory of \emph {Galois Fields}. Explain basically what a Galois field is here.}{11}{}%
-\contentsline {paragraph}{Modulo arithmetic is commonly used in Computer science, and needs little explanation. It is the amount left over by the division of two integers, commonly known as the \emph {remainder}. It is written as: $11 MOD 4 = 3$.}{12}{}%
-\contentsline {paragraph}{We'll also need to remember polynomials from basic algebra. More precisely, the mathematics upon them, with special interest on the coefficients. Next, we will recall the division of polynomials, and the special set of polynomial divisors name \emph {irreducible polynomials.} These are polynomials that ???}{12}{}%
-\contentsline {paragraph}{Now, that we have an reviewed all the required mathematics,}{12}{}%
-\contentsline {paragraph}{we can begin with the genius of the algorithm.}{12}{}%
-\contentsline {subsection}{\numberline {2.2.1}Step One:}{12}{}%
-\contentsline {paragraph}{Adding the key to the mix, the longer the key the better!}{12}{}%
-\contentsline {subsection}{\numberline {2.2.2}"SubBytes" or byte substitution}{12}{}%
-\contentsline {paragraph}{What happens here is the that bytes get shifted?}{12}{}%
-\contentsline {subsection}{\numberline {2.2.3}ShiftRows or the rows are shifted}{12}{}%
-\contentsline {paragraph}{The rows are shifted..}{12}{}%
-\contentsline {subsection}{\numberline {2.2.4}MixColums or the columns are mixed}{12}{}%
-\contentsline {paragraph}{Here, the columns are mixed in "this" manner.}{12}{}%
-\contentsline {subsection}{\numberline {2.2.5}AddRoundKey or the key (which key, partial) is re-added}{13}{}%
+\contentsline {paragraph}{AES is basically the only choice for a block cipher . It has been the industry standard for the past 20 years, even used by the U.S. government.}{11}{}%
+\contentsline {paragraph}{For that reason, the algorithm is built into modern CPU microcode, by both AMD and Intel, for even faster processing.}{11}{}%
+\contentsline {subsection}{\numberline {2.2.1}Mathematics: Overview}{11}{}%
+\contentsline {paragraph}{Since a full background is beyond the scope of this project (it could entail it's own thesis), the author will gloss over it quickly.}{11}{}%
+\contentsline {paragraph}{The foundation of AES is grounded in Abstract mathematics, more specifically, \emph {set theory}. Within set theory, is the study of groups. A group is a set of elements upon which an operation (and its inverse) can be executed.}{12}{}%
+\contentsline {paragraph}{In short, basic mathematical operations}{12}{}%
+\contentsline {paragraph}{are operations that can be applied to a group of elements.}{12}{}%
+\contentsline {paragraph}{A field is an extension of a group, in that all four basic arithmetic operations are included in a single structure.}{12}{}%
+\contentsline {paragraph}{However, as cryptographers, we are not yet satisfied. We need a working set that is finite, or as they are commonly known \emph {Galois fields}, or \emph {unendliche Körpe}. In short, the purpose of these fields is that the set of elements, regardless of the four principle operations performed on them, the result will remain \emph {within} the set of elements. This is profound, necessary and brilliant for cryptographic usage. But, how does this work?}{12}{}%
+\contentsline {paragraph}{Essentially, the operations are carried out with the aid of the \emph {modulo operator}, and it ensures our result remains in the set. But, what set?}{12}{}%
+\contentsline {paragraph}{We extend beyond a finite field, to focus on a extension field, in particular:}{12}{}%
+\contentsline {paragraph}{As this conveniently translates to 256 elements, which is perfect for a computer byte.}{12}{}%
+\contentsline {paragraph}{The last thing we will want to have in mind as we proceed is polynomial division. It's not any different than grammar school algebra, but is carried out with one of a very special type of polynomial, known as a \emph {irreducible polynomial}. An irreducible polynomial is similar to a prime number, only it is a polynomial. In other words, it cannot be broken down, divided down, into smaller components. For our cryptographic purposes, the polynomial we'll use is the following: $X8 + X4 + X3 + X + 1$}{13}{}%
+\contentsline {paragraph}{Now, that we have an reviewed all the required mathematics,}{13}{}%
+\contentsline {paragraph}{we continue with the algorithm.}{13}{}%
+\contentsline {paragraph}{Key expansion - how?}{13}{}%
+\contentsline {subsection}{\numberline {2.2.2}Step One:}{13}{}%
+\contentsline {paragraph}{Adding the key to the mix, the longer the key the better!}{13}{}%
+\contentsline {subsection}{\numberline {2.2.3}"SubBytes" or byte substitution}{13}{}%
+\contentsline {paragraph}{What happens here is the that bytes get shifted?}{13}{}%
+\contentsline {subsection}{\numberline {2.2.4}ShiftRows or the rows are shifted}{13}{}%
+\contentsline {paragraph}{The rows are shifted..}{13}{}%
+\contentsline {subsection}{\numberline {2.2.5}MixColums or the columns are mixed}{13}{}%
+\contentsline {paragraph}{Here, the columns are mixed in "this" manner.}{13}{}%
+\contentsline {subsection}{\numberline {2.2.6}AddRoundKey or the key (which key, partial) is re-added}{13}{}%
 \contentsline {paragraph}{"This" key is re-added, xor'd? Which key, back to the field.}{13}{}%
-\contentsline {subsection}{\numberline {2.2.6}The process is repeated x number of times.}{13}{}%
-\contentsline {subsection}{\numberline {2.2.7}AES algorithm summary}{13}{}%
-\contentsline {paragraph}{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern desktop CPUs (at least Intel and AMD), so it's blazingly fast.}{13}{}%
+\contentsline {subsection}{\numberline {2.2.7}The process is repeated x number of times.}{14}{}%
+\contentsline {subsection}{\numberline {2.2.8}AES algorithm summary}{14}{}%
+\contentsline {paragraph}{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern desktop CPUs (at least Intel and AMD), so it's blazingly fast.}{14}{}%
+\contentsline {subsection}{\numberline {2.2.9}Block}{14}{}%
 \contentsline {chapter}{\numberline {3}Implementation}{15}{}%
 \contentsline {section}{\numberline {3.1}WebExtensions}{15}{}%
 \contentsline {paragraph}{Write a blah blah paragraph, can be short, about the basic structure of WebExtension. The following are Manifest Keys that will be required for my implementation.}{15}{}%
@@ -64,66 +77,45 @@
 \contentsline {paragraph}{Additionally, we'll need an html and javascript document, as well as keep the manifest updated.}{17}{}%
 \contentsline {paragraph}{The Add-on should be fully functional now.}{17}{}%
 \contentsline {section}{\numberline {3.2}Crypto JS}{17}{}%
-\contentsline {chapter}{\numberline {4}Security Considerations}{19}{}%
-\contentsline {section}{\numberline {4.1}Attack Vectors}{19}{}%
-\contentsline {section}{\numberline {4.2}Attack Mitigation}{19}{}%
+\contentsline {chapter}{\numberline {4}Challenges Encountered}{19}{}%
 \contentsline {chapter}{\numberline {5}Summary}{21}{}%
-\contentsline {chapter}{\numberline {6}Appendix}{23}{}%
-\contentsline {section}{\numberline {6.1}Specifications details}{23}{}%
-\contentsline {subsection}{\numberline {6.1.1}Use Cases}{23}{}%
-\contentsline {paragraph}{The Use Cases used in this project will be defined, and or be restricted to the following items:}{23}{}%
-\contentsline {subsubsection}{Use Case ID}{23}{}%
-\contentsline {paragraph}{The Use Case ID will be a unique, numeric identifier for the use case.}{23}{}%
-\contentsline {subsubsection}{Actor(s)}{23}{}%
-\contentsline {paragraph}{An actor is a person or other entity external to the system who interacts with it, and performs use cases to complete task. Included in this designation, will be additional actors who participate in the use case.}{23}{}%
-\contentsline {subsubsection}{Description}{23}{}%
-\contentsline {paragraph}{This section should describe at a high level the purpose of the use case, what it aims to achieve, and any other relevant outcomes.}{23}{}%
-\contentsline {subsubsection}{Preconditions}{23}{}%
-\contentsline {paragraph}{The preconditions are all those conditions that must exist prior to the execution of the use case.}{23}{}%
-\contentsline {subsubsection}{Basic Flow}{24}{}%
-\contentsline {paragraph}{These are the basic, ordered steps and the description required for the completion of the use case. The steps will be numbers, and should be executed in this exact order. Completing the steps, in this order, should lead to the completion of the use case without error.}{24}{}%
-\contentsline {subsubsection}{Exceptions}{24}{}%
-\contentsline {paragraph}{Describes any anticipated errors that could occur during the execution of the use case, and how the system will handle these errors. The exceptions systems will not describe unanticipated errors, or error that are not included in the basic flow.}{24}{}%
-\contentsline {subsubsection}{Postconditions}{24}{}%
-\contentsline {paragraph}{Describes the state of all relevant parties, including the system, \emph {after} the execution of the use case.}{24}{}%
-\contentsline {section}{\numberline {6.2}Software Requirements}{26}{}%
-\contentsline {chapter}{\numberline {7}Software Requirments Specifications}{27}{}%
-\contentsline {section}{\numberline {7.1}Introduction}{27}{}%
-\contentsline {subsection}{\numberline {7.1.1}Purpose}{27}{}%
-\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{27}{}%
-\contentsline {subsection}{\numberline {7.1.2}Scope}{27}{}%
-\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{27}{}%
-\contentsline {subsection}{\numberline {7.1.3}Definitions, acronyms, abbreviations}{27}{}%
-\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{27}{}%
-\contentsline {subsection}{\numberline {7.1.4}References}{28}{}%
-\contentsline {paragraph}{Author used the IEEE document:}{28}{}%
-\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{28}{}%
-\contentsline {subsection}{\numberline {7.1.5}Overview}{29}{}%
-\contentsline {section}{\numberline {7.2}Overall Description}{29}{}%
-\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{29}{}%
-\contentsline {subsection}{\numberline {7.2.1}Product perspective}{29}{}%
-\contentsline {paragraph}{The developed software product, \emph {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{29}{}%
-\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{29}{}%
-\contentsline {subsubsection}{System interfaces}{29}{}%
-\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{29}{}%
-\contentsline {subsubsection}{User interfaces}{29}{}%
-\contentsline {paragraph}{There are no special user interface requirements.}{29}{}%
-\contentsline {subsubsection}{Hardware interfaces}{30}{}%
-\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{30}{}%
-\contentsline {subsubsection}{Software interfaces}{30}{}%
-\contentsline {paragraph}{The required software interfaces are:}{30}{}%
-\contentsline {subsubsection}{Communications interfaces}{30}{}%
-\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{30}{}%
-\contentsline {subsubsection}{Memory constraints}{30}{}%
-\contentsline {paragraph}{Not applicable}{30}{}%
-\contentsline {subsubsection}{Operations}{30}{}%
-\contentsline {paragraph}{Not applicable}{30}{}%
-\contentsline {subsubsection}{Site adaptation requirements}{30}{}%
-\contentsline {paragraph}{Not applicable}{30}{}%
-\contentsline {subsection}{\numberline {7.2.2}Product functions}{31}{}%
-\contentsline {subsection}{\numberline {7.2.3}User characteristics}{31}{}%
-\contentsline {subsection}{\numberline {7.2.4}Constraints}{31}{}%
-\contentsline {paragraph}{There will be various constraints within this project listed below:}{31}{}%
-\contentsline {subsection}{\numberline {7.2.5}Assumptions and dependencies}{31}{}%
-\contentsline {section}{\numberline {7.3}Specific Requirements}{31}{}%
-\contentsline {section}{\numberline {7.4}Appendix}{31}{}%
+\contentsline {chapter}{\numberline {6}Software Requirments Specifications}{23}{}%
+\contentsline {section}{\numberline {6.1}Introduction}{23}{}%
+\contentsline {subsection}{\numberline {6.1.1}Purpose}{23}{}%
+\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{23}{}%
+\contentsline {subsection}{\numberline {6.1.2}Scope}{23}{}%
+\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{23}{}%
+\contentsline {subsection}{\numberline {6.1.3}Definitions, acronyms, abbreviations}{23}{}%
+\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{23}{}%
+\contentsline {subsection}{\numberline {6.1.4}References}{24}{}%
+\contentsline {paragraph}{Author used the IEEE document:}{24}{}%
+\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{24}{}%
+\contentsline {subsection}{\numberline {6.1.5}Overview}{25}{}%
+\contentsline {section}{\numberline {6.2}Overall Description}{25}{}%
+\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{25}{}%
+\contentsline {subsection}{\numberline {6.2.1}Product perspective}{25}{}%
+\contentsline {paragraph}{The developed software product, \emph {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{25}{}%
+\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{25}{}%
+\contentsline {subsubsection}{System interfaces}{25}{}%
+\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{25}{}%
+\contentsline {subsubsection}{User interfaces}{25}{}%
+\contentsline {paragraph}{There are no special user interface requirements.}{25}{}%
+\contentsline {subsubsection}{Hardware interfaces}{26}{}%
+\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{26}{}%
+\contentsline {subsubsection}{Software interfaces}{26}{}%
+\contentsline {paragraph}{The required software interfaces are:}{26}{}%
+\contentsline {subsubsection}{Communications interfaces}{26}{}%
+\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{26}{}%
+\contentsline {subsubsection}{Memory constraints}{26}{}%
+\contentsline {paragraph}{Not applicable}{26}{}%
+\contentsline {subsubsection}{Operations}{26}{}%
+\contentsline {paragraph}{Not applicable}{26}{}%
+\contentsline {subsubsection}{Site adaptation requirements}{26}{}%
+\contentsline {paragraph}{Not applicable}{26}{}%
+\contentsline {subsection}{\numberline {6.2.2}Product functions}{27}{}%
+\contentsline {subsection}{\numberline {6.2.3}User characteristics}{27}{}%
+\contentsline {subsection}{\numberline {6.2.4}Constraints}{27}{}%
+\contentsline {paragraph}{There will be various constraints within this project listed below:}{27}{}%
+\contentsline {subsection}{\numberline {6.2.5}Assumptions and dependencies}{27}{}%
+\contentsline {section}{\numberline {6.3}Specific Requirements}{27}{}%
+\contentsline {section}{\numberline {6.4}Appendix}{27}{}%

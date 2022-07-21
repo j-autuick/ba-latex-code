@@ -1,4 +1,4 @@
-
+%% Goal clean up this section, make it concise, and finish it!
 
 \chapter{Cryptography}
 %Quick overview of cryptography
@@ -11,13 +11,13 @@
 
 \begin{enumerate}
 \item Asymmetric-key cryptography: A public and private key are created by both people wanting to exchange encrypted emails. This is the most secure and most commonly implementated encryption available, popularly known as "public-key encryption." Examples encryption key algorithms used include RSA and Diffe-Hellman-Merkle.
-There are challenges though:\cite{book0}
+There are challenges though:\cite{Shirey}
 \begin{enumerate}
 \item Both parties need to create their own keys
 \item Keys need to be exchanged, i.e. a person has to be acute enough to search for the other person's public key -- assuming one even exists
 \item Additional client software is also often required
 \end{enumerate}
-\item Symmetric-key Encryption: use the same key for both encryption and decryption\cite[p. 155]{book1}
+\item Symmetric-key Encryption: use the same key for both encryption and decryption\cite[p. 155]{DelfsKnebl}
 \begin{enumerate}
 \item The primary drawback is that both parties will need to exchange that key, often times in the form of a password.
 \end{enumerate}
@@ -34,7 +34,7 @@ operate on blocks of plaintext and ciphertext—usually of 64 bits but sometimes
 ciphers operate on streams of plaintext and ciphertext one bit or byte (sometimes even one 32-bit
 word) at a time. With a block cipher, the same plaintext block will always encrypt to the same
 ciphertext block, using the same key. With a stream cipher, the same plaintext bit or byte will
-encrypt to a different bit or byte every time it is encrypted.\cite[p. 12]{book2}
+encrypt to a different bit or byte every time it is encrypted.\cite[p. 12]{Schneier}
 \end{quote}
 \paragraph{The advantages of a stream ciphers:}
 
@@ -45,10 +45,12 @@ encrypt to a different bit or byte every time it is encrypted.\cite[p. 12]{book2
 
 \paragraph{are more appropriate for hardware implementations.}
 
-\paragraph{According to Bruce Schneier, block ciphers are more suitable for software implementation as they are easier to implement, avoid time-consuming bit manipulations, and operate on computer sized blocks.}\cite[p. 172]{book2}
+\paragraph{According to Bruce Schneier, block ciphers are more suitable for software implementation as they are easier to implement, avoid time-consuming bit manipulations, and operate on computer sized blocks.}\cite[p. 172]{Schneier}
+
+\paragraph{A bit of a spoiler, there is no longer strict "block vs. stream" cipher schemas. We'll explain shortly, but for now, we'll accept that we'll be implementing a block cipher.}
 
 \subsection{Block cipher selection}
-\paragraph{There are many block ciphers to choose from, these are just some of the most popular:}\cite{book3}
+\paragraph{There are many block ciphers to choose from, these are just some of the most popular:}\cite{Nirula}
 \begin{enumerate}
 \item Digital Encryption Standard(DES): DES is a symmetric key block cipher that uses 64-bit blocks, but it has been found vulnerable to powerful attacks. This is the reason the use of DES is on a decline. 
 \item Triple DES:This symmetric key cipher uses three keys to perform encryption-decryption-encryption. It is more secure than the original DES cipher but as compared to other modern algorithms, triple DES is quite slow and inefficient. 
@@ -57,14 +59,11 @@ encrypt to a different bit or byte every time it is encrypted.\cite[p. 12]{book2
 \item Twofish: Twofish is also a symmetric key block cipher with a block size of 128 bits and key sizes up to 256 bits. It is slower than AES for 128 bits but faster for 256 bits. It is also unpatented and the algorithm is freely available in the public domain.
 \end{enumerate}
 
-\paragraph{But, after an overall account of the block enciphers available, the author decided there is really only one reasonable choice: the Advanced Encryption Standard (AES). This decision is based }
+\paragraph{But, after an overall account of the block enciphers available, the author decided there is really only one choice: the Advanced Encryption Standard (AES) as it's the industry standard.}
 
 \section{Advanced Encryption Standard (AES)}
 
-\paragraph{AES is basically the only choice for a block cipher . It has been the industry standard for the past 20 years, even used by the U.S. government.}\cite{book4}
-
-\paragraph{For that reason, the algorithm is built into modern CPU microcode, by both AMD and Intel, for even faster processing.}
-
+\paragraph{For reasons that will soon become apparent, AES has been the industry standard for the past 20 years, even used as a secure standard by the U.S. government.}\cite{Aumasson}
 
 %Describe the mathematics involved in the Algorithm.
 
@@ -72,9 +71,9 @@ encrypt to a different bit or byte every time it is encrypted.\cite[p. 12]{book2
 \paragraph{Since a full background is beyond the scope of this project (it could entail it's own thesis), the author will gloss over it quickly.}
 %Start with Field Theory - Galois
 
-\paragraph{The foundation of AES is grounded in Abstract mathematics, more specifically, \emph{set theory}. Within set theory, is the study of groups. A group is a set of elements upon which an operation (and its inverse) can be executed.}\cite[p. 92]{PaarPelzl} 
+\paragraph{The foundation of AES is grounded in Abstract mathematics, more specifically, \emph{set theory}. Within set theory exists the study of groups. A group is a set of elements upon which an operation (and its inverse) can be executed.}\cite[p. 92]{PaarPelzl} 
 
-\paragraph{In short, basic mathematical operations}
+\paragraph{In short,}
 
 \begin{enumerate}
 \item addition
@@ -87,60 +86,79 @@ encrypt to a different bit or byte every time it is encrypted.\cite[p. 12]{book2
 
 \paragraph{A field is an extension of a group, in that all four basic arithmetic operations are included in a single structure.}\cite[p. 92]{PaarPelzl} 
 
-\paragraph{However, as cryptographers, we are not yet satisfied. We need a working set that is finite, or as they are commonly known \emph{Galois fields}, or \emph{unendliche Körpe}. In short, the purpose of these fields is that the set of elements, regardless of the four principle operations performed on them, the result will remain \emph{within} the set of elements. This is profound, necessary and brilliant for cryptographic usage. But, how does this work?}
+\paragraph{However, as cryptographers, we are not yet satisfied. We need a working set that is finite, or as they are commonly known \emph{Galois fields}, or \emph{unendliche Körpe}. In short, the beauty of the Galois fields is that regardless of the four principle operations performed on them, the result will remain \emph{within} the set of elements. This is profound, necessary and brilliant for cryptographic usage. But, how does this work?}
 
-\paragraph{Essentially, the operations are carried out with the aid of the \emph{modulo operator}, and it ensures our result remains in the set. But, what set?}
+\paragraph{Essentially, the above operations are carried out with the aid of the \emph{modulo operator}, and it ensures our result remains in the set. But, what set?}
 
 \paragraph{We extend beyond a finite field, to focus on a extension field, in particular:}
 
 $GF(2^8)$
 
-\paragraph{As this conveniently translates to 256 elements, which is perfect for a computer byte.}
+\paragraph{This conveniently translates to 256 elements, which fits perfectly within a computer byte.}
 
 %TODO Explain in more detail what irreducible polynimals are, and the important ones for this algorithm.
-\paragraph{The last thing we will want to have in mind as we proceed is polynomial division. It's not any different than grammar school algebra, but is carried out with one of a very special type of polynomial, known as a \emph{irreducible polynomial}. An irreducible polynomial is similar to a prime number, only it is a polynomial. In other words, it cannot be broken down, divided down, into smaller components. For our cryptographic purposes, the polynomial we'll use is the following: $X8 + X4 + X3 + X + 1$}\cite[p.21]{DelfsKnebl}
+\paragraph{The last thing we will want to have in mind as we proceed is polynomial division. It's not any different than grammar school algebra, but is carried out with one of a very special type of polynomial, known as a \emph{irreducible polynomial}. An irreducible polynomial is similar to a prime number, only it is a polynomial. In other words, it cannot be broken down, divided down, into smaller components. For our cryptographic purposes, the polynomial we'll use is the following: $x^8 + x^4 + x^3 + x + 1$}\cite[p.21]{DelfsKnebl}
+
+\subsection{The AES algorithm}
+
+\paragraph{With the mathemathical theories out of the way, we can look at how all the theory get implemented into our computer. Here is a simplifed overview: (See reference image: \ref{fig: AESovereview}).}
 
 
-\paragraph{Now, that we have an reviewed all the required mathematics,}
 
-\begin{enumerate}
-\item Galois Fields/Finite Fields, or \emph{endliche Körper}
-\item Polynomial division, and irreducible polynomials
-\item Modulo arithmetic
-\end{enumerate}
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{simplifiedOverviewAES.png}
+\caption{\label{fig: AESovereview} Simplified AES Overview}\cite[Webpage]{Crawford}
+\end{figure}
 
-\paragraph{we continue with the algorithm.}
 
-%TODO what is or how is key expansion done??
-\paragraph{Key expansion - how?}
+\paragraph{The first step in the AES algorithm is the creation of a 4-by-4 array of bytes called the state, that is modified in a series of rounds. The state is initially set equal to the input of the cipher (notice: a 128 bit--minimum--is exactly 16 bytes, perfect for execution on a computer). Then, the following for operations are applies.}\cite[p. 186]{Katz}
 
-%XOR with key??
-\subsection{Step One:}
-\paragraph{Adding the key to the mix, the longer the key the better!}
+%the following images need to be cited!
+\subsection{Step One: Adding the key.}
+\paragraph{In every round of the AES, a 128-bit sub-key is derived from the master key, and it is interpreted as a 4-by-4 array of bytes. The state array is updated by XORing it with the sub-key (See reference image: \ref{fig: AddRoundKey}).}\cite[p. 186]{Katz}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{AddRoundKey.png}
+\caption{\label{fig: AddRoundKey} AddRound Key Round}\cite[Webpage]{Crawford}
+\end{figure}
 
 
 %Byte substitution - bit shifting?
 \subsection{"SubBytes" or byte substitution}
-\paragraph{What happens here is the that bytes get shifted?}
+\paragraph{In this step, each byte of the state array is replaced by another byte according to a single fixed table S. This substitution table (or S-box) is a bijection over $\{0,1\}^8$. There is only one S-box that is substituting all the bytes in the state array, every round (See image: \ref{fig: SubBytes}).}\cite[p. 186]{Katz}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{SubBytes.png}
+\caption{\label{fig: SubBytes} SubBytes Round}\cite[Webpage]{Crawford}
+\end{figure}
 
 
 %Row Shifting
 \subsection{ShiftRows or the rows are shifted}
-\paragraph{The rows are shifted..}
+\paragraph{In this step, the bytes in each row of the state array are cyclically shifted to the left as follows: the first row of the array is untouched, and the second row is shifte one place to the left, the third row is shifted two places to the left, and the fourth row is shifted three places to the left (See reference image: \ref{fig: ShiftRows}).}\cite[p. 186]{Katz}
 
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{ShiftRows.png}
+\caption{\label{fig: ShiftRows} ShiftRows Round}\cite[Webpage]{Crawford}
+\end{figure}
 
 %Column mixing??
 \subsection{MixColums or the columns are mixed}
-\paragraph{Here, the columns are mixed in "this" manner.}
+\paragraph{In this step, an invertible linear transformation is applied to each column. One can think of this as a matrix multiplication (See reference image: \ref{fig: MixColumns}).}\cite[p. 186]{Katz}
 
-%Add round key??
-\subsection{AddRoundKey or the key (which key, partial) is re-added}
-\paragraph{"This" key is re-added, xor'd? Which key, back to the field.}
-
+\begin{figure}
+\centering
+\includegraphics[width=0.9\textwidth]{MixColumns.png}
+\caption{\label{fig: MixColumns} MixColumns Round}\cite[Webpage]{Crawford}
+\end{figure}
 
 %Algorithm (all the above) is repeated 9-13 times, depending on bit level of encryption.
 \subsection{The process is repeated x number of times.}
+\paragraph{The AES algorithm supports bit sizes of 128 (minimum requirement), 192, and 256. Depending on the bit size specified, the algorithm will be repeated either 10, 12, or 14 times.}
 
 
 
@@ -148,9 +166,6 @@ $GF(2^8)$
 \subsection{AES algorithm summary}
 \paragraph{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern desktop CPUs (at least Intel and AMD), so it's blazingly fast.}
 
-\subsection{Block}
+\paragraph{Although the algorithm is derived from a combination of complex mathematical theories, it's algorithmic implementation into hardware is the perfect intersection between mathematics and computer science. Any computer scientist can quickly assess from the images above, that the XORing, bit shifting, table lookups, and bit permutations are exactly the kind of operations that are executed super fast on computers.}\cite[p. 178]{Dooley}
 
-%TODO where did I get this image!!
-\begin{center}
-\includegraphics[width=0.7\textwidth]{AES-image.png}
-\end{center}
+

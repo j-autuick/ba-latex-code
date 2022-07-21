@@ -27,95 +27,94 @@
 \contentsline {paragraph}{The advantages of a stream ciphers:}{10}{}%
 \contentsline {paragraph}{are more appropriate for hardware implementations.}{10}{}%
 \contentsline {paragraph}{According to Bruce Schneier, block ciphers are more suitable for software implementation as they are easier to implement, avoid time-consuming bit manipulations, and operate on computer sized blocks.}{10}{}%
+\contentsline {paragraph}{A bit of a spoiler, there is no longer strict "block vs. stream" cipher schemas. We'll explain shortly, but for now, we'll accept that we'll be implementing a block cipher.}{10}{}%
 \contentsline {subsection}{\numberline {2.1.3}Block cipher selection}{10}{}%
 \contentsline {paragraph}{There are many block ciphers to choose from, these are just some of the most popular:}{10}{}%
-\contentsline {paragraph}{But, after an overall account of the block enciphers available, the author decided there is really only one reasonable choice: the Advanced Encryption Standard (AES). This decision is based }{11}{}%
+\contentsline {paragraph}{But, after an overall account of the block enciphers available, the author decided there is really only one choice: the Advanced Encryption Standard (AES) as it's the industry standard.}{11}{}%
 \contentsline {section}{\numberline {2.2}Advanced Encryption Standard (AES)}{11}{}%
-\contentsline {paragraph}{AES is basically the only choice for a block cipher . It has been the industry standard for the past 20 years, even used by the U.S. government.}{11}{}%
-\contentsline {paragraph}{For that reason, the algorithm is built into modern CPU microcode, by both AMD and Intel, for even faster processing.}{11}{}%
+\contentsline {paragraph}{For reasons that will soon become apparent, AES has been the industry standard for the past 20 years, even used as a secure standard by the U.S. government.}{11}{}%
 \contentsline {subsection}{\numberline {2.2.1}Mathematics: Overview}{11}{}%
 \contentsline {paragraph}{Since a full background is beyond the scope of this project (it could entail it's own thesis), the author will gloss over it quickly.}{11}{}%
-\contentsline {paragraph}{The foundation of AES is grounded in Abstract mathematics, more specifically, \emph {set theory}. Within set theory, is the study of groups. A group is a set of elements upon which an operation (and its inverse) can be executed.}{12}{}%
-\contentsline {paragraph}{In short, basic mathematical operations}{12}{}%
+\contentsline {paragraph}{The foundation of AES is grounded in Abstract mathematics, more specifically, \emph {set theory}. Within set theory exists the study of groups. A group is a set of elements upon which an operation (and its inverse) can be executed.}{12}{}%
+\contentsline {paragraph}{In short,}{12}{}%
 \contentsline {paragraph}{are operations that can be applied to a group of elements.}{12}{}%
 \contentsline {paragraph}{A field is an extension of a group, in that all four basic arithmetic operations are included in a single structure.}{12}{}%
-\contentsline {paragraph}{However, as cryptographers, we are not yet satisfied. We need a working set that is finite, or as they are commonly known \emph {Galois fields}, or \emph {unendliche Körpe}. In short, the purpose of these fields is that the set of elements, regardless of the four principle operations performed on them, the result will remain \emph {within} the set of elements. This is profound, necessary and brilliant for cryptographic usage. But, how does this work?}{12}{}%
-\contentsline {paragraph}{Essentially, the operations are carried out with the aid of the \emph {modulo operator}, and it ensures our result remains in the set. But, what set?}{12}{}%
+\contentsline {paragraph}{However, as cryptographers, we are not yet satisfied. We need a working set that is finite, or as they are commonly known \emph {Galois fields}, or \emph {unendliche Körpe}. In short, the beauty of the Galois fields is that regardless of the four principle operations performed on them, the result will remain \emph {within} the set of elements. This is profound, necessary and brilliant for cryptographic usage. But, how does this work?}{12}{}%
+\contentsline {paragraph}{Essentially, the above operations are carried out with the aid of the \emph {modulo operator}, and it ensures our result remains in the set. But, what set?}{12}{}%
 \contentsline {paragraph}{We extend beyond a finite field, to focus on a extension field, in particular:}{12}{}%
-\contentsline {paragraph}{As this conveniently translates to 256 elements, which is perfect for a computer byte.}{12}{}%
-\contentsline {paragraph}{The last thing we will want to have in mind as we proceed is polynomial division. It's not any different than grammar school algebra, but is carried out with one of a very special type of polynomial, known as a \emph {irreducible polynomial}. An irreducible polynomial is similar to a prime number, only it is a polynomial. In other words, it cannot be broken down, divided down, into smaller components. For our cryptographic purposes, the polynomial we'll use is the following: $X8 + X4 + X3 + X + 1$}{13}{}%
-\contentsline {paragraph}{Now, that we have an reviewed all the required mathematics,}{13}{}%
-\contentsline {paragraph}{we continue with the algorithm.}{13}{}%
-\contentsline {paragraph}{Key expansion - how?}{13}{}%
-\contentsline {subsection}{\numberline {2.2.2}Step One:}{13}{}%
-\contentsline {paragraph}{Adding the key to the mix, the longer the key the better!}{13}{}%
-\contentsline {subsection}{\numberline {2.2.3}"SubBytes" or byte substitution}{13}{}%
-\contentsline {paragraph}{What happens here is the that bytes get shifted?}{13}{}%
-\contentsline {subsection}{\numberline {2.2.4}ShiftRows or the rows are shifted}{13}{}%
-\contentsline {paragraph}{The rows are shifted..}{13}{}%
-\contentsline {subsection}{\numberline {2.2.5}MixColums or the columns are mixed}{13}{}%
-\contentsline {paragraph}{Here, the columns are mixed in "this" manner.}{13}{}%
-\contentsline {subsection}{\numberline {2.2.6}AddRoundKey or the key (which key, partial) is re-added}{13}{}%
-\contentsline {paragraph}{"This" key is re-added, xor'd? Which key, back to the field.}{13}{}%
-\contentsline {subsection}{\numberline {2.2.7}The process is repeated x number of times.}{14}{}%
-\contentsline {subsection}{\numberline {2.2.8}AES algorithm summary}{14}{}%
-\contentsline {paragraph}{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern desktop CPUs (at least Intel and AMD), so it's blazingly fast.}{14}{}%
-\contentsline {subsection}{\numberline {2.2.9}Block}{14}{}%
-\contentsline {chapter}{\numberline {3}Implementation}{15}{}%
-\contentsline {section}{\numberline {3.1}WebExtensions}{15}{}%
-\contentsline {paragraph}{Write a blah blah paragraph, can be short, about the basic structure of WebExtension. The following are Manifest Keys that will be required for my implementation.}{15}{}%
-\contentsline {paragraph}{In Thunderbird, all WebExtension API can be accessed through the browser.* namespace, as with Firefox, but also through the messenger.* namespace, which is a better fit for Thunderbird.}{15}{}%
-\contentsline {paragraph}{messenger.tabs.query}{16}{}%
-\contentsline {subparagraph}{The tabs API provides access to Thunderbird's tabs. In some cases, since the call is executed from where it is called from, it may be necessary to execute tabs \emph {message\_display\_action} and not from inside the tab we are looking for.}{16}{}%
-\contentsline {paragraph}{messenger.messageDisplay.getDisplayedMessage()}{16}{}%
-\contentsline {subparagraph}{the \emph {getDisplayedMessage} method of the \emph {messageDisplay API} provides access to the currently viewed message in a given tab. It returns a promise for a \emph {MessageHeader} object from the \emph {message API} with basic imformation about the message.}{16}{}%
-\contentsline {paragraph}{messenger.messages.getFull()}{16}{}%
-\contentsline {subparagraph}{The \emph {getFull()} method returns a Promise for a MessagePart object, which relates to messages containing multiple MIME parts. The headers member of the part returned by getFull includes the headers of the message.}{16}{}%
-\contentsline {paragraph}{Steps to create an addon in Thunderbird.}{16}{}%
-\contentsline {subsection}{\numberline {3.1.1}Using a background page}{16}{}%
-\contentsline {paragraph}{First, we need to add "backgrounds" to our manifest.}{16}{}%
-\contentsline {paragraph}{Additionally, we'll need an html and javascript document, as well as keep the manifest updated.}{17}{}%
-\contentsline {paragraph}{The Add-on should be fully functional now.}{17}{}%
-\contentsline {section}{\numberline {3.2}Crypto JS}{17}{}%
-\contentsline {chapter}{\numberline {4}Challenges Encountered}{19}{}%
-\contentsline {chapter}{\numberline {5}Summary}{21}{}%
-\contentsline {chapter}{\numberline {6}Software Requirments Specifications}{23}{}%
-\contentsline {section}{\numberline {6.1}Introduction}{23}{}%
-\contentsline {subsection}{\numberline {6.1.1}Purpose}{23}{}%
-\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{23}{}%
-\contentsline {subsection}{\numberline {6.1.2}Scope}{23}{}%
-\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{23}{}%
-\contentsline {subsection}{\numberline {6.1.3}Definitions, acronyms, abbreviations}{23}{}%
-\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{23}{}%
-\contentsline {subsection}{\numberline {6.1.4}References}{24}{}%
-\contentsline {paragraph}{Author used the IEEE document:}{24}{}%
-\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{24}{}%
-\contentsline {subsection}{\numberline {6.1.5}Overview}{25}{}%
-\contentsline {section}{\numberline {6.2}Overall Description}{25}{}%
-\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{25}{}%
-\contentsline {subsection}{\numberline {6.2.1}Product perspective}{25}{}%
-\contentsline {paragraph}{The developed software product, \emph {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{25}{}%
-\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{25}{}%
-\contentsline {subsubsection}{System interfaces}{25}{}%
-\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{25}{}%
-\contentsline {subsubsection}{User interfaces}{25}{}%
-\contentsline {paragraph}{There are no special user interface requirements.}{25}{}%
-\contentsline {subsubsection}{Hardware interfaces}{26}{}%
-\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{26}{}%
-\contentsline {subsubsection}{Software interfaces}{26}{}%
-\contentsline {paragraph}{The required software interfaces are:}{26}{}%
-\contentsline {subsubsection}{Communications interfaces}{26}{}%
-\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{26}{}%
-\contentsline {subsubsection}{Memory constraints}{26}{}%
-\contentsline {paragraph}{Not applicable}{26}{}%
-\contentsline {subsubsection}{Operations}{26}{}%
-\contentsline {paragraph}{Not applicable}{26}{}%
-\contentsline {subsubsection}{Site adaptation requirements}{26}{}%
-\contentsline {paragraph}{Not applicable}{26}{}%
-\contentsline {subsection}{\numberline {6.2.2}Product functions}{27}{}%
-\contentsline {subsection}{\numberline {6.2.3}User characteristics}{27}{}%
-\contentsline {subsection}{\numberline {6.2.4}Constraints}{27}{}%
-\contentsline {paragraph}{There will be various constraints within this project listed below:}{27}{}%
-\contentsline {subsection}{\numberline {6.2.5}Assumptions and dependencies}{27}{}%
-\contentsline {section}{\numberline {6.3}Specific Requirements}{27}{}%
-\contentsline {section}{\numberline {6.4}Appendix}{27}{}%
+\contentsline {paragraph}{This conveniently translates to 256 elements, which fits perfectly within a computer byte.}{12}{}%
+\contentsline {paragraph}{The last thing we will want to have in mind as we proceed is polynomial division. It's not any different than grammar school algebra, but is carried out with one of a very special type of polynomial, known as a \emph {irreducible polynomial}. An irreducible polynomial is similar to a prime number, only it is a polynomial. In other words, it cannot be broken down, divided down, into smaller components. For our cryptographic purposes, the polynomial we'll use is the following: $x^8 + x^4 + x^3 + x + 1$}{13}{}%
+\contentsline {subsection}{\numberline {2.2.2}The AES algorithm}{13}{}%
+\contentsline {paragraph}{With the mathemathical theories out of the way, we can look at how all the theory get implemented into our computer. Here is a simplifed overview: (See reference image: 2.1\hbox {}).}{13}{}%
+\contentsline {paragraph}{The first step in the AES algorithm is the creation of a 4-by-4 array of bytes called the state, that is modified in a series of rounds. The state is initially set equal to the input of the cipher (notice: a 128 bit--minimum--is exactly 16 bytes, perfect for execution on a computer). Then, the following for operations are applies.}{13}{}%
+\contentsline {subsection}{\numberline {2.2.3}Step One: Adding the key.}{14}{}%
+\contentsline {paragraph}{In every round of the AES, a 128-bit sub-key is derived from the master key, and it is interpreted as a 4-by-4 array of bytes. The state array is updated by XORing it with the sub-key (See reference image: 2.2\hbox {}).}{14}{}%
+\contentsline {subsection}{\numberline {2.2.4}"SubBytes" or byte substitution}{14}{}%
+\contentsline {paragraph}{In this step, each byte of the state array is replaced by another byte according to a single fixed table S. This substitution table (or S-box) is a bijection over $\{0,1\}^8$. There is only one S-box that is substituting all the bytes in the state array, every round (See image: 2.3\hbox {}).}{14}{}%
+\contentsline {subsection}{\numberline {2.2.5}ShiftRows or the rows are shifted}{15}{}%
+\contentsline {paragraph}{In this step, the bytes in each row of the state array are cyclically shifted to the left as follows: the first row of the array is untouched, and the second row is shifte one place to the left, the third row is shifted two places to the left, and the fourth row is shifted three places to the left (See reference image: 2.4\hbox {}).}{15}{}%
+\contentsline {subsection}{\numberline {2.2.6}MixColums or the columns are mixed}{15}{}%
+\contentsline {paragraph}{In this step, an invertible linear transformation is applied to each column. One can think of this as a matrix multiplication (See reference image: 2.5\hbox {}).}{16}{}%
+\contentsline {subsection}{\numberline {2.2.7}The process is repeated x number of times.}{16}{}%
+\contentsline {paragraph}{The AES algorithm supports bit sizes of 128 (minimum requirement), 192, and 256. Depending on the bit size specified, the algorithm will be repeated either 10, 12, or 14 times.}{16}{}%
+\contentsline {subsection}{\numberline {2.2.8}AES algorithm summary}{16}{}%
+\contentsline {paragraph}{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern desktop CPUs (at least Intel and AMD), so it's blazingly fast.}{16}{}%
+\contentsline {paragraph}{Although the algorithm is derived from a combination of complex mathematical theories, it's algorithmic implementation into hardware is the perfect intersection between mathematics and computer science. Any computer scientist can quickly assess from the images above, that the XORing, bit shifting, table lookups, and bit permutations are exactly the kind of operations that are executed super fast on computers.}{17}{}%
+\contentsline {chapter}{\numberline {3}Implementation}{19}{}%
+\contentsline {section}{\numberline {3.1}WebExtensions}{19}{}%
+\contentsline {paragraph}{Write a blah blah paragraph, can be short, about the basic structure of WebExtension. The following are Manifest Keys that will be required for my implementation.}{19}{}%
+\contentsline {paragraph}{In Thunderbird, all WebExtension API can be accessed through the browser.* namespace, as with Firefox, but also through the messenger.* namespace, which is a better fit for Thunderbird.}{19}{}%
+\contentsline {paragraph}{messenger.tabs.query}{20}{}%
+\contentsline {subparagraph}{The tabs API provides access to Thunderbird's tabs. In some cases, since the call is executed from where it is called from, it may be necessary to execute tabs \emph {message\_display\_action} and not from inside the tab we are looking for.}{20}{}%
+\contentsline {paragraph}{messenger.messageDisplay.getDisplayedMessage()}{20}{}%
+\contentsline {subparagraph}{the \emph {getDisplayedMessage} method of the \emph {messageDisplay API} provides access to the currently viewed message in a given tab. It returns a promise for a \emph {MessageHeader} object from the \emph {message API} with basic imformation about the message.}{20}{}%
+\contentsline {paragraph}{messenger.messages.getFull()}{20}{}%
+\contentsline {subparagraph}{The \emph {getFull()} method returns a Promise for a MessagePart object, which relates to messages containing multiple MIME parts. The headers member of the part returned by getFull includes the headers of the message.}{20}{}%
+\contentsline {paragraph}{Steps to create an addon in Thunderbird.}{20}{}%
+\contentsline {subsection}{\numberline {3.1.1}Using a background page}{20}{}%
+\contentsline {paragraph}{First, we need to add "backgrounds" to our manifest.}{20}{}%
+\contentsline {paragraph}{Additionally, we'll need an html and javascript document, as well as keep the manifest updated.}{21}{}%
+\contentsline {paragraph}{The Add-on should be fully functional now.}{21}{}%
+\contentsline {section}{\numberline {3.2}Crypto JS}{21}{}%
+\contentsline {chapter}{\numberline {4}Challenges Encountered}{23}{}%
+\contentsline {chapter}{\numberline {5}Summary}{25}{}%
+\contentsline {chapter}{\numberline {6}Software Requirments Specifications}{27}{}%
+\contentsline {section}{\numberline {6.1}Introduction}{27}{}%
+\contentsline {subsection}{\numberline {6.1.1}Purpose}{27}{}%
+\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{27}{}%
+\contentsline {subsection}{\numberline {6.1.2}Scope}{27}{}%
+\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{27}{}%
+\contentsline {subsection}{\numberline {6.1.3}Definitions, acronyms, abbreviations}{27}{}%
+\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{27}{}%
+\contentsline {subsection}{\numberline {6.1.4}References}{28}{}%
+\contentsline {paragraph}{Author used the IEEE document:}{28}{}%
+\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{28}{}%
+\contentsline {subsection}{\numberline {6.1.5}Overview}{29}{}%
+\contentsline {section}{\numberline {6.2}Overall Description}{29}{}%
+\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{29}{}%
+\contentsline {subsection}{\numberline {6.2.1}Product perspective}{29}{}%
+\contentsline {paragraph}{The developed software product, \emph {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{29}{}%
+\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{29}{}%
+\contentsline {subsubsection}{System interfaces}{29}{}%
+\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{29}{}%
+\contentsline {subsubsection}{User interfaces}{29}{}%
+\contentsline {paragraph}{There are no special user interface requirements.}{29}{}%
+\contentsline {subsubsection}{Hardware interfaces}{30}{}%
+\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{30}{}%
+\contentsline {subsubsection}{Software interfaces}{30}{}%
+\contentsline {paragraph}{The required software interfaces are:}{30}{}%
+\contentsline {subsubsection}{Communications interfaces}{30}{}%
+\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{30}{}%
+\contentsline {subsubsection}{Memory constraints}{30}{}%
+\contentsline {paragraph}{Not applicable}{30}{}%
+\contentsline {subsubsection}{Operations}{30}{}%
+\contentsline {paragraph}{Not applicable}{30}{}%
+\contentsline {subsubsection}{Site adaptation requirements}{30}{}%
+\contentsline {paragraph}{Not applicable}{30}{}%
+\contentsline {subsection}{\numberline {6.2.2}Product functions}{31}{}%
+\contentsline {subsection}{\numberline {6.2.3}User characteristics}{31}{}%
+\contentsline {subsection}{\numberline {6.2.4}Constraints}{31}{}%
+\contentsline {paragraph}{There will be various constraints within this project listed below:}{31}{}%
+\contentsline {subsection}{\numberline {6.2.5}Assumptions and dependencies}{31}{}%
+\contentsline {section}{\numberline {6.3}Specific Requirements}{31}{}%
+\contentsline {section}{\numberline {6.4}Appendix}{31}{}%

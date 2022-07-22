@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{book}
+\documentclass[12pt,a4paper, oneside]{book}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -38,11 +38,14 @@
 % surround code with box
 \usepackage{tcolorbox}
 \usepackage{etoolbox}
+
 \BeforeBeginEnvironment{minted}{\begin{tcolorbox}}%
 \AfterEndEnvironment{minted}{\end{tcolorbox}}%
 
 %new command added to change Bibliography title to References
 \renewcommand{\bibname}{References}
+
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=3cm]{geometry}
 
 \begin{document}
 

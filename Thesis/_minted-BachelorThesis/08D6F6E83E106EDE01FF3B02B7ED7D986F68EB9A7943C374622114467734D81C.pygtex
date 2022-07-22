@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{var}\PYG{+w}{ }\PYG{n+nx}{ciphertext}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{sjcl}\PYG{p}{.}\PYG{n+nx}{encrypt}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}reallyHardPasswordNoOneCouldEveryGuess\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Hello World!\PYGZdq{}}\PYG{p}{);}
+\PYG{k+kd}{var}\PYG{+w}{ }\PYG{n+nx}{plaintext}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{sjcl}\PYG{p}{.}\PYG{n+nx}{decrypt}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}reallyHardPasswordNoOneCouldEveryGuess\PYGZdq{}}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{ciphertext}\PYG{p}{);}
+\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}plain text: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n+nx}{plaintext}\PYG{p}{);}
+\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}cipher text: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n+nx}{ciphertext}\PYG{p}{);}
+\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}plain text \PYGZhy{} again!: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n+nx}{plaintext}\PYG{p}{);}
+\end{Verbatim}

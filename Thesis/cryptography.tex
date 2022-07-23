@@ -105,7 +105,7 @@ $GF(2^8)$
 
 
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{simplifiedOverviewAES.png}
 \caption{\label{fig: AESovereview} Simplified AES Overview}\cite[Webpage]{Crawford}
@@ -118,7 +118,7 @@ $GF(2^8)$
 \subsection{Step One: Adding the key.}
 \paragraph{In every round of the AES, a 128-bit sub-key is derived from the master key, and it is interpreted as a 4-by-4 array of bytes. The state array is updated by XORing it with the sub-key (See reference image: \ref{fig: AddRoundKey}).}\cite[p. 186]{Katz}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{AddRoundKey.png}
 \caption{\label{fig: AddRoundKey} AddRound Key Round}\cite[Webpage]{Crawford}
@@ -129,7 +129,7 @@ $GF(2^8)$
 \subsection{"SubBytes" or byte substitution}
 \paragraph{In this step, each byte of the state array is replaced by another byte according to a single fixed table S. This substitution table (or S-box) is a bijection over $\{0,1\}^8$. There is only one S-box that is substituting all the bytes in the state array, every round (See image: \ref{fig: SubBytes}).}\cite[p. 186]{Katz}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{SubBytes.png}
 \caption{\label{fig: SubBytes} SubBytes Round}\cite[Webpage]{Crawford}
@@ -140,7 +140,7 @@ $GF(2^8)$
 \subsection{ShiftRows or the rows are shifted}
 \paragraph{In this step, the bytes in each row of the state array are cyclically shifted to the left as follows: the first row of the array is untouched, and the second row is shifte one place to the left, the third row is shifted two places to the left, and the fourth row is shifted three places to the left (See reference image: \ref{fig: ShiftRows}).}\cite[p. 186]{Katz}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{ShiftRows.png}
 \caption{\label{fig: ShiftRows} ShiftRows Round}\cite[Webpage]{Crawford}
@@ -150,7 +150,7 @@ $GF(2^8)$
 \subsection{MixColums or the columns are mixed}
 \paragraph{In this step, an invertible linear transformation is applied to each column. One can think of this as a matrix multiplication (See reference image: \ref{fig: MixColumns}).}\cite[p. 186]{Katz}
 
-\begin{figure}
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{MixColumns.png}
 \caption{\label{fig: MixColumns} MixColumns Round}\cite[Webpage]{Crawford}

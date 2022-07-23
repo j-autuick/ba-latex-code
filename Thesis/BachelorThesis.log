@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.19)  23 JUL 2022 08:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.6.19)  23 JUL 2022 09:15
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -906,7 +906,7 @@ File: /Users/drexl/Documents/ba-latex-code/images//webEx.png Graphic file (type
  png)
 <use /Users/drexl/Documents/ba-latex-code/images//webEx.png>
 Package pdftex.def Info: /Users/drexl/Documents/ba-latex-code/images//webEx.png
-  used on input line 68.
+  used on input line 71.
 (pdftex.def)             Requested size: 435.32422pt x 226.58723pt.
 ) (./challenges.tex [16 </Users/drexl/Documents/ba-latex-code/images//webEx.png
 >]
@@ -961,7 +961,7 @@ ve/2022/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2022
 -dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2022/texmf-dist/f
 onts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2022/texmf-dist/fonts/ty
 pe1/urw/palatino/uplri8a.pfb>
-Output written on BachelorThesis.pdf (24 pages, 1053078 bytes).
+Output written on BachelorThesis.pdf (24 pages, 1053210 bytes).
 PDF statistics:
  156 PDF objects out of 1000 (max. 8388607)
  92 compressed objects within 1 object stream

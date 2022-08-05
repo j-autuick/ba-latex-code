@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}compose\PYGZus{}action\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}default\PYGZus{}popup\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}passwordPrompt/passwordPrompt.html\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}default\PYGZus{}title\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Insecure\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}default\PYGZus{}icon\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}images/unlocked\PYGZus{}64px.png\PYGZdq{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{},}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

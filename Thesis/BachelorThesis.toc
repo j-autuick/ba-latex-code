@@ -62,64 +62,75 @@
 \contentsline {paragraph}{Although the algorithm is derived from a combination of complex mathematical theories, it's algorithmic implementation into hardware is the perfect intersection between mathematics and computer science. Any computer scientist can quickly assess from the images above, that the XORing, bit shifting, table lookups, and bit permutations are exactly the kind of operations that are executed super fast on computers.}{13}{}%
 \contentsline {chapter}{\numberline {3}Implementation}{14}{}%
 \contentsline {section}{\numberline {3.1}Javascript Cryptography}{14}{}%
-\contentsline {paragraph}{Originally, the researcher was not sure how best to implement cryptography within a Thunderbird add-on. Implementing my own javascript AES algorithm, while ideal, was not realistic--or adviceable--with the time constraints of this thesis. Thus, the issue would be finding an existing library or API that had done the javascript cryptographic implementations.}{14}{}%
-\contentsline {paragraph}{For this task, there were three necessary conditions:}{14}{}%
+\contentsline {paragraph}{The developer decided that the best solution for the cryptography implementation was the utilization of a pre-existing cryptography library.}{14}{}%
+\contentsline {paragraph}{For this task, there were three necessary conditions that had to be met:}{14}{}%
 \contentsline {paragraph}{and, slightly less important, actively maintained.}{14}{}%
-\contentsline {paragraph}{Meeting the above criteria was not as simple as it would seem. There were many options that met some of the conditions, but meeting them all was more challenging. Ultimately, however, the researcher was satisfied with the Stanford Javascript Crypto Library (SJCL) meeting the above full criteria.}{14}{}%
+\contentsline {paragraph}{Meeting the above criteria was not as simple as it would seem. There were many options that met some of the conditions, but meeting them all was more challenging. Ultimately, however, the researcher was satisfied with the Stanford Javascript Crypto Library (SJCL), as it met all the above conditions. Additionally, it appeared to be well developed, and maintained.}{14}{}%
 \contentsline {paragraph}{The usage is pretty straight forward, and will work for this implementation. Simply linking the javascript source in the html file (See reference figure: 3.1\hbox {}).:}{15}{}%
 \contentsline {paragraph}{and, the javascript can simply be used as follows (See reference figure: 3.2\hbox {}):}{15}{}%
 \contentsline {paragraph}{giving the following result (See reference figure: 3.3\hbox {}):}{15}{}%
 \contentsline {paragraph}{The usage is pretty straight forward, and will meet our needs.}{15}{}%
-\contentsline {section}{\numberline {3.2}WebExtensions}{16}{}%
-\contentsline {paragraph}{WebExtensions are web technology built with typical Web elements such as HTML, CSS, and javascript. Each extension must also have a \emph {manifest.json} file which carries vital information about the extension. This may include properties--known as manifest keys--like the author of the software extension, software version, permissions, and/or minimum requirement of Thunderbird to use the extension, just to name a few. As the author delves into the development section, it will be pretty clear how they work.}{16}{}%
-\contentsline {paragraph}{Starting with the release of Thunderbird version 68 (August 2019), Thunderbird moved to only support WebExtensions for add-ons and themes development, with all previous versions no longer working.}{16}{}%
+\contentsline {section}{\numberline {3.2}WebExtensions}{15}{}%
+\contentsline {paragraph}{WebExtensions are web technology built with the tools that are natural to any web developer: HTML, CSS, and Javascript. Each extension must have a \emph {manifest.json} file, which essentially hold all the vital information as to the author of the software, permissions required to use the add-on, the software version, and so on.}{15}{}%
+\contentsline {paragraph}{Starting with the release of Thunderbird version 68 (August 2019), Thunderbird moved to only support WebExtensions for add-ons and themes development, with all previous versions no longer working. Even the long standing Enigmail cryptography add-on that the author used for years, no longer functioned.}{15}{}%
 \contentsline {paragraph}{Here is an image from Mozilla's Thunderbird Add-on Webpage that gives a quick glance of how the extensions might look like.}{16}{}%
 \contentsline {section}{\numberline {3.3}Implementation Details}{16}{}%
-\contentsline {chapter}{\numberline {4}Challenges Encountered}{17}{}%
-\contentsline {section}{\numberline {4.1}Open-source community}{17}{}%
-\contentsline {section}{\numberline {4.2}Live development environment}{17}{}%
-\contentsline {chapter}{\numberline {5}Summary}{18}{}%
-\contentsline {section}{\numberline {5.1}Retrospective}{18}{}%
-\contentsline {paragraph}{In an ideal situation, I would have liked to to implemented "an HTW AES javascript crypto suite." However, the author was lacking to conditions. One, a team of likely three students would have been required to carry out the project in the required timeframe. The documentation, development, and testing of such a system would have required a great deal of teamwork.}{18}{}%
-\contentsline {paragraph}{Secondly, the students working as a team would have had to work together in the past, be known to each other, and have a nice blend of talents, motivations, and personalities for it to work efficiently.}{18}{}%
-\contentsline {chapter}{\numberline {6}Software Requirments Specifications}{19}{}%
-\contentsline {section}{\numberline {6.1}Introduction}{19}{}%
-\contentsline {subsection}{\numberline {6.1.1}Purpose}{19}{}%
-\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{19}{}%
-\contentsline {subsection}{\numberline {6.1.2}Scope}{19}{}%
-\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{19}{}%
-\contentsline {subsection}{\numberline {6.1.3}Definitions, acronyms, abbreviations}{19}{}%
-\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{19}{}%
-\contentsline {subsection}{\numberline {6.1.4}References}{20}{}%
-\contentsline {paragraph}{Author used the IEEE document:}{20}{}%
-\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{20}{}%
-\contentsline {subsection}{\numberline {6.1.5}Overview}{20}{}%
-\contentsline {section}{\numberline {6.2}Overall Description}{20}{}%
-\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{20}{}%
-\contentsline {subsection}{\numberline {6.2.1}Product perspective}{20}{}%
-\contentsline {paragraph}{The developed software product, \emph {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{20}{}%
-\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{20}{}%
-\contentsline {subsubsection}{System interfaces}{21}{}%
-\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{21}{}%
-\contentsline {subsubsection}{User interfaces}{21}{}%
-\contentsline {paragraph}{There are no special user interface requirements.}{21}{}%
-\contentsline {subsubsection}{Hardware interfaces}{21}{}%
-\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{21}{}%
-\contentsline {subsubsection}{Software interfaces}{21}{}%
-\contentsline {paragraph}{The required software interfaces are:}{21}{}%
-\contentsline {subsubsection}{Communications interfaces}{21}{}%
-\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{21}{}%
-\contentsline {subsubsection}{Memory constraints}{21}{}%
-\contentsline {paragraph}{Not applicable}{21}{}%
-\contentsline {subsubsection}{Operations}{21}{}%
-\contentsline {paragraph}{Not applicable}{21}{}%
-\contentsline {subsubsection}{Site adaptation requirements}{21}{}%
-\contentsline {paragraph}{Not applicable}{21}{}%
-\contentsline {subsection}{\numberline {6.2.2}Product functions}{22}{}%
-\contentsline {subsection}{\numberline {6.2.3}User characteristics}{22}{}%
-\contentsline {subsection}{\numberline {6.2.4}Constraints}{22}{}%
-\contentsline {paragraph}{There will be various constraints within this project listed below:}{22}{}%
-\contentsline {subsection}{\numberline {6.2.5}Assumptions and dependencies}{22}{}%
-\contentsline {section}{\numberline {6.3}Specific Requirements}{22}{}%
-\contentsline {section}{\numberline {6.4}Appendix}{22}{}%
-\contentsline {chapter}{References}{23}{}%
+\contentsline {paragraph}{But, lets dive right in and get started. As we step through the development, it will become more clear.}{16}{}%
+\contentsline {subsection}{\numberline {3.3.1}Creating a button}{16}{}%
+\contentsline {paragraph}{First, we'll create a button that will appear in the "Compose Window," the window that appears when you start to write an email.}{16}{}%
+\contentsline {paragraph}{Before add-on implementation:}{16}{}%
+\contentsline {paragraph}{with add-on button implemented.}{17}{}%
+\contentsline {paragraph}{And, here is the manifest.json file that was created for this button. Most of the references in the manifest.json file, are, well manifest. The only thing of interest is the manifest version of 2. Apparently, it has to be 2, and it always is 2. The rest provide information about the add-on, location of images used, and the permissions required for the add-on to function. (See reference figure: 3.7\hbox {}).:}{18}{}%
+\contentsline {subsection}{\numberline {3.3.2}Prompt for password}{18}{}%
+\contentsline {paragraph}{Now that we got a working button, we're going to make it ask for a password when it's clicked. Which is simple enough by altering adding to our manifest file, and some basic Javascript. }{18}{}%
+\contentsline {paragraph}{To get a better understanding of our development, here is a glance at our file structure so far.}{19}{}%
+\contentsline {subsection}{\numberline {3.3.3}Encrypt}{19}{}%
+\contentsline {subsection}{\numberline {3.3.4}Send message}{19}{}%
+\contentsline {chapter}{\numberline {4}Challenges Encountered}{20}{}%
+\contentsline {section}{\numberline {4.1}Open-source community}{20}{}%
+\contentsline {section}{\numberline {4.2}Live development environment}{20}{}%
+\contentsline {chapter}{\numberline {5}Summary}{21}{}%
+\contentsline {section}{\numberline {5.1}Retrospective}{21}{}%
+\contentsline {paragraph}{In an ideal situation, I would have liked to to implemented "an HTW AES javascript crypto suite." However, the author was lacking to conditions. One, a team of likely three students would have been required to carry out the project in the required timeframe. The documentation, development, and testing of such a system would have required a great deal of teamwork.}{21}{}%
+\contentsline {paragraph}{Secondly, the students working as a team would have had to work together in the past, be known to each other, and have a nice blend of talents, motivations, and personalities for it to work efficiently.}{21}{}%
+\contentsline {chapter}{\numberline {6}Software Requirments Specifications}{22}{}%
+\contentsline {section}{\numberline {6.1}Introduction}{22}{}%
+\contentsline {subsection}{\numberline {6.1.1}Purpose}{22}{}%
+\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{22}{}%
+\contentsline {subsection}{\numberline {6.1.2}Scope}{22}{}%
+\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{22}{}%
+\contentsline {subsection}{\numberline {6.1.3}Definitions, acronyms, abbreviations}{22}{}%
+\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{22}{}%
+\contentsline {subsection}{\numberline {6.1.4}References}{23}{}%
+\contentsline {paragraph}{Author used the IEEE document:}{23}{}%
+\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{23}{}%
+\contentsline {subsection}{\numberline {6.1.5}Overview}{23}{}%
+\contentsline {section}{\numberline {6.2}Overall Description}{23}{}%
+\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{23}{}%
+\contentsline {subsection}{\numberline {6.2.1}Product perspective}{23}{}%
+\contentsline {paragraph}{The developed software product, \emph {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{23}{}%
+\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{23}{}%
+\contentsline {subsubsection}{System interfaces}{24}{}%
+\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{24}{}%
+\contentsline {subsubsection}{User interfaces}{24}{}%
+\contentsline {paragraph}{There are no special user interface requirements.}{24}{}%
+\contentsline {subsubsection}{Hardware interfaces}{24}{}%
+\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{24}{}%
+\contentsline {subsubsection}{Software interfaces}{24}{}%
+\contentsline {paragraph}{The required software interfaces are:}{24}{}%
+\contentsline {subsubsection}{Communications interfaces}{24}{}%
+\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{24}{}%
+\contentsline {subsubsection}{Memory constraints}{24}{}%
+\contentsline {paragraph}{Not applicable}{24}{}%
+\contentsline {subsubsection}{Operations}{24}{}%
+\contentsline {paragraph}{Not applicable}{24}{}%
+\contentsline {subsubsection}{Site adaptation requirements}{24}{}%
+\contentsline {paragraph}{Not applicable}{24}{}%
+\contentsline {subsection}{\numberline {6.2.2}Product functions}{25}{}%
+\contentsline {subsection}{\numberline {6.2.3}User characteristics}{25}{}%
+\contentsline {subsection}{\numberline {6.2.4}Constraints}{25}{}%
+\contentsline {paragraph}{There will be various constraints within this project listed below:}{25}{}%
+\contentsline {subsection}{\numberline {6.2.5}Assumptions and dependencies}{25}{}%
+\contentsline {section}{\numberline {6.3}Specific Requirements}{25}{}%
+\contentsline {section}{\numberline {6.4}Appendix}{25}{}%
+\contentsline {chapter}{References}{26}{}%

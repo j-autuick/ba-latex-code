@@ -4,9 +4,9 @@
 
 \section{Javascript Cryptography}
 
-\paragraph{Originally, the researcher was not sure how best to implement cryptography within a Thunderbird add-on. Implementing my own javascript AES algorithm, while ideal, was not realistic--or adviceable--with the time constraints of this thesis. Thus, the issue would be finding an existing library or API that had done the javascript cryptographic implementations.}
+\paragraph{The developer decided that the best solution for the cryptography implementation was the utilization of a pre-existing cryptography library.}
 
-\paragraph{For this task, there were three necessary conditions:}
+\paragraph{For this task, there were three necessary conditions that had to be met:}
 
 \begin{itemize}
 \item A clear, easily identifiable, and reputable source/owners
@@ -16,7 +16,7 @@
 
 \paragraph{and, slightly less important, actively maintained.}
 
-\paragraph{Meeting the above criteria was not as simple as it would seem. There were many options that met some of the conditions, but meeting them all was more challenging. Ultimately, however, the researcher was satisfied with the Stanford Javascript Crypto Library (SJCL) meeting the above full criteria.}\cite[Website]{SJCL}
+\paragraph{Meeting the above criteria was not as simple as it would seem. There were many options that met some of the conditions, but meeting them all was more challenging. Ultimately, however, the researcher was satisfied with the Stanford Javascript Crypto Library (SJCL), as it met all the above conditions. Additionally, it appeared to be well developed, and maintained.}\cite[Website]{SJCL}
 
 \paragraph{The usage is pretty straight forward, and will work for this implementation. Simply linking the javascript source in the html file (See reference figure: \ref{fig: exampleSJCL_html}).:}
 
@@ -59,9 +59,9 @@ console.log("plain text - again!: " + plaintext);
 
 \section{WebExtensions}
 
-\paragraph{WebExtensions are web technology built with typical Web elements such as HTML, CSS, and javascript. Each extension must also have a \emph{manifest.json} file which carries vital information about the extension. This may include properties--known as manifest keys--like the author of the software extension, software version, permissions, and/or minimum requirement of Thunderbird to use the extension, just to name a few. As the author delves into the development section, it will be pretty clear how they work.} \cite[Webpage]{WebEx}
+\paragraph{WebExtensions are web technology built with the tools that are natural to any web developer: HTML, CSS, and Javascript. Each extension must have a \emph{manifest.json} file, which essentially hold all the vital information as to the author of the software, permissions required to use the add-on, the software version, and so on.} \cite[Webpage]{WebEx}
 
-\paragraph{Starting with the release of Thunderbird version 68 (August 2019), Thunderbird moved to only support WebExtensions for add-ons and themes development, with all previous versions no longer working.}
+\paragraph{Starting with the release of Thunderbird version 68 (August 2019), Thunderbird moved to only support WebExtensions for add-ons and themes development, with all previous versions no longer working. Even the long standing Enigmail cryptography add-on that the author used for years, no longer functioned.}
 
 \paragraph{Here is an image from Mozilla's Thunderbird Add-on Webpage that gives a quick glance of how the extensions might look like.}\footnote{Source: same webpage as noted above.}
 
@@ -74,4 +74,113 @@ console.log("plain text - again!: " + plaintext);
 
 
 \section{Implementation Details}
+\paragraph{But, lets dive right in and get started. As we step through the development, it will become more clear.}
+
+\subsection{Creating a button}
+
+\paragraph{First, we'll create a button that will appear in the "Compose Window," the window that appears when you start to write an email.}
+
+\paragraph{Before add-on implementation:}
+
+%add image here
+%add Image
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{ComposeWindow_No_Button.png}
+    \caption{\label{fig: noButton} Normal compose window}
+\end{figure}
+
+\paragraph{with add-on button implemented.}
+
+%add image
+%add Image
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{ComposeWindowButtonInsecure.png}
+    \caption{\label{fig: withButton} Button added to the compose window.}
+\end{figure}
+
+\paragraph{And, here is the manifest.json file that was created for this button. Most of the references in the manifest.json file, are, well manifest. The only thing of interest is the manifest version of 2. Apparently, it has to be 2, and it always is 2. The rest provide information about the add-on, location of images used, and the permissions required for the add-on to function. (See reference figure: \ref{fig: basic_manifest.json}).:}
+
+%add code here
+\begin{figure}[H]
+\centering
+\begin{minted}[breaklines]{javascript}
+{
+    "manifest_version": 2,
+    "name": "Crypto add-on",
+    "description": "A password AES cryptographic addon",
+    "version": "1.0",
+    "author": "Esteban Licea",
+    "applications": {
+        "gecko": {
+            "id": "esteban@little-beak.com",
+            "strict_min_version": "78.0"
+        }
+    },
+    "compose_action": {
+        "default_title": "Insecure",
+        "default_icon": "images/unlocked_64px.png"
+    },
+    "permissions": [
+        "menus"
+    ],
+    "icons": {
+        "64": "images/unlocked_64px.png",
+        "32": "images/unlocked_32px.png",
+        "16": "images/unlocked_16px.png"
+    }
+}
+\end{minted}
+\caption{\label{fig: basic_manifest.json} Basic manifest.json file}
+\end{figure}
+
+%% I was preoccupied with the 
+
+\subsection{Prompt for password}
+
+\paragraph{Now that we got a working button, we're going to make it ask for a password when it's clicked. Which is simple enough by altering adding to our manifest file, and some basic Javascript. }
+
+%add code here
+\begin{figure}[H]
+\centering
+\begin{minted}[breaklines]{javascript}
+{
+    "compose_action": {
+        "default_popup": "passwordPrompt/passwordPrompt.html",
+        "default_title": "Insecure",
+        "default_icon": "images/unlocked_64px.png"
+    },
+}
+\end{minted}
+\caption{\label{fig: addPwToManifest} Add a Password Prompt to manifest file}
+\end{figure}
+
+add code here
+\begin{figure}[H]
+\centering
+\begin{minted}[breaklines]{javascript}
+{
+var user = prompt("Please enter a secure password or phrase (the longer the better): ");
+if (user != null) {
+    document.getElementById("greeting").innerHTML = "Greetings, " + user + "!";
+}
+}
+\end{minted}
+\caption{\label{fig: pwPrompt} Javascript prompt for password}
+\end{figure}
+
+\paragraph{To get a better understanding of our development, here is a glance at our file structure so far.}
+
+%add Image
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{fileStructureSoFar_1.png}
+    \caption{\label{fig: folderStructure1} Development so far...}
+\end{figure}
+
+
+
+\subsection{Encrypt}
+\subsection{Send message}
 

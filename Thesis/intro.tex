@@ -26,21 +26,21 @@
 
 \section{Background}
 
-\paragraph{The the sphere of email communication, PGP has existed for decades. It is predicated on the exchange of user created public (and private) keys. However, it has a few inherent problems. First, there is a technical requirement to create and exchange keys. In order to facilitate this, additional client software must be installed. Additionally, several challenging steps beyond the scope of the average end user will need to be completed, like selecting encryption algorithm, size of key, etcetra. Originally, Thunderbird relied on an add-on, Enigmail, to create, manage, and exchange keys. The author used this add-on for many years. And, while it was satisfactory, it was plain to see that it was not without it's technical requirements.}
+\paragraph{In the realm of email communication, Pretty Good Privacy (PGP) has existed for decades. It is predicated on the exchange of user created public keys (in combination with private, non-exchanged keys). However, it has a few inherent obstacles. First, there is a technical requirement to create and exchange keys. In order to facilitate this, additional client software must be installed. Additionally, several challenging steps beyond the scope of the average end user will need to be completed, like selecting encryption algorithm, size of key, etc. Originally, Thunderbird relied on an add-on, Enigmail, to create, manage, and exchange keys. The author used this add-on for many years. And, while it was satisfactory, it was plain to see that it was not without it's technical requirements.}
 
-\paragraph{Starting with Thunderbird 78, Mozilla implemented OpenPGP as part of it's core client software, and dropped support for all add-ons not using MailExtensions (which includes Enigmail). However, the feature is disabled by default, and is still considered a work in progress. All other add-ons found on Thunderbird's extensions page or searching through Github were considered to be in a testing or experimental phase.}
+\paragraph{Starting with Thunderbird 78 (2020), Mozilla implemented OpenPGP as part of its core client software, and dropped support for all add-ons not using MailExtensions (which includes Enigmail). There were a few reasons for this, including Mozilla's desire to simplify the process. But, also the desire to move away from the PGP trademarked software. Nevertheless, the OpenPGP feature is disabled by default, and is still considered a work in progress. All other encryption add-ons found on Thunderbird's extensions page or searching through Github were considered to be in a testing or experimental phase.}
 
 \section{Problem}
 
-\paragraph{Mozilla has tried to support end-to-end encryption (E2EE) for a long time, it has been faced with a major obstacles, mostly mentioned above, including:}
+\paragraph{Mozilla has tried to support end-to-end encryption (E2EE) for a long time, but it has been faced with major obstacles, partly mentioned above, including:}
 
 \begin{itemize}
-\item Setting up the PGP add-on Enigmail was too technical
+\item Setting up the Enigmail add-on was too technical
 \item Generating keys was too technical
-\item Even if conditions 1. \& 2. were fulfilled, it was especially uncommon that anyone else you would want to converse with would have gone through the trouble to set up a client or keys for themselves
-\item Mozilla is in the process of using OpenPGP, a build-in component to the Thunderbird client, but that also has problems, most obviously, you again need new keys (granted, easier to set up this time)
+\item Even if conditions 1. \& 2. were fulfilled, its uncommon that others have created their own public keys
+\item Mozilla is in the process of using OpenPGP, a built-in component to the Thunderbird client, but that also has problems: most obviously, you need new keys (granted, easier to set up this time)
 \item and, again, both people must have generated keys (again, easier this time)
-\item Lastly, this OpenPGP built-in component, is still in it's early developmental stages.
+\item Lastly, this OpenPGP built-in component, is still in its early developmental stages.
 \end{itemize}
 
 \paragraph{Thus, the problem: How can Alice send an encrypted email to someone that does not have any type of public key available?}
@@ -48,9 +48,9 @@
 \section{Solution}
 %3. Introduce my current research
 
-\paragraph{The bachelor thesis candidate intends to research and develop a Thunderbird Add-on, that will allow Alice to send an encrypted message to Bob. Bob is not a tech savvy person, and is clueless about encryption technology. So, the idea of learning, installing, and setting up any types of keys, for him, is overwhelming. However, they do communicate regularly, so Alice can just whisper a one time password to him. Subsequently, Alice could then use developed add-on to encipher an email message for Bob. Which, he then could decipher using the same add-on, and the analog agreed upon passphrase.}\footnote{Alice and Bob are fictional characters commonly used as placeholders in discussions about cryptographic systems and protocols.}
+\paragraph{The bachelor thesis candidate intends to research and develop a Thunderbird Add-on, that will allow Alice to send an encrypted message to Bob. Bob is not a tech savvy person, and is clueless about encryption technology. So, the idea of learning, installing, and setting up any types of keys, for him, is overwhelming. However, they do communicate regularly, so Alice can just whisper a one time password to him. Subsequently, Alice could then use the developed add-on to encrypt an email message for Bob. Which, he then could decrypt using the same add-on, and the previously agreed upon password.}\footnote{Alice and Bob are fictional characters commonly used as placeholders in discussions about cryptographic systems and protocols.}
 
-\paragraph{More specifically, it will focus on the Mozilla Thunderbird client, for the simple fact that I have personally used it for over ten years, it's free, open-source, and cross platform. While I grant that not everyone uses Thunderbird, at least there should be no shortage of users, and theoretically anyone can get it easily, for free.}
+\paragraph{This thesis will focus on the Mozilla Thunderbird client, for the simple fact that it's free, open-source, and cross platform. While I grant that not everyone uses Thunderbird, at least there should be no shortage of users, and theoretically anyone can get it easily, for free.}
 
 \paragraph{Ultimately, this project aims to offer a simple, albeit \emph{not} perfect solution for those interested in privacy, that don't have the technical expertise to engage in key creation, exchanges or have zero knowledge about encryption. The author will demonstrate the advantages and disadvantages of various implementations strategies, and implement a solution that offers, hopefully, a viable encryption option that will fulfill some use cases.}
 
@@ -66,14 +66,14 @@
 \paragraph{The methods and tools used to solve this research inquiry will include:}
 
 \begin{enumerate}
-\item Literature
+\item Research literature and books
 \item Online learning resources
-\item Thunderbird and JS Encryption APIs
+\item Mozilla's WebExtensions API and JS Encryption APIs
 \item Guidance from Mentors, and fellow Thunderbird add-on developers
-\item Visual Studio Code
-\item Github
-\item Latex
-\item Jira
+\item Visual Studio Code coding
+\item Github for version control
+\item Latex for composing text
+\item Jira for project management
 \end{enumerate}
 
 \paragraph{After the research has been completed, all coding will proceed using a test driven development approach. Thunderbird add-ons are based on MailExtension technology, which are created using the follow standard languages:}

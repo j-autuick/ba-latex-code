@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+s+s2}{\PYGZdq{}message\PYGZus{}display\PYGZus{}action\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{l+s+s2}{\PYGZdq{}default\PYGZus{}title\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Decrypt\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{  }\PYG{l+s+s2}{\PYGZdq{}default\PYGZus{}icon\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}images/locked\PYGZus{}64px.png\PYGZdq{}}
+\PYG{p}{\PYGZcb{},}
+\PYG{l+s+s2}{\PYGZdq{}permissions\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{p}{[}
+\PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}compose\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}messageRead\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{	}\PYG{l+s+s2}{\PYGZdq{}messagesModify\PYGZdq{}}
+\PYG{p}{]}
+\end{Verbatim}

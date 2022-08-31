@@ -1,0 +1,8 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kd}{let}\PYG{+w}{ }\PYG{n+nx}{password}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{popupCloseMode}\PYG{p}{;}
+\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}16. Encrypting now! \PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n+nx}{sjcl}\PYG{p}{.}\PYG{n+nx}{encrypt}\PYG{p}{(}\PYG{n+nx}{password}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{details}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{));}
+\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}12. Random text to encrypt is: \PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n+nx}{details}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{);}
+\PYG{k+kd}{let}\PYG{+w}{ }\PYG{n+nx}{newBody}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nx}{sjcl}\PYG{p}{.}\PYG{n+nx}{encrypt}\PYG{p}{(}\PYG{n+nx}{password}\PYG{p}{,}\PYG{+w}{ }\PYG{n+nx}{details}\PYG{p}{.}\PYG{n+nx}{body}\PYG{p}{);}
+\PYG{n+nx}{console}\PYG{p}{.}\PYG{n+nx}{log}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}17. newBody is \PYGZdq{}}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n+nx}{newBody}\PYG{p}{);}
+\PYG{n+nx}{messenger}\PYG{p}{.}\PYG{n+nx}{compose}\PYG{p}{.}\PYG{n+nx}{setComposeDetails}\PYG{p}{(}\PYG{n+nx}{currentComposeTabId}\PYG{p}{,}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n+nx}{body}\PYG{o}{:}\PYG{+w}{ }\PYG{n+nx}{newBody}\PYG{+w}{ }\PYG{p}{\PYGZcb{})}
+\end{Verbatim}

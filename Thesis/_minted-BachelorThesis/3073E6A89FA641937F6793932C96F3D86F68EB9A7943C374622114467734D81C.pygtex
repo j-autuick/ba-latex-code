@@ -3,7 +3,7 @@
 \PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}manifest\PYGZus{}version\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+m+mf}{2}\PYG{p}{,}
 \PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}name\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Crypto add\PYGZhy{}on\PYGZdq{}}\PYG{p}{,}
 \PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}A password AES cryptographic addon\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}version\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}1.0\PYGZdq{}}\PYG{p}{,}
+\PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}version\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}1.5\PYGZdq{}}\PYG{p}{,}
 \PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}author\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}Esteban Licea\PYGZdq{}}\PYG{p}{,}
 \PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}applications\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
 \PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}gecko\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
@@ -17,11 +17,6 @@
 \PYG{+w}{    }\PYG{p}{\PYGZcb{},}
 \PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}permissions\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{p}{[}
 \PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}menus\PYGZdq{}}
-\PYG{+w}{    }\PYG{p}{],}
-\PYG{+w}{    }\PYG{l+s+s2}{\PYGZdq{}icons\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
-\PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}64\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}images/unlocked\PYGZus{}64px.png\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}32\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}images/unlocked\PYGZus{}32px.png\PYGZdq{}}\PYG{p}{,}
-\PYG{+w}{        }\PYG{l+s+s2}{\PYGZdq{}16\PYGZdq{}}\PYG{o}{:}\PYG{+w}{ }\PYG{l+s+s2}{\PYGZdq{}images/unlocked\PYGZus{}16px.png\PYGZdq{}}
-\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{]}
 \PYG{p}{\PYGZcb{}}
 \end{Verbatim}

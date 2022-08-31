@@ -1,266 +1,283 @@
 \relax 
 \@writefile{toc}{\contentsline {section}{\numberline {0.1}Abstract}{1}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The developer describes the steps in researching and developing a Thunderbird Add-on that offers E2EE, without the need for key changes, i.e. without PGP. The developed software will allow one user to exchange a keyword/password with another user, encipher a message with that keyword/password, and the other user will be able to decipher to message with that password.}{1}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{4}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The developer describes the steps in researching and developing a Thunderbird add-on that offers End-to-End Encryption (E2EE), without the need for key changes, i.e. without PGP and its asymmetric key exchange requirement. The developed software will allow one user to exchange a password with another user, encrypt a message with that password, and the other user will be able to decrypt the message with that password.}{1}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {0.2}Acknowledgements}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{First off, I need to give credit to my partner and child, who did their best to limit distractions and allow me to complete this project. Without their continued support and love, this project would have been a great deal more complicated.}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Secondly, I need to give special mention to John Bieling, an adminitrative Thunderbird Developer, who gave invaluable guidance to many roadblocks and issues I had along the way. He was always able to point me in the right direction, and without his help this project would have not been completed.}{2}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{5}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {paragraph}{The digital age has fully absorbed our societies. We do everything in some form or another on digital media: create art, science, communicate, create and share memories, play games, and write thesis reports with our computers. There is basically no limit to what people do with their computers.}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Proportional to this growth, the internet's influence on our lives has also ballooned. Our activities have been pushed more and more online, and onto "the cloud." Originally, few bothered to think about privacy. Most damaging, perhaps, was the erroneous expectation of private communication. Edward Snowden's revelations about the "Five Eyes" intelligence alliance, between the United States, the United Kingdom, Canada, Australia, and New Zealand and their the collection of all online communication, social media, and phone data removed any doubt about expectations to individual privacy. No online communication, or online activities in general, has been considered safe ever since.}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}Background}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The the sphere of email communication, PGP has existed for decades. It is predicated on the exchange of user created public (and private) keys. However, it has a few inherent problems. First, there is a technical requirement to create and exchange keys. In order to facilitate this, additional client software must be installed. Additionally, several challenging steps beyond the scope of the average end user will need to be completed, like selecting encryption algorithm, size of key, etcetra. Originally, Thunderbird relied on an add-on, Enigmail, to create, manage, and exchange keys. The author used this add-on for many years. And, while it was satisfactory, it was plain to see that it was not without it's technical requirements.}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Starting with Thunderbird 78, Mozilla implemented OpenPGP as part of it's core client software, and dropped support for all add-ons not using MailExtensions (which includes Enigmail). However, the feature is disabled by default, and is still considered a work in progress. All other add-ons found on Thunderbird's extensions page or searching through Github were considered to be in a testing or experimental phase.}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Problem}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Mozilla has tried to support end-to-end encryption (E2EE) for a long time, it has been faced with a major obstacles, mostly mentioned above, including:}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Thus, the problem: How can Alice send an encrypted email to someone that does not have any type of public key available?}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Solution}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The bachelor thesis candidate intends to research and develop a Thunderbird Add-on, that will allow Alice to send an encrypted message to Bob. Bob is not a tech savvy person, and is clueless about encryption technology. So, the idea of learning, installing, and setting up any types of keys, for him, is overwhelming. However, they do communicate regularly, so Alice can just whisper a one time password to him. Subsequently, Alice could then use developed add-on to encipher an email message for Bob. Which, he then could decipher using the same add-on, and the analog agreed upon passphrase.}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{More specifically, it will focus on the Mozilla Thunderbird client, for the simple fact that I have personally used it for over ten years, it's free, open-source, and cross platform. While I grant that not everyone uses Thunderbird, at least there should be no shortage of users, and theoretically anyone can get it easily, for free.}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Ultimately, this project aims to offer a simple, albeit \emph  {not} perfect solution for those interested in privacy, that don't have the technical expertise to engage in key creation, exchanges or have zero knowledge about encryption. The author will demonstrate the advantages and disadvantages of various implementations strategies, and implement a solution that offers, hopefully, a viable encryption option that will fulfill some use cases.}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Research will dictate the best implementation strategy.}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}Methods applied}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The methods and tools used to solve this research inquiry will include:}{6}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{After the research has been completed, all coding will proceed using a test driven development approach. Thunderbird add-ons are based on MailExtension technology, which are created using the follow standard languages:}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The digital age has fully absorbed our societies. We do everything in some form or another on digital media: create art, science, communicate, create and share memories, play games, and write thesis reports with our computers. There is basically no limit to what people do with their computers.}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Proportional to this growth, the internet's influence on our lives has also ballooned. Our activities have been pushed more and more online, and onto "the cloud." Originally, few bothered to think about privacy. Most damaging, perhaps, was the erroneous expectation of private communication. Edward Snowden's revelations about the "Five Eyes" intelligence alliance, between the United States, the United Kingdom, Canada, Australia, and New Zealand and their the collection of all online communication, social media, and phone data removed any doubt about expectations to individual privacy. No online communication, or online activities in general, has been considered safe ever since.}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}Background}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{In the realm of email communication, Pretty Good Privacy (PGP) has existed for decades. It is predicated on the exchange of user created public keys (in combination with private, non-exchanged keys). However, it has a few inherent obstacles. First, there is a technical requirement to create and exchange keys. In order to facilitate this, additional client software must be installed. Additionally, several challenging steps beyond the scope of the average end user will need to be completed, like selecting encryption algorithm, size of key, etc. Originally, Thunderbird relied on an add-on, Enigmail, to create, manage, and exchange keys. The author used this add-on for many years. And, while it was satisfactory, it was plain to see that it was not without it's technical requirements.}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Starting with Thunderbird 78 (2020), Mozilla implemented OpenPGP as part of its core client software, and dropped support for all add-ons not using MailExtensions (which includes Enigmail). There were a few reasons for this, including Mozilla's desire to simplify the process. But, also the desire to move away from the PGP trademarked software. Nevertheless, the OpenPGP feature is disabled by default, and is still considered a work in progress. All other encryption add-ons found on Thunderbird's extensions page or searching through Github were considered to be in a testing or experimental phase.}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Problem}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Mozilla has tried to support end-to-end encryption (E2EE) for a long time, but it has been faced with major obstacles, partly mentioned above, including:}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Thus, the problem: How can Alice send an encrypted email to someone that does not have any type of public key available?}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Solution}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The bachelor thesis candidate intends to research and develop a Thunderbird Add-on, that will allow Alice to send an encrypted message to Bob. Bob is not a tech savvy person, and is clueless about encryption technology. So, the idea of learning, installing, and setting up any types of keys, for him, is overwhelming. However, they do communicate regularly, so Alice can just whisper a one time password to him. Subsequently, Alice could then use the developed add-on to encrypt an email message for Bob. Which, he then could decrypt using the same add-on, and the previously agreed upon password.}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{This thesis will focus on the Mozilla Thunderbird client, for the simple fact that it's free, open-source, and cross platform. While I grant that not everyone uses Thunderbird, at least there should be no shortage of users, and theoretically anyone can get it easily, for free.}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ultimately, this project aims to offer a simple, albeit \emph  {not} perfect solution for those interested in privacy, that don't have the technical expertise to engage in key creation, exchanges or have zero knowledge about encryption. The author will demonstrate the advantages and disadvantages of various implementations strategies, and implement a solution that offers, hopefully, a viable encryption option that will fulfill some use cases.}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Research will dictate the best implementation strategy.}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Methods applied}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The methods and tools used to solve this research inquiry will include:}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{After the research has been completed, all coding will proceed using a test driven development approach. Thunderbird add-ons are based on MailExtension technology, which are created using the follow standard languages:}{7}{}\protected@file@percent }
 \citation{Shirey}
 \citation{DelfsKnebl}
 \citation{Schneier}
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Cryptography}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Cryptography}{8}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Algorithm selection overview}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Symmetric key encryption}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Selecting an algorithm, among so many, was pretty straightforward given my use case, but I wanted to show my thought processes. Firstly, there are two fundamental paths for selecting an encryption algorithm. The selection between \emph  {asymmetric} and \emph  {symmetric} key encryption is the initial decision.}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The goal of this project is \emph  {ease of use} (at the cost of security), so our choice is clear: symmetric-key encryption.}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Block vs. Stream cipher encryption}{7}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Next, we need to decide between a block cipher or a stream cipher. As Bruce Schneier defines the two in his book "Applied Cryptography: Protocols, Algorithms in C" as:}{7}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Algorithm selection overview}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Symmetric key encryption}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Selecting an algorithm, among so many, was pretty straightforward given my use case. Firstly, there are two fundamental paths for selecting an encryption algorithm. The selection between \emph  {asymmetric} and \emph  {symmetric} key encryption is the initial decision.}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The goal of this project is \emph  {ease of use} (at the cost of security), so our choice is clear: symmetric-key encryption.}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Block vs. Stream cipher encryption}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Next, we need to decide between a block cipher or a stream cipher. As Bruce Schneier defines the two in his book "Applied Cryptography: Protocols, Algorithms in C" as:}{8}{}\protected@file@percent }
 \citation{Schneier}
 \citation{Nirula}
-\@writefile{toc}{\contentsline {paragraph}{The advantages of a stream ciphers:}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{are more appropriate for hardware implementations.}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{According to Bruce Schneier, block ciphers are more suitable for software implementation as they are easier to implement, avoid time-consuming bit manipulations, and operate on computer sized blocks.}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A bit of a spoiler, there is no longer strict "block vs. stream" cipher schemas. We'll explain shortly, but for now, we'll accept that we'll be implementing a block cipher.}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Block cipher selection}{8}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There are many block ciphers to choose from, these are just some of the most popular:}{8}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The advantages of a stream ciphers:}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{are more appropriate for hardware implementations.}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{According to Bruce Schneier, block ciphers are more suitable for software implementation as they are easier to implement, avoid time-consuming bit manipulations, and operate on computer sized blocks.}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Block cipher selection}{9}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There are many block ciphers to choose from, these are just some of the most popular:}{9}{}\protected@file@percent }
 \citation{Aumasson}
 \citation{PaarPelzl}
 \citation{PaarPelzl}
-\@writefile{toc}{\contentsline {paragraph}{But, after an overall account of the block enciphers available, the author decided there is really only one choice: the Advanced Encryption Standard (AES) as it's the industry standard.}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Advanced Encryption Standard (AES)}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{For reasons that will soon become apparent, AES has been the industry standard for the past 20 years, even used as a secure standard by the U.S. government.}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Mathematics: Overview}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Since a full background is beyond the scope of this project (it could entail it's own thesis), the author will gloss over it quickly.}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The foundation of AES is grounded in Abstract mathematics, more specifically, \emph  {set theory}. Within set theory exists the study of groups. A group is a set of elements upon which an operation (and its inverse) can be executed.}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{In short,}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{are operations that can be applied to a group of elements.}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{A field is an extension of a group, in that all four basic arithmetic operations are included in a single structure.}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{However, as cryptographers, we are not yet satisfied. We need a working set that is finite, or as they are commonly known \emph  {Galois fields}, or \emph  {unendliche Körpe}. In short, the beauty of the Galois fields is that regardless of the four principle operations performed on them, the result will remain \emph  {within} the set of elements. This is profound, necessary and brilliant for cryptographic usage. But, how does this work?}{9}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Essentially, the above operations are carried out with the aid of the \emph  {modulo operator}, and it ensures our result remains in the set. But, what set?}{9}{}\protected@file@percent }
+\citation{PaarYoutube}
+\@writefile{toc}{\contentsline {paragraph}{After an overall account of the available block enciphers, the author decided there is really only one choice: the Advanced Encryption Standard (AES) as it's the industry standard.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Advanced Encryption Standard (AES)}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{For reasons that will soon become apparent, AES has been the industry standard for the past 20 years, even used as a secure standard by the U.S. government.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Mathematics: Overview}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Since a full background is beyond the scope of this project (it could entail it's own thesis), the author will gloss over it quickly.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The foundation of AES is grounded in Abstract mathematics, more specifically, \emph  {set theory}. Within set theory exists the study of groups. A group is a set of elements upon which an operation (and its inverse) can be executed.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{In short,}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{are operations that can be applied to a group of elements.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A field is an extension of a group, in that all four basic arithmetic operations are included in a single structure.}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{However, as cryptographers, we are not yet satisfied. We need a working set that is finite, or as they are commonly known \emph  {Galois fields}, or \emph  {endliche Körpe}. In short, the beauty of the Galois fields is that regardless of the four principle operations performed on them, the result will remain \emph  {within} the set of elements. This is profound, necessary and brilliant for cryptographic usage. But, how does this work?}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Essentially, the above operations are carried out with the aid of the \emph  {modulo operator}, and it ensures our result remains in the set. But, what set?}{10}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The Galois field principles are focused on one particular sub-field, namely the field defined by:}{10}{}\protected@file@percent }
 \citation{DelfsKnebl}
 \citation{Crawford}
 \citation{Katz}
 \citation{Katz}
-\@writefile{toc}{\contentsline {paragraph}{We extend beyond a finite field, to focus on a extension field, in particular:}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{This conveniently translates to 256 elements, which fits perfectly within a computer byte.}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The last thing we will want to have in mind as we proceed is polynomial division. It's not any different than grammar school algebra, but is carried out with one of a very special type of polynomial, known as a \emph  {irreducible polynomial}. An irreducible polynomial is similar to a prime number, only it is a polynomial. In other words, it cannot be broken down, divided down, into smaller components. For our cryptographic purposes, the polynomial we'll use is the following: $x^8 + x^4 + x^3 + x + 1$}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}The AES algorithm}{10}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces  Simplified AES Overview\relax }}{10}{}\protected@file@percent }
+\citation{Crawford}
+\@writefile{toc}{\contentsline {paragraph}{This conveniently translates to 256 elements, which fits perfectly within a computer byte.}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The last thing we will want to have in mind as we proceed is polynomial division. It's not any different than grammar school algebra, but is carried out with one of a very special type of polynomial, known as a \emph  {irreducible polynomial}. An irreducible polynomial is similar to a prime number, only that it is a polynomial. In other words, it cannot be factored into smaller components. The AES algorithm uses the following polynomial: $x^8 + x^4 + x^3 + x + 1$}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}The AES algorithm}{11}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces  Simplified AES Overview\relax }}{11}{}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig: AESovereview}{{2.1}{10}}
-\@writefile{toc}{\contentsline {paragraph}{With the mathemathical theories out of the way, we can look at how all the theory get implemented into our computer. Here is a simplifed overview: (See reference image: 2.1\hbox {}).}{10}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The first step in the AES algorithm is the creation of a 4-by-4 array of bytes called the state, that is modified in a series of rounds. The state is initially set equal to the input of the cipher (notice: a 128 bit--minimum--is exactly 16 bytes, perfect for execution on a computer). Then, the following for operations are applies.}{10}{}\protected@file@percent }
+\newlabel{fig: AESovereview}{{2.1}{11}}
+\@writefile{toc}{\contentsline {paragraph}{With the mathemathical theories out of the way, we can look at how all the theory get implemented into our computers. Here is a simplifed overview: (See: 2.1\hbox {}).}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The first step in the AES algorithm is the creation of a 4-by-4 array of bytes called the state, that is modified in a series of rounds. The state is initially set equal to the input of the cipher (notice: a 128 bit minimum is exactly 16 bytes, perfect for execution on a computer). Then, the following four operations are applied.}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Step one: "AddRound" key}{11}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{In every round of the AES, a 128-bit sub-key is derived from the master key, and it is interpreted as a 4-by-4 array of bytes. The state array is updated by XORing it with the sub-key (See: 2.2\hbox {}).}{11}{}\protected@file@percent }
+\citation{Katz}
+\citation{Crawford}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces  AddRound Key Round\relax }}{12}{}\protected@file@percent }
+\newlabel{fig: AddRoundKey}{{2.2}{12}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Step two: "SubBytes" or byte substitution}{12}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{In this step, each byte of the state array is replaced by another byte according to a single fixed table S. This substitution table (or S-box) is a bijection over $\{0,1\}^8$. There is only one S-box that is substituting all the bytes in the state array, every round (See: 2.3\hbox {}).}{12}{}\protected@file@percent }
+\citation{Katz}
 \citation{Crawford}
 \citation{Katz}
 \citation{Crawford}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Step One: Adding the key.}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{In every round of the AES, a 128-bit sub-key is derived from the master key, and it is interpreted as a 4-by-4 array of bytes. The state array is updated by XORing it with the sub-key (See reference image: 2.2\hbox {}).}{11}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces  AddRound Key Round\relax }}{11}{}\protected@file@percent }
-\newlabel{fig: AddRoundKey}{{2.2}{11}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}"SubBytes" or byte substitution}{11}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{In this step, each byte of the state array is replaced by another byte according to a single fixed table S. This substitution table (or S-box) is a bijection over $\{0,1\}^8$. There is only one S-box that is substituting all the bytes in the state array, every round (See image: 2.3\hbox {}).}{11}{}\protected@file@percent }
-\citation{Katz}
-\citation{Crawford}
-\citation{Katz}
-\citation{Crawford}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces  SubBytes Round\relax }}{12}{}\protected@file@percent }
-\newlabel{fig: SubBytes}{{2.3}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}ShiftRows or the rows are shifted}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{In this step, the bytes in each row of the state array are cyclically shifted to the left as follows: the first row of the array is untouched, and the second row is shifte one place to the left, the third row is shifted two places to the left, and the fourth row is shifted three places to the left (See reference image: 2.4\hbox {}).}{12}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces  ShiftRows Round\relax }}{12}{}\protected@file@percent }
-\newlabel{fig: ShiftRows}{{2.4}{12}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}MixColums or the columns are mixed}{12}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{In this step, an invertible linear transformation is applied to each column. One can think of this as a matrix multiplication (See reference image: 2.5\hbox {}).}{12}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces  SubBytes Round\relax }}{13}{}\protected@file@percent }
+\newlabel{fig: SubBytes}{{2.3}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.5}Step three: "ShiftRows" or the rows are shifted}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{In this step, the bytes in each row of the state array are cyclically shifted to the left as follows: the first row of the array is untouched, and the second row is shifted one place to the left, the third row is shifted two places to the left, and the fourth row is shifted three places to the left (See: 2.4\hbox {}).}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces  ShiftRows Round\relax }}{13}{}\protected@file@percent }
+\newlabel{fig: ShiftRows}{{2.4}{13}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.6}Step four: "MixColumns" or the columns are mixed}{13}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{In this step, an invertible linear transformation is applied to each column. One can think of this as a matrix multiplication (See: 2.5\hbox {}).}{13}{}\protected@file@percent }
 \citation{Dooley}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces  MixColumns Round\relax }}{13}{}\protected@file@percent }
-\newlabel{fig: MixColumns}{{2.5}{13}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.7}The process is repeated x number of times.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The AES algorithm supports bit sizes of 128 (minimum requirement), 192, and 256. Depending on the bit size specified, the algorithm will be repeated either 10, 12, or 14 times.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.8}AES algorithm summary}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern desktop CPUs (at least Intel and AMD), so it's blazingly fast.}{13}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Although the algorithm is derived from a combination of complex mathematical theories, it's algorithmic implementation into hardware is the perfect intersection between mathematics and computer science. Any computer scientist can quickly assess from the images above, that the XORing, bit shifting, table lookups, and bit permutations are exactly the kind of operations that are executed super fast on computers.}{13}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces  MixColumns Round\relax }}{14}{}\protected@file@percent }
+\newlabel{fig: MixColumns}{{2.5}{14}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.7}The process is repeated x number of times}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The AES algorithm supports bit sizes of 128 (minimum requirement), 192, and 256. Depending on the bit size specified, the algorithm will be repeated either 10, 12, or 14 times.}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2.8}AES algorithm summary}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The goal of the algorithm is to insert confusion and diffusion into the field, over and over. And, the algorithm is just reversed to retrieve the plain text. The algorithm was fast in 2001, when it was introduced, but now, 20 years later, it is built into all modern CPUs, so it's blazingly fast.}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Although the algorithm is derived from a combination of complex mathematical theories, its algorithmic implementation into hardware is the perfect intersection between mathematics and computer science. Any computer scientist can quickly assess from the images above, that the XORing, bit shifting, table lookups, and bit permutations are exactly the kind of operations that are executed super fast on computers.}{14}{}\protected@file@percent }
 \citation{SJCL}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Implementation}{14}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Implementation}{15}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Javascript Cryptography}{14}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The developer decided that the best solution for the cryptography implementation was the utilization of a pre-existing cryptography library.}{14}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{For this task, there were three necessary conditions that had to be met:}{14}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{and, slightly less important, actively maintained.}{14}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Meeting the above criteria was not as simple as it would seem. There were many options that met some of the conditions, but meeting them all was more challenging. Ultimately, however, the researcher was satisfied with the Stanford Javascript Crypto Library (SJCL), as it met all the above conditions. Additionally, it appeared to be well developed, and maintained.}{14}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces  Example of linking SJCL in HTML\relax }}{14}{}\protected@file@percent }
-\newlabel{fig: exampleSJCL_html}{{3.1}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Javascript Cryptography}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The developer decided that the best solution for the cryptography implementation was the utilization of a pre-existing cryptography library.}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{For this task, there were three necessary conditions that had to be met:}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{and, slightly less important, actively maintained.}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Meeting the above criteria was not as simple as it would seem. There were many options that met some of the conditions, but meeting all of them was more challenging. Ultimately, however, the researcher was satisfied with the Stanford Javascript Crypto Library (SJCL), as it met all the above conditions. Additionally, it appeared to be well developed, and still actively maintained.}{15}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces  Example of javascript SJCL\relax }}{15}{}\protected@file@percent }
+\newlabel{fig: exampleSJCL_js}{{3.1}{15}}
 \citation{WebEx}
-\@writefile{toc}{\contentsline {paragraph}{The usage is pretty straight forward, and will work for this implementation. Simply linking the javascript source in the html file (See reference figure: 3.1\hbox {}).:}{15}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces  Example of javascript SJCL\relax }}{15}{}\protected@file@percent }
-\newlabel{fig: exampleSJCL_js}{{3.2}{15}}
-\@writefile{toc}{\contentsline {paragraph}{and, the javascript can simply be used as follows (See reference figure: 3.2\hbox {}):}{15}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces  Example output to Firefox console\relax }}{15}{}\protected@file@percent }
-\newlabel{fig: exampleSJCL}{{3.3}{15}}
-\@writefile{toc}{\contentsline {paragraph}{giving the following result (See reference figure: 3.3\hbox {}):}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The usage is pretty straight forward, and will meet our needs.}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}WebExtensions}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{WebExtensions are web technology built with the tools that are natural to any web developer: HTML, CSS, and Javascript. Each extension must have a \emph  {manifest.json} file, which essentially hold all the vital information as to the author of the software, permissions required to use the add-on, the software version, and so on.}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Starting with the release of Thunderbird version 68 (August 2019), Thunderbird moved to only support WebExtensions for add-ons and themes development, with all previous versions no longer working. Even the long standing Enigmail cryptography add-on that the author used for years, no longer functioned.}{15}{}\protected@file@percent }
+\citation{WebEx}
+\@writefile{toc}{\contentsline {paragraph}{The usage is pretty straight forward, and will work for this implementation. The library is available in a minified version, and will be packages with the add-on (See: \G@refundefinedtrue \text  {\normalfont  \bfseries  ??}\GenericWarning  {               }{LaTeX Warning: Reference `fig: exampleSJCL_html' on page 16 undefined}).:}{16}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces  Example output to Firefox console\relax }}{16}{}\protected@file@percent }
+\newlabel{fig: exampleSJCL}{{3.2}{16}}
+\@writefile{toc}{\contentsline {paragraph}{giving the following result (See: 3.2\hbox {}):}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{This usage will meet our needs.}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}WebExtensions}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{WebExtensions are web technologies built with the tools that are natural to any web developer: HTML, CSS, and Javascript. Each extension must have a \emph  {manifest.json} file, which essentially holds all the vital information like the author of the software, permissions required to use the add-on, the software version, and so on.}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Starting with the release of Thunderbird version 68 (August 2019), Thunderbird moved to only support WebExtensions for add-ons and themes development, with all previous versions no longer working. Even the long standing Enigmail cryptography add-on that the author used for years, no longer functioned.}{16}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Here is an image from Mozilla's Thunderbird Add-on Webpage that gives a quick glance of how the extensions might look like.}{16}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces  WebExtension overview\relax }}{16}{}\protected@file@percent }
-\newlabel{fig: webEx}{{3.4}{16}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Implementation Details}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{But, lets dive right in and get started. As we step through the development, it will become more clear.}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Creating a button}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{First, we'll create a button that will appear in the "Compose Window," the window that appears when you start to write an email.}{16}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces  Normal compose window\relax }}{16}{}\protected@file@percent }
-\newlabel{fig: noButton}{{3.5}{16}}
-\@writefile{toc}{\contentsline {paragraph}{Before add-on implementation:}{16}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces  Button added to the compose window.\relax }}{17}{}\protected@file@percent }
-\newlabel{fig: withButton}{{3.6}{17}}
-\@writefile{toc}{\contentsline {paragraph}{with add-on button implemented.}{17}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces  Basic manifest.json file\relax }}{17}{}\protected@file@percent }
-\newlabel{fig: basic_manifest.json}{{3.7}{17}}
-\@writefile{toc}{\contentsline {paragraph}{And, here is the manifest.json file that was created for this button. Most of the references in the manifest.json file, are, well manifest. The only thing of interest is the manifest version of 2. Apparently, it has to be 2, and it always is 2. The rest provide information about the add-on, location of images used, and the permissions required for the add-on to function. (See reference figure: 3.7\hbox {}).:}{18}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Prompt for password}{18}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces  Add a Password Prompt to manifest file\relax }}{18}{}\protected@file@percent }
-\newlabel{fig: addPwToManifest}{{3.8}{18}}
-\@writefile{toc}{\contentsline {paragraph}{Now that we got a working button, we're going to make it ask for a password when it's clicked. Which is simple enough by altering adding to our manifest file, and some basic Javascript. }{18}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces  Javascript prompt for password\relax }}{18}{}\protected@file@percent }
-\newlabel{fig: pwPrompt}{{3.9}{18}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces  Development so far...\relax }}{19}{}\protected@file@percent }
-\newlabel{fig: folderStructure1}{{3.10}{19}}
-\@writefile{toc}{\contentsline {paragraph}{To get a better understanding of our development, here is a glance at our file structure so far.}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Encrypt}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Send message}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Challenges Encountered}{20}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces  WebExtension overview\relax }}{17}{}\protected@file@percent }
+\newlabel{fig: webEx}{{3.3}{17}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Implementation Details}{17}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Developer Tools}{17}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces  Developer Toolkit\relax }}{17}{}\protected@file@percent }
+\newlabel{fig: devToolkit}{{3.4}{17}}
+\@writefile{toc}{\contentsline {paragraph}{For this project, the developer used a Test Driven Development model to go step-by-step through each implemented item. This allows for immediate checking if something works or not, and enhancement of the code in an incremental way. Most every step will be sent to the console.log, to verify success or failure. The first invaluable tool was Tunderbird's mail client Developer Toolkit, which shows a great deal of information, and includes the console. It was an excellent tool which helped with debugging, and seeing what was working and not working through each step (See: 3.4\hbox {}). The developer had it open at all times. Note: Not incidentally, it looks like a typical web browsers developer toolkit, since Thunderbird's core is based on Web Extension technology.}{17}{}\protected@file@percent }
+\citation{Bieling}
+\@writefile{toc}{\contentsline {paragraph}{The second valuable tool was the communication channel Element. It an excellent channel to ask questions to other Thunderbird developers. It was where I found answers to most issues that I had (See: 3.5\hbox {}).}{18}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces  Developer uses Element (Drexl Spivey)\relax }}{18}{}\protected@file@percent }
+\newlabel{fig: helpScreeny}{{3.5}{18}}
+\@writefile{toc}{\contentsline {paragraph}{As mentioned in the acknowledgements, John Bieling was always able to point me in the right direction, within a reasonably short period of time. So, this type of quick responses were paramount to getting the author back on track.}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The third valuable resource gained during the development process was a Github repository that had many sample extensions. The examples that provided the most help are listed below:}{18}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Creating a compose window encryption button}{19}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{First, we'll create a button that will appear in the "Compose Window," the window that appears when you start to write an email.}{19}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces  Normal compose window\relax }}{19}{}\protected@file@percent }
+\newlabel{fig: noButton}{{3.6}{19}}
+\@writefile{toc}{\contentsline {paragraph}{Before add-on implementation: (See: 3.6\hbox {})}{19}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces  Button added to the compose window.\relax }}{19}{}\protected@file@percent }
+\newlabel{fig: withButton}{{3.7}{19}}
+\@writefile{toc}{\contentsline {paragraph}{with add-on button implemented (See: 3.10\hbox {}).}{19}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces  Basic manifest.json file\relax }}{20}{}\protected@file@percent }
+\newlabel{fig: basic_manifest.json}{{3.8}{20}}
+\@writefile{toc}{\contentsline {paragraph}{And, here is the manifest.json file that was created for this button. Most of the references in the manifest.json file are self-explanatory. One thing to note about the manifest file is the version number. It has to be set to 2. The rest is composed of information about the add-on, location of images used, and the permissions required for the add-on to function, which is not insignificant. Different permissions are required to access different areas of the user interface, e.g. the compose window, browser window, messages, modifyMessages, etc. (See reference figure: 3.8\hbox {}).}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Prompt for password}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Managing the password was an early obstacle encountered. Namely, the developer was put on notice that he simply could not just use straight Javascript to get the desired results, but instead work within the context of Mozilla's API. So, this was an initial challenge. However, the developer was able to find a solution:}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{I wanted to highlight the process one time, just so it's clear. This was the process throughout. First, if necessary, the manifest.json file has to be updated. Then, the web extension files (html, js, and css) should be kept orderly. But, additionally, Mozilla web extension API rules needed to be followed.}{21}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces  Add a Password Prompt to manifest file\relax }}{21}{}\protected@file@percent }
+\newlabel{fig: addPwToManifest}{{3.9}{21}}
+\@writefile{toc}{\contentsline {paragraph}{Step one: updated the manifest.json file. The developer needed to add the \emph  {compose\_action} so that the button would be added on the compose window.}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{But, in the code, several files needed to be created, in addition to the pop up folder. A \emph  {background.js} file needed to be created. The background.js file acts, as the name suggests in the background. It is loaded when the add-on is loaded, and it is running, or shall I say, "listening" for events. The code will be available on github, but I will explain the basic process.}{21}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces  Pop up Window with Developer Toolkit\relax }}{21}{}\protected@file@percent }
+\newlabel{fig: withButton}{{3.10}{21}}
+\@writefile{toc}{\contentsline {paragraph}{First, the background.js file is loaded, which has listeners, namely for when the button on the compose window is pressed. This activates the pop up window, which will launch the popup.html file.}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The reader can notice how I used the Developer Toolkit, with console.log used literally throughout the development process.}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Encrypt the message}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The challenge with the password, was not simply collecting it--which would seem straight forward enough. But, instead, it was passing the variable from the popup.html and it's accompanying popup.js to the background.js. The way the API works, it wasn't as straight forward as the developer originally thought. The password had to be sent as a message, to listeners in the background.js.}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Fortunately, there were some examples that were reasonably close on Mr. Bieling's github sample-extensions repo that gave me some ideas of how it could work.}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The encryption was a three part process.}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{After we were able to move the password variable to the background.js, we could go with step two.}{22}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces  Loading external library into background.js\relax }}{22}{}\protected@file@percent }
+\newlabel{fig: loadSJCL}{{3.11}{22}}
+\@writefile{toc}{\contentsline {paragraph}{For this step, the developer loaded the minimized version of the library, which is quite small, and still powerful. This is how it was loaded into the background.js file. (See: 3.11\hbox {})}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Originally, sent every step through the console.log (later cleaned up). There are a few different elements here to take note of. Firstly, some of the elements are part of the Mozilla API, like the details.body, messenger.compose.setComposeDetails. Apparently, the messenger is the namespace used for Thunderbird, replacing what was previously used, which was browser.}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Another interesting component is the actual execution of the encryption, by the SJCL.}{22}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces  Encryption code\relax }}{23}{}\protected@file@percent }
+\newlabel{fig: encryptionCode}{{3.12}{23}}
+\@writefile{toc}{\contentsline {paragraph}{It's usage is pretty straight forward, it takes two arguments, one with a password, and another with the text to be encrypted.}{23}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces  The popup window, in front of a completed email\relax }}{23}{}\protected@file@percent }
+\newlabel{fig: button}{{3.13}{23}}
+\@writefile{toc}{\contentsline {paragraph}{The expected and natural behavior for a user is for them to write an email, then click on the "encrypt" button, like so. (See: 3.13\hbox {}), and enter a password.}{23}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces  Voila! Encrypted Text.\relax }}{24}{}\protected@file@percent }
+\newlabel{fig: encryptedText}{{3.14}{24}}
+\@writefile{toc}{\contentsline {paragraph}{After that, a password is entered, and the magic happens (See: 3.14\hbox {}.}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Note: the console.log keeping track of where we are, and also verifying that the decryption also works with the same password. From here, the message can be sent as normal, or saved as a draft. There was some developmental pondering, if the encryption button should also send the message in one go, since it's not like the email is really able to be edited or read at this point, but for now left it as is, in case the user wants to add attachments or email recipients.}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.5}Decrypt the Message}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Now, forwarding the email to another account, you can see the email appears normal, but looking at it more closely now, we can see two very interesting elements.}{24}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces  Updated manifest.json components\relax }}{24}{}\protected@file@percent }
+\newlabel{fig: updateManifest}{{3.15}{24}}
+\citation{Schneier}
+\@writefile{toc}{\contentsline {paragraph}{First, there is a "Decrypt" icon on the far right of what is known as the \emph  {message\_display\_area} another UI component of the Thunderbird interface. This is another required manifest.json addition, as well as updating the permissions section (See: 3.15\hbox {} \& 3.16\hbox {}).}{25}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Another interesting encryption component that has not been explained, is the way the encrypted message is parsed, and displayed. Most of it describes the protocols involved, like mode of operation (in this case, CCM, or \emph  {Counter with Cipher Block Chaining-Message Authentication Code}), type of cipher used (AES), the version, et cetera. What leads the block, however, is important. The "iv" or the \emph  {Initialization vector}. This is essentially used as a seeding value, and what is so interesting about it is, that even if a would be hacker was given the "iv" value, without the password they would be no closer to decrypting the message.}{25}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces  Decryption button activating pop-up\relax }}{25}{}\protected@file@percent }
+\newlabel{fig: decrypt1}{{3.16}{25}}
+\@writefile{toc}{\contentsline {paragraph}{The following image displays the activation of the "decrypt button" which displays a similar pop-up window as was shown during the encryption pop-up, with the only difference between "ENCRYPT" or "DECRYPT," naturally.}{25}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces  Console showing the decrypted text\relax }}{26}{}\protected@file@percent }
+\newlabel{fig: decrypt2}{{3.17}{26}}
+\@writefile{toc}{\contentsline {paragraph}{Finally, in the console.log, we are able to see that from the receiving end, we are able to decrypt the emailed text when the correct password is given. (See: 3.17\hbox {})}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The implementation was not completed. The developer wasn't not quite able to get the decrypted code to replaced the cipher code in the body of the message in a reliable way. Further development will continue to resolve this this. Unfortunately, the Mozilla API is a living, breathing in progress project, so the various elements do not behavior in a uniform manner. Namely, the API that worked on the compose window did not have the same rules as the message window. It will be resolved in the near future.}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Challenges Encountered}{27}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-<<<<<<< Updated upstream
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Open-source community}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Live development environment}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Summary}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Live development environment}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There were many challenge encountered, especially at the start. First, the developer wanted to work through the four available Thunderbird add-on development beginner tutorials to build an understanding of how the basics worked. There was only one problem, after two simple "hello world" level tutorials, the last two did not work. A week or so of trying to figure it out, far too long, before I finally asked for help. There were bugs. Thus, I became acquainted with the Mozilla bug tracker, \emph  {Bugzilla}. Even though Thunderbird is considered to be an agnostic piece of software, that should work in Windows, Linux and Apple operating systems, it apparently is not always the case. Development is chiefly done in Windows, and bugs for other systems are worked out over time. One of the most helpful developers, John Bieling, mentioned to me that, he himself, used Windows, and that he did not even have access to a Apple computer to debug some of the issues.}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The developer's preferred platform is Apple OS, followed closely by Linux Mint. However, both proved to be unreliable and had to fallback to a Windows system, which became the system I used for this project. Even though, sometimes, during this process, I would revert to Apple or Linux platforms, ultimately, I came to the grim realization that it not advisable, because I could code something -- 100\% as it should be -- and it wouldn't work.}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Backlog}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There were many areas where the developer's efforts were incomplete, in one regard or another. In some cases, it was simply a juvenile and painful oversight at the start. There were many components that should have been included in the original specifications that the developer simply did not consider. This included common features of email clients that were completely overlooked:}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There are a slew of other issues that only became evident to the developer \emph  {after} the development process began. Small things could be immediately resolved--or turned out not to be issues at all (like handling messages that fall into the draft window). But, many other things were not included in the original specifications--so the developer stayed the course, and remained focused on meeting the minimum specified requirements, rather than stray too far in different directions.}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ultimately, the developer will include all the source code in the appendix, such that this document will entail all the components of this project--should the repository not eternally be on github.}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{These are additional items that could be added, improved or enhanced in the future:}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Lastly, the code needs to be re-factored to be cleaner. The developer concedes some redundancy.}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Summary}{29}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Retrospective}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{In an ideal situation, I would have liked to to implemented "an HTW AES javascript crypto suite." However, the author was lacking to conditions. One, a team of likely three students would have been required to carry out the project in the required timeframe. The documentation, development, and testing of such a system would have required a great deal of teamwork.}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Secondly, the students working as a team would have had to work together in the past, be known to each other, and have a nice blend of talents, motivations, and personalities for it to work efficiently.}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Software Requirments Specifications}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Retrospective}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{First, the developer has to acknowledge that \emph  {now} he feels like he knows Mozilla's Thunderbird API. Additionally, the experience and knowledge in Javascript has expanded by leaps and bounds. So, professionally, the experience has been of significant importance for someone interesting in calling themselves a professional in internet technologies.}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{This was the developer's very first, full fledged project where he was not supported, or rather carried, by other more talents programmers. Additionally, it marked the first time that the developer worked in a real-time environment with other developers. I was not intimidated by this, at the time, because I did not know any better. Only later, when I saw developers arguing about something (stylistic), with one throwing down his "..in his 40 years of software engineering experience" card, to which the respondent conceding defeat with his own "..that he only had 30+ years of software engineering experience" card of his own. I knew then, I was swimming with the sharks. Fortunately, it came towards the end of my project.}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Next steps}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Regrettably, the implementation is not complete. It falls just short, of meeting the specifications defined by the developer at the beginning, and further short of what should be expected in a complete turn-key solution. There were a number of things that the developer did not foresee before development began which, in itself, is a failing that inhibited a robust solution.}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Nevertheless, the developer intends to smooth out the project, enhance shortcoming, and use it as an example of what the developer is fully capable of. The developer can take a break from academic writing, and just focus on hacking, debugging, testing, refining, and re-factoring.}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Software Requirments Specifications}{30}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Introduction}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Purpose}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Scope}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Definitions, acronyms, abbreviations}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}References}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Author used the IEEE document:}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.5}Overview}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Overall Description}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Product perspective}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The developed software product, \emph  {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph  {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{System interfaces}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{User interfaces}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There are no special user interface requirements.}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Hardware interfaces}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Software interfaces}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The required software interfaces are:}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Communications interfaces}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Memory constraints}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Not applicable}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Operations}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Not applicable}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Site adaptation requirements}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Not applicable}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Product functions}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}User characteristics}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Constraints}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There will be various constraints within this project listed below:}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.5}Assumptions and dependencies}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Specific Requirements}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Appendix}{25}{}\protected@file@percent }
-=======
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Open-source community}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Anything here?}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Live development environment}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There were many challenge encountered, especially at the start. First, the author wanted to work through the four available Thunderbird add-on development tutorials. There was only one problem, after two simple "hello world" type tutorials, the last two did not work, as expected. A week or so of trying to figure it out -- far too long -- I finally asked for help. There were bugs! Thus, I became acquinted with the Mozilla bug tracker, \emph  {Bugzilla}. Even though Thunderbird is considered to be an agnostic piece of software, that should work in Windows, Linux and Apple computer, it is not always the case. Apparently, development is chiefly done in Windows, and bugs for other systems are worked out over time. One of the most helpful developers, helpful to me on this journey, John Bieling, mentioned that he himself used Windows, and that he did not even have access to a Apple computer to debug some of the issues.}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{My preferred platform is Apple OS, followed closely by Linux Mint. Lastly, if I have to, I will use Windows, which is what I had to use for this project. Even though sometimes during this process, I would revert to Apple or Linux platforms, ultimately, I came to the grim realization that it not advisable, because I could code something -- 100\% as it should be -- and it wouldn't work.}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Nice to Haves - Backlog}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There were many areas where the developer failed, in one regard or another. In some cases, it was simply a juvenile and painful oversight at the start. There were many components that should have been included in the original specifications that the developer simply did not consider. This included common features of email clients that were completely overlooked:}{17}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{If time allows, I will correct some of these elements.}{18}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Which brings me to my second failure, of sorts. During the development process, I saw things that were not part of the original specifications, that could be considered "very nice to have" components. I could go back and change the specifications, and add these components -- and I will add them if \emph  {time} allows. But, I want to stay genuine and committed to the specifications, and fulfill them before getting bogged down with "nice to have" features. For the time being the developer will add them to a backlog, and work on them up until the project is submitted, and thereafter, as ultimately, the project will serve not only as an academic exercise, but a development example by the author.}{18}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Backlog}{18}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{These are items that are being noted, that need to be added, improved or enhanced in the future:}{18}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Summary}{19}{}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Retrospective}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{In an ideal situation, I would have liked to to implemented "an HTW AES javascript crypto suite." However, the author was lacking to conditions. One, a team of likely three students would have been required to carry out the project in the required timeframe. The documentation, development, and testing of such a system would have required a great deal of teamwork.}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Secondly, the students working as a team would have had to work together in the past, be known to each other, and have a nice blend of talents, motivations, and personalities for it to work efficiently.}{19}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Software Requirments Specifications}{20}{}\protected@file@percent }
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Introduction}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Purpose}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Scope}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Definitions, acronyms, abbreviations}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}References}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Author used the IEEE document:}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.5}Overview}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Overall Description}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Product perspective}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The developed software product, \emph  {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph  {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{System interfaces}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{User interfaces}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There are no special user interface requirements.}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Hardware interfaces}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Software interfaces}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The required software interfaces are:}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Communications interfaces}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Memory constraints}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Not applicable}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Operations}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Not applicable}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Site adaptation requirements}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Not applicable}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Product functions}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}User characteristics}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Constraints}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There will be various constraints within this project listed below:}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.5}Assumptions and dependencies}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Specific Requirements}{23}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Appendix}{23}{}\protected@file@percent }
->>>>>>> Stashed changes
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Introduction}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Purpose}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Scope}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Definitions, acronyms, abbreviations}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}References}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Author used the IEEE document:}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.5}Overview}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Overall Description}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Product perspective}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The developed software product, \emph  {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph  {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{System interfaces}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{User interfaces}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There are no special user interface requirements.}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Hardware interfaces}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Software interfaces}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The required software interfaces are:}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Communications interfaces}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Memory constraints}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Not applicable}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Operations}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Not applicable}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Site adaptation requirements}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Not applicable}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Product functions}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}User characteristics}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Constraints}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There will be various constraints within this project listed below:}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.5}Assumptions and dependencies}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Specific Requirements}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Use Cases}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The Use Cases used in this project will be defined, and or be restricted to the following items:}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Use Case ID}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The Use Case ID will be a unique, numeric identifier for the use case.}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Actor(s)}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{An actor is a person or other entity external to the system who interacts with it, and performs use cases to complete task. Included in this designation, will be additional actors who participate in the use case.}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Description}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{This section should describe at a high level the purpose of the use case, what it aims to achieve, and any other relevant outcomes.}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Preconditions}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The preconditions are all those conditions that must exist prior to the execution of the use case.}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Basic Flow}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{These are the basic, ordered steps and the description required for the completion of the use case. The steps will be numbers, and should be executed in this exact order. Completing the steps, in this order, should lead to the completion of the use case without error.}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Exceptions}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Describes any anticipated errors that could occur during the execution of the use case, and how the system will handle these errors. The exceptions systems will not describe unanticipated errors, or error that are not included in the basic flow.}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Postconditions}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Describes the state of all relevant parties, including the system, \emph  {after} the execution of the use case.}{34}{}\protected@file@percent }
+\gdef \LT@i {\LT@entry 
+    {1}{97.35826pt}\LT@entry 
+    {1}{268.0748pt}}
+\gdef \LT@ii {\LT@entry 
+    {1}{97.35826pt}\LT@entry 
+    {1}{268.0748pt}}
+\gdef \LT@iii {\LT@entry 
+    {1}{97.35826pt}\LT@entry 
+    {1}{268.0748pt}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Personas}{37}{}\protected@file@percent }
 \bibcite{Shirey}{Shirey, 2007}
 \bibcite{DelfsKnebl}{Delfs and Knebl, 2002}
 \bibcite{Schneier}{Schneier, 2015}
@@ -273,18 +290,15 @@
 \bibcite{Crawford}{Crawford, 2019}
 \bibcite{SJCL}{Stanford Security Lab, 2009}
 \bibcite{WebEx}{Mozilla}
+\bibcite{Bieling}{Bieling}
+\@writefile{toc}{\contentsline {chapter}{References}{39}{}\protected@file@percent }
+\bibcite{PaarYoutube}{Paar}
 \gdef\minted@oldcachelist{,
   default.pygstyle,
-  32F8973278F2EB344A1202091F503C2F610F5E44995EFBCEA4AD36CA5FDC4BAE.pygtex,
-<<<<<<< Updated upstream
   08D6F6E83E106EDE01FF3B02B7ED7D986F68EB9A7943C374622114467734D81C.pygtex,
-  33548F9E7E7AE30EDD8D6EB2DB4EDB0C6F68EB9A7943C374622114467734D81C.pygtex,
+  3073E6A89FA641937F6793932C96F3D86F68EB9A7943C374622114467734D81C.pygtex,
   34F304E94D49B1B68925F399031EDF9C6F68EB9A7943C374622114467734D81C.pygtex,
-  033A10BB97589932B4791570941B89BC6F68EB9A7943C374622114467734D81C.pygtex}
-\@writefile{toc}{\contentsline {chapter}{References}{26}{}\protected@file@percent }
-\gdef \@abspage@last{27}
-=======
-  08D6F6E83E106EDE01FF3B02B7ED7D986F68EB9A7943C374622114467734D81C.pygtex}
-\@writefile{toc}{\contentsline {chapter}{References}{24}{}\protected@file@percent }
-\gdef \@abspage@last{25}
->>>>>>> Stashed changes
+  DA196F9FDE771914BB54D78A7333E6F06F68EB9A7943C374622114467734D81C.pygtex,
+  56674AB4A36038956660AA255D9289926F68EB9A7943C374622114467734D81C.pygtex,
+  00BE42AB550EBDBF3BD99178BAF1CF796F68EB9A7943C374622114467734D81C.pygtex}
+\gdef \@abspage@last{41}

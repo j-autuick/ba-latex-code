@@ -1,28 +1,37 @@
 \chapter{Challenges Encountered}
 
-\section{Open-source community}
-\paragraph{Anything here?}
-
 \section{Live development environment}
-\paragraph{There were many challenge encountered, especially at the start. First, the author wanted to work through the four available Thunderbird add-on development tutorials. There was only one problem, after two simple "hello world" type tutorials, the last two did not work, as expected. A week or so of trying to figure it out -- far too long -- I finally asked for help. There were bugs! Thus, I became acquinted with the Mozilla bug tracker, \emph{Bugzilla}. Even though Thunderbird is considered to be an agnostic piece of software, that should work in Windows, Linux and Apple computer, it is not always the case. Apparently, development is chiefly done in Windows, and bugs for other systems are worked out over time. One of the most helpful developers, helpful to me on this journey, John Bieling, mentioned that he himself used Windows, and that he did not even have access to a Apple computer to debug some of the issues.}
+\paragraph{There were many challenge encountered, especially at the start. First, the developer wanted to work through the four available Thunderbird add-on development beginner tutorials to build an understanding of how the basics worked. There was only one problem, after two simple "hello world" level tutorials, the last two did not work. A week or so of trying to figure it out, far too long, before I finally asked for help. There were bugs. Thus, I became acquainted with the Mozilla bug tracker, \emph{Bugzilla}. Even though Thunderbird is considered to be an agnostic piece of software, that should work in Windows, Linux and Apple operating systems, it apparently is not always the case. Development is chiefly done in Windows, and bugs for other systems are worked out over time. One of the most helpful developers, John Bieling, mentioned to me that, he himself, used Windows, and that he did not even have access to a Apple computer to debug some of the issues.}
 
-\paragraph{My preferred platform is Apple OS, followed closely by Linux Mint. Lastly, if I have to, I will use Windows, which is what I had to use for this project. Even though sometimes during this process, I would revert to Apple or Linux platforms, ultimately, I came to the grim realization that it not advisable, because I could code something -- 100\% as it should be -- and it wouldn't work.}
+\paragraph{The developer's preferred platform is Apple OS, followed closely by Linux Mint. However, both proved to be unreliable  and had to fallback to a Windows system, which became the system I used for this project. Even though, sometimes, during this process, I would revert to Apple or Linux platforms, ultimately, I came to the grim realization that it not advisable, because I could code something -- 100\% as it should be -- and it wouldn't work.}
 
-\section{Nice to Haves - Backlog}
-\paragraph{There were many areas where the developer failed, in one regard or another. In some cases, it was simply a juvenile and painful oversight at the start. There were many components that should have been included in the original specifications that the developer simply did not consider. This included common features of email clients that were completely overlooked:} 
+\section{Backlog}
+
+\paragraph{There were many areas where the developer's efforts were incomplete, in one regard or another. In some cases, it was simply a juvenile and painful oversight at the start. There were many components that should have been included in the original specifications that the developer simply did not consider. This included common features of email clients that were completely overlooked:} 
 
 \begin{enumerate}
-\item Handle copying of emails to Sent folder
+\item How to handle decrypted messages
+\begin{itemize}
+\item how long do they stay decrypted?
+\item do they re-encrypt after a certain amount of time?
+\end{itemize}
 \end{enumerate}
 
-\paragraph{If time allows, I will correct some of these elements.}
+\paragraph{There are a slew of other issues that only became evident to the developer \emph{after} the development process began. Small things could be immediately resolved--or turned out not to be issues at all (like handling messages that fall into the draft window). But, many other things were not included in the original specifications--so the developer stayed the course, and remained focused on meeting the minimum specified requirements, rather than stray too far in different directions.}
 
-\paragraph{Which brings me to my second failure, of sorts. During the development process, I saw things that were not part of the original specifications, that could be considered "very nice to have" components. I could go back and change the specifications, and add these components -- and I will add them if \emph{time} allows. But, I want to stay genuine and committed to the specifications, and fulfill them before getting bogged down with "nice to have" features. For the time being the developer will add them to a backlog, and work on them up until the project is submitted, and thereafter, as ultimately, the project will serve not only as an academic exercise, but a development example by the author.}
 
-\subsection{Backlog}
-\paragraph{These are items that are being noted, that need to be added, improved or enhanced in the future:}
+\paragraph{Ultimately, the developer will include all the source code in the appendix, such that this document will entail all the components of this project--should the repository not eternally be on github.}
 
+\paragraph{These are additional items that could be added, improved or enhanced in the future:}
+
+% Update this...
 \begin{itemize}
-\item Password Popup - Do not allow empty password
-\item Password Popup - Deactivate "Encrypt" button, if password field empty
+\item Password handling
+\begin{itemize}
+\item minimum requirement
+\item character restrictions
+\item empty character considerations -- like an empty password
 \end{itemize}
+\end{itemize}
+
+\paragraph{Lastly, the code needs to be re-factored to be cleaner. The developer concedes some redundancy.}

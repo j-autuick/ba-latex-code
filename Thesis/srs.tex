@@ -2,7 +2,7 @@
 %It is a derived from the IEEE Standard 830-1998 for writing
 %Software Requirements Specifications
 
-\chapter{Software Requirments Specifications}
+\chapter{Software Requirements Specifications}
 \section{Introduction}
 %The introduction of the SRS should provide an overview of the entire SRS. It should contain the following
 %subsections:
@@ -33,26 +33,26 @@
 \paragraph{The following definitions, acronyms, and abbreviations may be used with in the software development process:}
 
 \begin{description}[font=\sffamily\bfseries, leftmargin=1cm]
-  \item[client] Refers to an email client, more specifically Mozilla's Thunderbird email client.
-  \item[E2EE] End-to-end encrypted, in this case, an end-to-end encrypted email.
-  \item[JS] JavaScript.
-  \item[AES] Advanced Encryption Standard.
-  \item[IEEE] Institute of Electrical and Electronics Engineers.
-  \item[asymmetric encryption] Encryption that only uses one key for encryption.
-  \item[symmetric encryption] Encryption that requires two keys, one on each side of the private message exchange.
-  \item[API] application programming interface.
-  \item[extensions] An extension adds features and functions to a browser.
-  \item[plain text] The text that we wish to encrypt.
-  \item[cipher text] The encrypted text.
-  \item[ECB] Electronic Codebook, a AES encryption mode.
-  \item[CBC] Cipher Block Chaining, a AES encryption mode.
-  \item[CFB] Cipher Feedback Mode, a AES encryption mode.
-  \item[OFB] Output Feedback Mode, a AES encryption mode.
-  \item[CTR] Counter Mode, a AES encryption mode.
-  \item[SRS] Software Requirements Specification.
+\item[AES] Advanced Encryption Standard.
+\item[API] application programming interface.
+\item[asymmetric encryption] Encryption that requires two keys, one on each side of the private message exchange.
+\item[CBC] Cipher Block Chaining, a AES encryption mode.
+\item[CFB] Cipher Feedback Mode, a AES encryption mode.
+\item[cipher text] The encrypted text.
+\item[client] Refers to an email client, more specifically Mozilla's Thunderbird email client.
+\item[CTR] Counter Mode, a AES encryption mode.
+\item[E2EE] End-to-end encrypted, in this case, an end-to-end encrypted email.
+\item[ECB] Electronic Codebook, a AES encryption mode.
+\item[extensions] An extension adds features and functions to a browser.
+\item[IEEE] Institute of Electrical and Electronics Engineers.
+\item[JS] JavaScript.
+\item[OFB] Output Feedback Mode, a AES encryption mode.
+\item[plain text] The text that we wish to encrypt.
+\item[SRS] Software Requirements Specification.
+\item[symmetric encryption] Encryption that only uses one key for encryption.
 \end{description}
 
-\subsection{References}
+\subsection{Software Requirements References}
 %This subsection should
 %a) Provide a complete list of all documents referenced elsewhere in the SRS;
 %b) Identify each document by title, report number (if applicable), date, and publishing organization;
@@ -65,7 +65,7 @@
 \end{enumerate}
 \paragraph{the IEEE Recommended Practice for Software Requirements Specifications.}\footnote{https://cse.msu.edu/~cse870/IEEEXplore-SRS-template.pdf}
 
-\subsection{Overview}
+%\subsection{Overview}
 %This subsection should
 %a) Describe what the rest of the SRS contains;
 %b) Explain how the SRS is organized.
@@ -99,19 +99,19 @@
 %f) Memory;
 %g) Operations;
 %h) Site adaptation requirements.
-\paragraph{The developed software product, \emph{Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}
-\paragraph{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph{Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}
+\paragraph{The developed software product, \emph{Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PGP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}
+\paragraph{The two alternatives to this proposal do have the advantage that they use asymmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph{Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of some security.}
 
 
 \subsubsection{System interfaces}
 %This should list each system interface and identify the functionality of the software to accomplish the system requirement and the interface description to match the system.
-\paragraph{The required, and assumed interfaces required for the product include the following:}
+\paragraph{The interfaces required for the product include the following:}
 \begin{enumerate}
 \item A modern system, running one of three operating systems:
 \begin{enumerate}
 \item Windows 10 or later
 \item Apple running Big Sur or later
-\item Linux variant, running a modern system
+\item Linux variant like Debian 10+ or Mint 21+
 \end{enumerate}
 \item an Internet connection
 \end{enumerate}
@@ -156,14 +156,14 @@
 \item Mozilla's free, open source email client, Thunderbird, to be installed on the system.
 \item The client should be configured to send and receive emails.\footnote{Thus, an email account on an email server is assumed.}
 \item The client should be updated to the latest current software version.
-\item The client can be installed on any current (or recent) Windows, Linux, or Apple OS.\footnote{No other OS will be tested.}
+\item The client can be installed and tested on Windows 10, Linux Cinnamon Mind 21, and macOS Monterey.
 \end{enumerate}
 
 
 
 \subsubsection{Communications interfaces}
 %This should specify the various interfaces to communications such as local network protocols, etc.
-\paragraph{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}
+\paragraph{No special communication interfaces will be required, than would already be prerequisites for email communication, i.e. network capable computer.}
 
 \subsubsection{Memory constraints}
 %This should specify any applicable characteristics and limits on primary and secondary memory.
@@ -192,7 +192,7 @@
 
 
 
-\subsection{Product functions}
+%\subsection{Product functions}
 %This subsection of the SRS should provide a summary of the major functions that the software will perform.
 %For example, an SRS for an accounting program may use this part to address customer account maintenance,
 %customer statement, and invoice preparation without mentioning the vast amount of detail that each of those functions requires.
@@ -205,8 +205,10 @@
 
 
 
+
 \subsection{User characteristics}
 %This subsection of the SRS should describe those general characteristics of the intended users of the product including educational level, experience, and technical expertise. It should not be used to state specific requirements, but rather should provide the reasons why certain specific requirements are later specified in Section 3 of the SRS.
+\paragraph{See Personas in the appendix.}
 
 \subsection{Constraints}
 %This subsection of the SRS should provide a general description of any other items that will limit the developer's options. These include:
@@ -223,12 +225,12 @@
 %k) Safety and security considerations.
 \paragraph{There will be various constraints within this project listed below:}
 \begin{itemize}
-\item Security: It will not be possible to account for all attack vectors. Thus, only known, common attack vectors will be discussed.
-\item Security: How Mallory comes into possession of an encrypted email may not be fully explored. Related to 1. above, but we'll at least give an examination to this possibility -- however she came into possess the Email.
+\item Security: It will not be possible to account for all attack vectors. Thus, they will not be explored at this time.
+%\item Security: How Mallory comes into possession of an encrypted email may not be fully explored. Related to 1. above, but we'll at least give an examination to this possibility -- however she came into possess the email.
 \end{itemize}
 
 
-\subsection{Assumptions and dependencies}
+%\subsection{Assumptions and dependencies}
 %This subsection of the SRS should list each of the factors that affect the requirements stated in the SRS.
 %These factors are not design constraints on the software but are, rather, any changes to them that can affect the requirements in the SRS. For example, an assumption may be that a specific operating system will be available on the hardware designated for the software product. If, in fact, the operating system is not available, the SRS would then have to change accordingly.
 
@@ -236,7 +238,6 @@
 %5.2.6 Apportioning of requirements (2.6 of the SRS)
 %This subsection of the SRS should identify requirements that may be delayed until future versions of the
 %system.
-
 
 \section{Specific Requirements}
 %This section of the SRS should contain all of the software requirements to a level of detail sufficient to

@@ -14,9 +14,9 @@
 
 \paragraph{and, slightly less important, actively maintained.}
 
-\paragraph{Meeting the above criteria was not as simple as it would seem. There were many options that met some of the conditions, but meeting all of them was more challenging. Ultimately, however, the researcher was satisfied with the Stanford Javascript Crypto Library (SJCL), as it met all the above conditions. Additionally, it appeared to be well developed, and still actively maintained.}\cite[Website]{SJCL}
+\paragraph{Meeting the above criteria was not as simple as it would seem. There were many options that met some of the conditions, but meeting all of them was more challenging. Ultimately, however, the researcher was satisfied with the Stanford Javascript Crypto Library (SJCL), as it met all the above conditions. Additionally, it appeared to be well developed, and still actively maintained (See: \ref{fig: exampleSJCL_js}.}\cite[Website]{SJCL}
 
-\paragraph{The usage is pretty straight forward, and will work for this implementation. The library is available in a minified version, and will be packages with the add-on (See: \ref{fig: exampleSJCL_html}).:}
+\paragraph{The usage is uncomplicated, and will work for this implementation. The library is available in a minified version, and will be packages with the add-on:}
 
 \begin{figure}[H]
 \centering
@@ -46,7 +46,7 @@ console.log("plain text - again!: " + plaintext);
 
 \paragraph{Starting with the release of Thunderbird version 68 (August 2019), Thunderbird moved to only support WebExtensions for add-ons and themes development, with all previous versions no longer working. Even the long standing Enigmail cryptography add-on that the author used for years, no longer functioned.}
 
-\paragraph{Here is an image from Mozilla's Thunderbird Add-on Webpage that gives a quick glance of how the extensions might look like.} \cite[Webpage]{WebEx}
+\paragraph{Here is an image from Mozilla's Thunderbird Add-on Webpage that gives a quick glance of how the extensions might look like (See: \ref{fig: webEx}.} \cite[Webpage]{WebEx}
 
 \begin{figure}[H]
 \centering
@@ -142,18 +142,13 @@ console.log("plain text - again!: " + plaintext);
 
 \subsection{Prompt for password}
 
-\paragraph{Managing the password was an early obstacle encountered. Namely, the developer was put on notice that he simply could not just use straight Javascript to get the desired results, but instead work within the context of Mozilla's API. So, this was an initial challenge. However, the developer was able to find a solution:}
+\paragraph{Managing the password was an early obstacle encountered. Namely, the developer was put on notice that he simply could not just use straight Javascript to get the desired results, but instead had to work within the context of Mozilla's API. So, this was an initial challenge.}
 
-\begin{itemize}
-\item First, to update the manifest file
-\item Then, created an encryptPopup folder
-\item which included, a popup.html and popup.js file
-\item Note: the popup.css file was kept in the main directory
-\end{itemize}
 
-\paragraph{I wanted to highlight the process one time, just so it's clear. This was the process throughout. First, if necessary, the manifest.json file has to be updated. Then, the web extension files (html, js, and css) should be kept orderly. But, additionally, Mozilla web extension API rules needed to be followed.}
+\paragraph{I wanted to highlight the process one time, just so it's clear. This was the process throughout. First, if necessary, the manifest.json file has to be updated. Then, the web extension files (HTML, CSS, and Javascript) should be kept orderly. But, additionally, Mozilla web extension API rules needed to be followed.}
 
 \paragraph{Step one: updated the manifest.json file. The developer needed to add the \emph{compose\_action} so that the button would be added on the compose window.}
+
 
 %add code here
 \begin{figure}[H]
@@ -173,7 +168,7 @@ console.log("plain text - again!: " + plaintext);
 
 \paragraph{But, in the code, several files needed to be created, in addition to the pop up folder. A \emph{background.js} file needed to be created. The background.js file acts, as the name suggests in the background. It is loaded when the add-on is loaded, and it is running, or shall I say, "listening" for events. The code will be available on github, but I will explain the basic process.}
 
-\paragraph{First, the background.js file is loaded, which has listeners, namely for when the button on the compose window is pressed. This activates the pop up window, which will launch the popup.html file.}
+\paragraph{The background.js listeners are just waiting for the encrypt button to be clicked. This activates the pop up window, which will launch the popup.html file. (See: \ref{fig: withButton}}
 
 %add Image
 \begin{figure}[H]
@@ -185,11 +180,11 @@ console.log("plain text - again!: " + plaintext);
 \paragraph{The reader can notice how I used the Developer Toolkit, with console.log used literally throughout the development process.}
 
 \subsection{Encrypt the message}
-\paragraph{The challenge with the password, was not simply collecting it--which would seem straight forward enough. But, instead, it was passing the variable from the popup.html and it's accompanying popup.js to the background.js. The way the API works, it wasn't as straight forward as the developer originally thought. The password had to be sent as a message, to listeners in the background.js.}
+\paragraph{The challenge with the password was not simply collecting it. But, instead, it was passing the variable from the popup.html and its accompanying popup.js to the background.js. The way the API works, it wasn't as straight forward as the developer originally thought. The password had to be sent as a message, to listeners in the background.js.}
 
 \paragraph{Fortunately, there were some examples that were reasonably close on Mr. Bieling's github sample-extensions repo that gave me some ideas of how it could work.}
 
-\paragraph{The encryption was a three part process.} 
+\paragraph{The encryption was a three part process:} 
 
 \begin{itemize}
 \item Get the password variable
@@ -213,11 +208,11 @@ document.head.appendChild(imported);
 \caption{\label{fig: loadSJCL} Loading external library into background.js}
 \end{figure}
 
-\paragraph{Originally, sent every step through the console.log (later cleaned up). There are a few different elements here to take note of. Firstly, some of the elements are part of the Mozilla API, like the details.body, messenger.compose.setComposeDetails. Apparently, the messenger is the namespace used for Thunderbird, replacing what was previously used, which was browser.}
+\paragraph{During development, every step was sent to the console.log (later cleaned up). There are a few different elements here to take note of. Firstly, some of the elements are part of the Mozilla API, like the details.body, messenger.compose.setComposeDetails. Apparently, the messenger is the namespace used for Thunderbird, replacing what was previously used (the browser namespace).}
 
 \paragraph{Another interesting component is the actual execution of the encryption, by the SJCL.}\footnote{Stanford Javascript Cryptography Library}
 
-\paragraph{It's usage is pretty straight forward, it takes two arguments, one with a password, and another with the text to be encrypted.}
+\paragraph{It's usage is simple, it takes two arguments, one with a password, and another with the text to be encrypted.}
 
 
 %add code here
@@ -243,22 +238,32 @@ messenger.compose.setComposeDetails(currentComposeTabId, { body: newBody })
     \caption{\label{fig: button} The popup window, in front of a completed email}
 \end{figure}
 
-\paragraph{After that, a password is entered, and the magic happens (See: \ref{fig: encryptedText}.}
+\paragraph{After that, a password is entered, and the magic happens. (See: \ref{fig: encryptedText})}
 
 %add Image
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{step3.jpg}
-    \caption{\label{fig: encryptedText} Voila! Encrypted Text.}
+    \caption{\label{fig: encryptedText} Voila! Encrypted text}
 \end{figure}
 
-\paragraph{Note: the console.log keeping track of where we are, and also verifying that the decryption also works with the same password. From here, the message can be sent as normal, or saved as a draft. There was some developmental pondering, if the encryption button should also send the message in one go, since it's not like the email is really able to be edited or read at this point, but for now left it as is, in case the user wants to add attachments or email recipients.}
+\paragraph{Note: the console.log keeping track of where we are, and also verifying that the decryption also works with the same password. From here, the message can be sent as normal, or saved as a draft. There was some developmental pondering, if the encryption button should also send the message in one go, since it's not like the email is really able to be edited or read at this point, but for now left it as is, giving the user the option to add attachments or email recipients.}
 
 
 \subsection{Decrypt the Message}
-\paragraph{Now, forwarding the email to another account, you can see the email appears normal, but looking at it more closely now, we can see two very interesting elements.}
+\paragraph{Now, sending the email to another account, we can see two very interesting elements.}
 
-\paragraph{First, there is a "Decrypt" icon on the far right of what is known as the \emph{message\_display\_area} another UI component of the Thunderbird interface. This is another required manifest.json addition, as well as updating the permissions section (See: \ref{fig: updateManifest} \& \ref{fig: decrypt1}).}
+\paragraph{First, there is a "Decrypt" icon on the far right of what is known as the \emph{message\_display\_area} another UI component of the Thunderbird interface. (See: \ref{fig: decryptButton})}
+
+%add Image
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{step5.jpg}
+    \caption{\label{fig: decryptButton} Decrypt icon}
+\end{figure}
+
+
+\paragraph{This is another required manifest.json addition, as well as updating the permissions section (See: \ref{fig: updateManifest} \& \ref{fig: decrypt1}).}
 
 %add code here
 \begin{figure}[H]
@@ -277,9 +282,9 @@ messenger.compose.setComposeDetails(currentComposeTabId, { body: newBody })
 \caption{\label{fig: updateManifest} Updated manifest.json components}
 \end{figure}
 
-\paragraph{Another interesting encryption component that has not been explained, is the way the encrypted message is parsed, and displayed. Most of it describes the protocols involved, like mode of operation (in this case, CCM, or \emph{Counter with Cipher Block Chaining-Message Authentication Code}), type of cipher used (AES), the version, et cetera. What leads the block, however, is important. The "iv" or the \emph{Initialization vector}. This is essentially used as a seeding value, and what is so interesting about it is, that even if a would be hacker was given the "iv" value, without the password they would be no closer to decrypting the message.}\cite[p.170]{Schneier}
+\paragraph{An interesting encryption component that has not been explained, is the way the encrypted message is displayed. Most of the encrypt text describes the protocols involved, like mode of operation (in this case, CCM, or \emph{Counter with Cipher Block Chaining-Message Authentication Code}), type of cipher used (AES), the version, etc. What leads the block, however, is important. The "iv" or the \emph{Initialization vector}. This is essentially used as a seeding value. And what is so interesting about it is: that even if a would be hacker was given the "iv" value, without the password they would be no closer to decrypting the message. (See \ref{fig: decrypt1})}\cite[p.170]{Schneier}
 
-\paragraph{The following image displays the activation of the "decrypt button" which displays a similar pop-up window as was shown during the encryption pop-up, with the only difference between "ENCRYPT" or "DECRYPT," naturally.}
+\paragraph{The following image displays the activation of the "decrypt button" which displays a similar pop-up window as was shown during the encryption pop-up, with the only difference between "ENCRYPT" or "DECRYPT," naturally.  (See \ref{fig: decrypt1})}
 
 
 %add Image
@@ -299,7 +304,7 @@ messenger.compose.setComposeDetails(currentComposeTabId, { body: newBody })
     \caption{\label{fig: decrypt2} Console showing the decrypted text}
 \end{figure}
 
-\paragraph{The implementation was not completed. The developer wasn't not quite able to get the decrypted code to replaced the cipher code in the body of the message in a reliable way. Further development will continue to resolve this this. Unfortunately, the Mozilla API is a living, breathing in progress project, so the various elements do not behavior in a uniform manner. Namely, the API that worked on the compose window did not have the same rules as the message window. It will be resolved in the near future.}
+\paragraph{Ultimaetly, however, the implementation was not completed. The developer wasn't not quite able to get the decrypted code to replaced the cipher code in the body of the message in a reliable way. Further development will continue to resolve this. Unfortunately, the Mozilla API is a living, breathing, in progress project, so the various elements do not behave in a uniform manner. Namely, the API that worked on the compose window did not have a corresponding message window API.}
 
 
 

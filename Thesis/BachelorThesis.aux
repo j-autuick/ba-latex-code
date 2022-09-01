@@ -107,12 +107,12 @@
 \@writefile{toc}{\contentsline {paragraph}{The developer decided that the best solution for the cryptography implementation was the utilization of a pre-existing cryptography library.}{15}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{For this task, there were three necessary conditions that had to be met:}{15}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{and, slightly less important, actively maintained.}{15}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Meeting the above criteria was not as simple as it would seem. There were many options that met some of the conditions, but meeting all of them was more challenging. Ultimately, however, the researcher was satisfied with the Stanford Javascript Crypto Library (SJCL), as it met all the above conditions. Additionally, it appeared to be well developed, and still actively maintained.}{15}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Meeting the above criteria was not as simple as it would seem. There were many options that met some of the conditions, but meeting all of them was more challenging. Ultimately, however, the researcher was satisfied with the Stanford Javascript Crypto Library (SJCL), as it met all the above conditions. Additionally, it appeared to be well developed, and still actively maintained (See: 3.1\hbox {}.}{15}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces  Example of javascript SJCL\relax }}{15}{}\protected@file@percent }
 \newlabel{fig: exampleSJCL_js}{{3.1}{15}}
 \citation{WebEx}
 \citation{WebEx}
-\@writefile{toc}{\contentsline {paragraph}{The usage is pretty straight forward, and will work for this implementation. The library is available in a minified version, and will be packages with the add-on (See: \G@refundefinedtrue \text  {\normalfont  \bfseries  ??}\GenericWarning  {               }{LaTeX Warning: Reference `fig: exampleSJCL_html' on page 16 undefined}).:}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The usage is uncomplicated, and will work for this implementation. The library is available in a minified version, and will be packages with the add-on:}{16}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces  Example output to Firefox console\relax }}{16}{}\protected@file@percent }
 \newlabel{fig: exampleSJCL}{{3.2}{16}}
 \@writefile{toc}{\contentsline {paragraph}{giving the following result (See: 3.2\hbox {}):}{16}{}\protected@file@percent }
@@ -120,7 +120,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}WebExtensions}{16}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{WebExtensions are web technologies built with the tools that are natural to any web developer: HTML, CSS, and Javascript. Each extension must have a \emph  {manifest.json} file, which essentially holds all the vital information like the author of the software, permissions required to use the add-on, the software version, and so on.}{16}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Starting with the release of Thunderbird version 68 (August 2019), Thunderbird moved to only support WebExtensions for add-ons and themes development, with all previous versions no longer working. Even the long standing Enigmail cryptography add-on that the author used for years, no longer functioned.}{16}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Here is an image from Mozilla's Thunderbird Add-on Webpage that gives a quick glance of how the extensions might look like.}{16}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Here is an image from Mozilla's Thunderbird Add-on Webpage that gives a quick glance of how the extensions might look like (See: 3.3\hbox {}.}{16}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces  WebExtension overview\relax }}{17}{}\protected@file@percent }
 \newlabel{fig: webEx}{{3.3}{17}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}Implementation Details}{17}{}\protected@file@percent }
@@ -146,114 +146,114 @@
 \newlabel{fig: basic_manifest.json}{{3.8}{20}}
 \@writefile{toc}{\contentsline {paragraph}{And, here is the manifest.json file that was created for this button. Most of the references in the manifest.json file are self-explanatory. One thing to note about the manifest file is the version number. It has to be set to 2. The rest is composed of information about the add-on, location of images used, and the permissions required for the add-on to function, which is not insignificant. Different permissions are required to access different areas of the user interface, e.g. the compose window, browser window, messages, modifyMessages, etc. (See reference figure: 3.8\hbox {}).}{20}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.3}Prompt for password}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Managing the password was an early obstacle encountered. Namely, the developer was put on notice that he simply could not just use straight Javascript to get the desired results, but instead work within the context of Mozilla's API. So, this was an initial challenge. However, the developer was able to find a solution:}{20}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{I wanted to highlight the process one time, just so it's clear. This was the process throughout. First, if necessary, the manifest.json file has to be updated. Then, the web extension files (html, js, and css) should be kept orderly. But, additionally, Mozilla web extension API rules needed to be followed.}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Managing the password was an early obstacle encountered. Namely, the developer was put on notice that he simply could not just use straight Javascript to get the desired results, but instead had to work within the context of Mozilla's API. So, this was an initial challenge.}{20}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{I wanted to highlight the process one time, just so it's clear. This was the process throughout. First, if necessary, the manifest.json file has to be updated. Then, the web extension files (HTML, CSS, and Javascript) should be kept orderly. But, additionally, Mozilla web extension API rules needed to be followed.}{20}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces  Add a Password Prompt to manifest file\relax }}{21}{}\protected@file@percent }
 \newlabel{fig: addPwToManifest}{{3.9}{21}}
 \@writefile{toc}{\contentsline {paragraph}{Step one: updated the manifest.json file. The developer needed to add the \emph  {compose\_action} so that the button would be added on the compose window.}{21}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{But, in the code, several files needed to be created, in addition to the pop up folder. A \emph  {background.js} file needed to be created. The background.js file acts, as the name suggests in the background. It is loaded when the add-on is loaded, and it is running, or shall I say, "listening" for events. The code will be available on github, but I will explain the basic process.}{21}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces  Pop up Window with Developer Toolkit\relax }}{21}{}\protected@file@percent }
 \newlabel{fig: withButton}{{3.10}{21}}
-\@writefile{toc}{\contentsline {paragraph}{First, the background.js file is loaded, which has listeners, namely for when the button on the compose window is pressed. This activates the pop up window, which will launch the popup.html file.}{21}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The reader can notice how I used the Developer Toolkit, with console.log used literally throughout the development process.}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Encrypt the message}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The challenge with the password, was not simply collecting it--which would seem straight forward enough. But, instead, it was passing the variable from the popup.html and it's accompanying popup.js to the background.js. The way the API works, it wasn't as straight forward as the developer originally thought. The password had to be sent as a message, to listeners in the background.js.}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The background.js listeners are just waiting for the encrypt button to be clicked. This activates the pop up window, which will launch the popup.html file. (See: 3.10\hbox {}}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The reader can notice how I used the Developer Toolkit, with console.log used literally throughout the development process.}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Encrypt the message}{21}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The challenge with the password was not simply collecting it. But, instead, it was passing the variable from the popup.html and its accompanying popup.js to the background.js. The way the API works, it wasn't as straight forward as the developer originally thought. The password had to be sent as a message, to listeners in the background.js.}{22}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Fortunately, there were some examples that were reasonably close on Mr. Bieling's github sample-extensions repo that gave me some ideas of how it could work.}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The encryption was a three part process.}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The encryption was a three part process:}{22}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{After we were able to move the password variable to the background.js, we could go with step two.}{22}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces  Loading external library into background.js\relax }}{22}{}\protected@file@percent }
 \newlabel{fig: loadSJCL}{{3.11}{22}}
 \@writefile{toc}{\contentsline {paragraph}{For this step, the developer loaded the minimized version of the library, which is quite small, and still powerful. This is how it was loaded into the background.js file. (See: 3.11\hbox {})}{22}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Originally, sent every step through the console.log (later cleaned up). There are a few different elements here to take note of. Firstly, some of the elements are part of the Mozilla API, like the details.body, messenger.compose.setComposeDetails. Apparently, the messenger is the namespace used for Thunderbird, replacing what was previously used, which was browser.}{22}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{During development, every step was sent to the console.log (later cleaned up). There are a few different elements here to take note of. Firstly, some of the elements are part of the Mozilla API, like the details.body, messenger.compose.setComposeDetails. Apparently, the messenger is the namespace used for Thunderbird, replacing what was previously used (the browser namespace).}{22}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Another interesting component is the actual execution of the encryption, by the SJCL.}{22}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces  Encryption code\relax }}{23}{}\protected@file@percent }
 \newlabel{fig: encryptionCode}{{3.12}{23}}
-\@writefile{toc}{\contentsline {paragraph}{It's usage is pretty straight forward, it takes two arguments, one with a password, and another with the text to be encrypted.}{23}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{It's usage is simple, it takes two arguments, one with a password, and another with the text to be encrypted.}{23}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces  The popup window, in front of a completed email\relax }}{23}{}\protected@file@percent }
 \newlabel{fig: button}{{3.13}{23}}
 \@writefile{toc}{\contentsline {paragraph}{The expected and natural behavior for a user is for them to write an email, then click on the "encrypt" button, like so. (See: 3.13\hbox {}), and enter a password.}{23}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces  Voila! Encrypted Text.\relax }}{24}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces  Voila! Encrypted text\relax }}{24}{}\protected@file@percent }
 \newlabel{fig: encryptedText}{{3.14}{24}}
-\@writefile{toc}{\contentsline {paragraph}{After that, a password is entered, and the magic happens (See: 3.14\hbox {}.}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Note: the console.log keeping track of where we are, and also verifying that the decryption also works with the same password. From here, the message can be sent as normal, or saved as a draft. There was some developmental pondering, if the encryption button should also send the message in one go, since it's not like the email is really able to be edited or read at this point, but for now left it as is, in case the user wants to add attachments or email recipients.}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{After that, a password is entered, and the magic happens. (See: 3.14\hbox {})}{24}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Note: the console.log keeping track of where we are, and also verifying that the decryption also works with the same password. From here, the message can be sent as normal, or saved as a draft. There was some developmental pondering, if the encryption button should also send the message in one go, since it's not like the email is really able to be edited or read at this point, but for now left it as is, giving the user the option to add attachments or email recipients.}{24}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.5}Decrypt the Message}{24}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Now, forwarding the email to another account, you can see the email appears normal, but looking at it more closely now, we can see two very interesting elements.}{24}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces  Updated manifest.json components\relax }}{24}{}\protected@file@percent }
-\newlabel{fig: updateManifest}{{3.15}{24}}
+\@writefile{toc}{\contentsline {paragraph}{Now, sending the email to another account, we can see two very interesting elements.}{24}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces  Decrypt icon\relax }}{25}{}\protected@file@percent }
+\newlabel{fig: decryptButton}{{3.15}{25}}
+\@writefile{toc}{\contentsline {paragraph}{First, there is a "Decrypt" icon on the far right of what is known as the \emph  {message\_display\_area} another UI component of the Thunderbird interface. (See: 3.15\hbox {})}{25}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces  Updated manifest.json components\relax }}{25}{}\protected@file@percent }
+\newlabel{fig: updateManifest}{{3.16}{25}}
 \citation{Schneier}
-\@writefile{toc}{\contentsline {paragraph}{First, there is a "Decrypt" icon on the far right of what is known as the \emph  {message\_display\_area} another UI component of the Thunderbird interface. This is another required manifest.json addition, as well as updating the permissions section (See: 3.15\hbox {} \& 3.16\hbox {}).}{25}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Another interesting encryption component that has not been explained, is the way the encrypted message is parsed, and displayed. Most of it describes the protocols involved, like mode of operation (in this case, CCM, or \emph  {Counter with Cipher Block Chaining-Message Authentication Code}), type of cipher used (AES), the version, et cetera. What leads the block, however, is important. The "iv" or the \emph  {Initialization vector}. This is essentially used as a seeding value, and what is so interesting about it is, that even if a would be hacker was given the "iv" value, without the password they would be no closer to decrypting the message.}{25}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.16}{\ignorespaces  Decryption button activating pop-up\relax }}{25}{}\protected@file@percent }
-\newlabel{fig: decrypt1}{{3.16}{25}}
-\@writefile{toc}{\contentsline {paragraph}{The following image displays the activation of the "decrypt button" which displays a similar pop-up window as was shown during the encryption pop-up, with the only difference between "ENCRYPT" or "DECRYPT," naturally.}{25}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces  Console showing the decrypted text\relax }}{26}{}\protected@file@percent }
-\newlabel{fig: decrypt2}{{3.17}{26}}
-\@writefile{toc}{\contentsline {paragraph}{Finally, in the console.log, we are able to see that from the receiving end, we are able to decrypt the emailed text when the correct password is given. (See: 3.17\hbox {})}{26}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The implementation was not completed. The developer wasn't not quite able to get the decrypted code to replaced the cipher code in the body of the message in a reliable way. Further development will continue to resolve this this. Unfortunately, the Mozilla API is a living, breathing in progress project, so the various elements do not behavior in a uniform manner. Namely, the API that worked on the compose window did not have the same rules as the message window. It will be resolved in the near future.}{26}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Challenges Encountered}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{This is another required manifest.json addition, as well as updating the permissions section (See: 3.16\hbox {} \& 3.17\hbox {}).}{26}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{An interesting encryption component that has not been explained, is the way the encrypted message is displayed. Most of the encrypt text describes the protocols involved, like mode of operation (in this case, CCM, or \emph  {Counter with Cipher Block Chaining-Message Authentication Code}), type of cipher used (AES), the version, etc. What leads the block, however, is important. The "iv" or the \emph  {Initialization vector}. This is essentially used as a seeding value. And what is so interesting about it is: that even if a would be hacker was given the "iv" value, without the password they would be no closer to decrypting the message. (See 3.17\hbox {})}{26}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.17}{\ignorespaces  Decryption button activating pop-up\relax }}{26}{}\protected@file@percent }
+\newlabel{fig: decrypt1}{{3.17}{26}}
+\@writefile{toc}{\contentsline {paragraph}{The following image displays the activation of the "decrypt button" which displays a similar pop-up window as was shown during the encryption pop-up, with the only difference between "ENCRYPT" or "DECRYPT," naturally. (See 3.17\hbox {})}{26}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3.18}{\ignorespaces  Console showing the decrypted text\relax }}{26}{}\protected@file@percent }
+\newlabel{fig: decrypt2}{{3.18}{26}}
+\@writefile{toc}{\contentsline {paragraph}{Finally, in the console.log, we are able to see that from the receiving end, we are able to decrypt the emailed text when the correct password is given. (See: 3.18\hbox {})}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Ultimaetly, however, the implementation was not completed. The developer wasn't not quite able to get the decrypted code to replaced the cipher code in the body of the message in a reliable way. Further development will continue to resolve this. Unfortunately, the Mozilla API is a living, breathing, in progress project, so the various elements do not behave in a uniform manner. Namely, the API that worked on the compose window did not have a corresponding message window API.}{27}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Challenges Encountered}{28}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Live development environment}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There were many challenge encountered, especially at the start. First, the developer wanted to work through the four available Thunderbird add-on development beginner tutorials to build an understanding of how the basics worked. There was only one problem, after two simple "hello world" level tutorials, the last two did not work. A week or so of trying to figure it out, far too long, before I finally asked for help. There were bugs. Thus, I became acquainted with the Mozilla bug tracker, \emph  {Bugzilla}. Even though Thunderbird is considered to be an agnostic piece of software, that should work in Windows, Linux and Apple operating systems, it apparently is not always the case. Development is chiefly done in Windows, and bugs for other systems are worked out over time. One of the most helpful developers, John Bieling, mentioned to me that, he himself, used Windows, and that he did not even have access to a Apple computer to debug some of the issues.}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The developer's preferred platform is Apple OS, followed closely by Linux Mint. However, both proved to be unreliable and had to fallback to a Windows system, which became the system I used for this project. Even though, sometimes, during this process, I would revert to Apple or Linux platforms, ultimately, I came to the grim realization that it not advisable, because I could code something -- 100\% as it should be -- and it wouldn't work.}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Backlog}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There were many areas where the developer's efforts were incomplete, in one regard or another. In some cases, it was simply a juvenile and painful oversight at the start. There were many components that should have been included in the original specifications that the developer simply did not consider. This included common features of email clients that were completely overlooked:}{27}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There are a slew of other issues that only became evident to the developer \emph  {after} the development process began. Small things could be immediately resolved--or turned out not to be issues at all (like handling messages that fall into the draft window). But, many other things were not included in the original specifications--so the developer stayed the course, and remained focused on meeting the minimum specified requirements, rather than stray too far in different directions.}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Ultimately, the developer will include all the source code in the appendix, such that this document will entail all the components of this project--should the repository not eternally be on github.}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{These are additional items that could be added, improved or enhanced in the future:}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Lastly, the code needs to be re-factored to be cleaner. The developer concedes some redundancy.}{28}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Summary}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Live development environment}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There were many challenges encountered, especially at the start. First, the developer wanted to work through the four available Thunderbird add-on development beginner tutorials to build an understanding of how the basics worked. There was only one problem, after two simple "hello world" level tutorials, the last two did not work. A week or so of trying to figure it out, far too long, before I finally asked for help. There were bugs. Thus, I became acquainted with the Mozilla bug tracker, \emph  {Bugzilla}. Even though Thunderbird is considered to be an agnostic piece of software, that should work in Windows, Linux and Apple operating systems, it apparently is not always the case. Development is chiefly done in Windows, and bugs for other systems are worked out over time. One of the most helpful developers, John Bieling, mentioned to me that, he himself, used Windows, and that he did not even have access to a Apple computer to debug some of the issues.}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The developer's preferred platform is Apple OS, followed closely by Linux Mint. However, both proved to be unreliable and I had to fallback to a Windows system, which became the system I used for this project. Even though, sometimes, during this process, I would revert to Apple or Linux platforms, ultimately, I came to the grim realization that it was not advisable, because I could code something -- 100\% as it should be -- and it wouldn't work.}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Backlog}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There were many areas where the developer's efforts were incomplete, in one regard or another. In some cases, it was simply a juvenile and painful oversight at the start. There were many components that should have been included in the original specifications that the developer simply did not consider. This included common features of email clients that were completely overlooked:}{28}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There are a slew of other issues that only became evident to the developer \emph  {after} the development process began. Small things could be immediately resolved--or turned out not to be issues at all (like handling messages that fall into the draft window). But, many other things were not included in the original specifications--so the developer stayed the course, and remained focused on meeting the minimum specified requirements, rather than stray too far in different directions.}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{These are additional items that could be added, improved or enhanced in the future:}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Lastly, the code needs to be re-factored to be cleaner. The developer concedes some redundancy.}{29}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Summary}{30}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Retrospective}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{First, the developer has to acknowledge that \emph  {now} he feels like he knows Mozilla's Thunderbird API. Additionally, the experience and knowledge in Javascript has expanded by leaps and bounds. So, professionally, the experience has been of significant importance for someone interesting in calling themselves a professional in internet technologies.}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{This was the developer's very first, full fledged project where he was not supported, or rather carried, by other more talents programmers. Additionally, it marked the first time that the developer worked in a real-time environment with other developers. I was not intimidated by this, at the time, because I did not know any better. Only later, when I saw developers arguing about something (stylistic), with one throwing down his "..in his 40 years of software engineering experience" card, to which the respondent conceding defeat with his own "..that he only had 30+ years of software engineering experience" card of his own. I knew then, I was swimming with the sharks. Fortunately, it came towards the end of my project.}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Next steps}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Regrettably, the implementation is not complete. It falls just short, of meeting the specifications defined by the developer at the beginning, and further short of what should be expected in a complete turn-key solution. There were a number of things that the developer did not foresee before development began which, in itself, is a failing that inhibited a robust solution.}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Nevertheless, the developer intends to smooth out the project, enhance shortcoming, and use it as an example of what the developer is fully capable of. The developer can take a break from academic writing, and just focus on hacking, debugging, testing, refining, and re-factoring.}{29}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Software Requirments Specifications}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Retrospective}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{First, the developer has to acknowledge that \emph  {now} he feels like he knows Mozilla's Thunderbird API. Additionally, the experience and knowledge in Javascript has expanded by leaps and bounds. So, professionally, the experience has been of significant importance for someone interesting in calling themselves a professional in internet technologies.}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{This was the developer's very first full fledged project where he was not supported, by other more talented programmers. Additionally, it marked the first time that the developer worked in a real-time environment with other developers. I was not intimidated by this, at the time, because I did not know any better. Only later, when I saw developers arguing about something (stylistic), with one throwing down his "...in 40 years of software engineering experience" card, to which the respondent conceding defeat with his own "...that he only had 30+ years of software engineering experience" card. I knew then, I was swimming with the sharks. Fortunately, it came towards the end of my project.}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Regrettably, the implementation is not complete. It falls just short of meeting the specifications defined by the developer at the beginning, and further short of what should be expected in a complete turn-key solution. There were a number of things that the developer did not foresee before development began which, in itself, is a failing that inhibited a robust solution.}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Next steps}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Nevertheless, the developer intends to smooth out the project, enhance shortcomings, and use it as an example of what the developer is fully capable of. The developer can take a break from academic writing, and just focus on hacking, debugging, testing, refining, and re-factoring.}{30}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Software Requirements Specifications}{31}{}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Introduction}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Purpose}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Scope}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Definitions, acronyms, abbreviations}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{30}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}References}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Author used the IEEE document:}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.5}Overview}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Overall Description}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Product perspective}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The developed software product, \emph  {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PgP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The two alternatives do have the advantage that they used symmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph  {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of security.}{31}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{System interfaces}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The required, and assumed interfaces required for the product include the following:}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{User interfaces}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There are no special user interface requirements.}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Hardware interfaces}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Software interfaces}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The required software interfaces are:}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Communications interfaces}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for Email communication, i.e. network capable computer.}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Memory constraints}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Not applicable}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Operations}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Not applicable}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Site adaptation requirements}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Not applicable}{32}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Product functions}{33}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}User characteristics}{33}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.4}Constraints}{33}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{There will be various constraints within this project listed below:}{33}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.5}Assumptions and dependencies}{33}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Specific Requirements}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Introduction}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.1}Purpose}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{This document will describe the entire software development process, including use cases, personas, diagrams, and the end goals of the system. The audience for this document will be any persons interested in the software engineering process used for this project, but more specifically, those responsible for overseeing and rating this project.}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.2}Scope}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The name for this product will be "Thunderbird: One Time Password." This product will be a Thunderbird add-on, that will encipher plain text into cipher text, which will be delivered by the Thunderbird client to another Thunderbird recipient, that also has the add-on installed. Finally, the second person will be able to decipher the cipher text back to plain text, and read the message.}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.3}Definitions, acronyms, abbreviations}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The following definitions, acronyms, and abbreviations may be used with in the software development process:}{31}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1.4}Software Requirements References}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Author used the IEEE document:}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{the IEEE Recommended Practice for Software Requirements Specifications.}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Overall Description}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The following subsections will describe the general factors that will influence the product requirements, including any background information.}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}Product perspective}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The developed software product, \emph  {Thunderbird: One Time Password}, has not current rival. It current alternatives would be Mozilla's own implementation of OpenPGP. The previous option was PGP through the add-on Enigmail. However, at the writing of this document, the add-on is no longer supported.}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The two alternatives to this proposal do have the advantage that they use asymmetric key exchange to encrypt emails, which is more secure, and recommended for encoded email exchange. The \emph  {Thunderbird: One Time Password} add-on will have the feature that it is easy to use, at the expense of some security.}{32}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{System interfaces}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The interfaces required for the product include the following:}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{User interfaces}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There are no special user interface requirements.}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Hardware interfaces}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There are no special hardware interfaces required for this product to function.}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Software interfaces}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The required software interfaces are:}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Communications interfaces}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{No special communication interfaces will be required, than would already be prerequisites for email communication, i.e. network capable computer.}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Memory constraints}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Not applicable}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Operations}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Not applicable}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Site adaptation requirements}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Not applicable}{33}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}User characteristics}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{See Personas in the appendix.}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.3}Constraints}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{There will be various constraints within this project listed below:}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Specific Requirements}{34}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.3.1}Use Cases}{34}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{The Use Cases used in this project will be defined, and or be restricted to the following items:}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The Use Cases used in this project will be defined, and be restricted to the following items:}{34}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Use Case ID}{34}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{The Use Case ID will be a unique, numeric identifier for the use case.}{34}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Actor(s)}{34}{}\protected@file@percent }
@@ -264,35 +264,38 @@
 \@writefile{toc}{\contentsline {paragraph}{The preconditions are all those conditions that must exist prior to the execution of the use case.}{34}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{Basic Flow}{34}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{These are the basic, ordered steps and the description required for the completion of the use case. The steps will be numbers, and should be executed in this exact order. Completing the steps, in this order, should lead to the completion of the use case without error.}{34}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Exceptions}{34}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Describes any anticipated errors that could occur during the execution of the use case, and how the system will handle these errors. The exceptions systems will not describe unanticipated errors, or error that are not included in the basic flow.}{34}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{Postconditions}{34}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Describes the state of all relevant parties, including the system, \emph  {after} the execution of the use case.}{34}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Exceptions}{35}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Describes any anticipated errors that could occur during the execution of the use case, and how the system will handle these errors. The exceptions will not describe unanticipated errors that are not included in the basic flow.}{35}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Postconditions}{35}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Describes the state of all relevant parties, including the system, \emph  {after} the execution of the use case.}{35}{}\protected@file@percent }
 \gdef \LT@i {\LT@entry 
     {1}{97.35826pt}\LT@entry 
     {1}{268.0748pt}}
 \gdef \LT@ii {\LT@entry 
     {1}{97.35826pt}\LT@entry 
-    {1}{268.0748pt}}
+    {1}{282.3298pt}}
 \gdef \LT@iii {\LT@entry 
     {1}{97.35826pt}\LT@entry 
     {1}{268.0748pt}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Personas}{37}{}\protected@file@percent }
-\bibcite{Shirey}{Shirey, 2007}
-\bibcite{DelfsKnebl}{Delfs and Knebl, 2002}
-\bibcite{Schneier}{Schneier, 2015}
-\bibcite{Nirula}{Nirula, 2022}
+\gdef \LT@iv {\LT@entry 
+    {1}{97.35826pt}\LT@entry 
+    {1}{268.0748pt}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3.2}Personas}{39}{}\protected@file@percent }
 \bibcite{Aumasson}{Aumasson, 2017}
-\bibcite{PaarPelzl}{Paar \& Pelzl, 2009}
-\bibcite{Dooley}{Dooley, 2008}
-\bibcite{Katz}{Katz \& Lindell, 2007}
-\bibcite{book10}{Martin, 2017}
+\bibcite{Bieling}{Bieling, 2020}
 \bibcite{Crawford}{Crawford, 2019}
+\bibcite{DelfsKnebl}{Delfs and Knebl, 2007}
+\bibcite{Dooley}{Dooley, 2008}
+\bibcite{Katz}{Katz \& Lindell, 2008}
+\bibcite{book10}{Martin, 2017}
+\bibcite{WebEx}{Mozilla, 2022}
+\bibcite{Nirula}{Nirula, 2022}
+\bibcite{PaarPelzl}{Paar \& Pelzl, 2009}
+\bibcite{PaarYoutube}{Paar, 2014}
+\bibcite{Schneier}{Schneier, 2015}
+\bibcite{Shirey}{Shirey, 2007}
+\@writefile{toc}{\contentsline {chapter}{References}{42}{}\protected@file@percent }
 \bibcite{SJCL}{Stanford Security Lab, 2009}
-\bibcite{WebEx}{Mozilla}
-\bibcite{Bieling}{Bieling}
-\@writefile{toc}{\contentsline {chapter}{References}{39}{}\protected@file@percent }
-\bibcite{PaarYoutube}{Paar}
 \gdef\minted@oldcachelist{,
   default.pygstyle,
   08D6F6E83E106EDE01FF3B02B7ED7D986F68EB9A7943C374622114467734D81C.pygtex,
@@ -301,4 +304,4 @@
   DA196F9FDE771914BB54D78A7333E6F06F68EB9A7943C374622114467734D81C.pygtex,
   56674AB4A36038956660AA255D9289926F68EB9A7943C374622114467734D81C.pygtex,
   00BE42AB550EBDBF3BD99178BAF1CF796F68EB9A7943C374622114467734D81C.pygtex}
-\gdef \@abspage@last{41}
+\gdef \@abspage@last{44}
